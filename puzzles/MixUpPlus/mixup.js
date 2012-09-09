@@ -165,11 +165,17 @@ jQuery(function(){
             tiltMid = " rotate" + tiltDuo[midLetter][midNum%2] + "(" + (45 + 90 * (Math.round(midNum/2) - 20)) + "deg) ";
         }
 
+        var cssOpe = 'rotate' + faceRotate[faceType][0] + '(' + faceRotate[faceType][1] + 'deg)' + tiltMid + tiltOpe +
+            'translate3d(' + (facePos[facePosNum][0] + margin) + 'px, ' + (facePos[facePosNum][1] + margin) + 'px, ' + originPos + 'px)';
         $(target)
             .css('-webkit-transform-origin', originPos + 'px ' + originPos + 'px 0px')
-            .css('-webkit-transform',
-            'rotate' + faceRotate[faceType][0] + '(' + faceRotate[faceType][1] + 'deg)' + tiltMid + tiltOpe +
-                'translate3d(' + (facePos[facePosNum][0] + margin) + 'px, ' + (facePos[facePosNum][1] + margin) + 'px, ' + originPos + 'px)');
+            .css('-moz-transform-origin', originPos + 'px ' + originPos + 'px 0px')
+            .css('-ms-transform-origin', originPos + 'px ' + originPos + 'px 0px')
+            .css('-o-transform-origin', originPos + 'px ' + originPos + 'px 0px')
+            .css('-webkit-transform',cssOpe)
+            .css('-moz-transform',cssOpe)
+            .css('-ms-transform',cssOpe)
+            .css('-o-transform',cssOpe);
     };
     function updateFaces (){
         jQuery.each($faces.children(), function(){
@@ -507,7 +513,12 @@ jQuery(function(){
     var viewRange = 1200;
     $('#viewRange').change(function(){
         viewRange = parseInt( this.value);
-        $('#cubeViewPort').css('-webkit-perspective',viewRange + 'px');
+        $('#cubeViewPort')
+            .css('-webkit-perspective',viewRange + 'px')
+            .css('-moz-perspective',viewRange + 'px')
+            .css('-ms-perspective',viewRange + 'px')
+            .css('-o-perspective',viewRange + 'px');
+
     })
     $("button[name='reset']").click(function(){
         jQuery.each( $faces.children(), function(){
@@ -524,28 +535,79 @@ jQuery(function(){
     // 前回の設定.
     store.get('keyTable', function(ok, val) {
         if (ok) {
-            jQuery.each( val.split(','), function(i,v){
-                var tmp = v.split(':');
-                keyTable[tmp[0]] = tmp[1];
-                $('select[name=' + tmp[1] +']').val( tmp[0]);
+            if( val != null) {
+                jQuery.each( val.split(','), function(i,v){
+                    var tmp = v.split(':');
+                    keyTable[tmp[0]] = tmp[1];
+                    $('select[name=' + tmp[1] +']').val( tmp[0]);
+                });
+            }
+        }
+    });
+
+
+    var colorList = {
+        "U":"#FFFFFF",
+        "F":"#FF0000",
+        "L":"#008000",
+        "R":"#FFFF00",
+        "B":"#FFA500",
+        "D":"#0000FF"
+    }
+    // 前回の設定.
+    store.get('colorList', function(ok, val) {
+        if (ok) {
+            if( val != null) {
+                jQuery.each( val.split(','), function(i,v){
+                    var tmp = v.split(':');
+                    colorList[tmp[0]] = tmp[1];
+                    $('.'+tmp[0]+"Color").css('background-color',tmp[1]);
+                });
+            }
+        }
+    });
+    $('select').change(function() {
+        if (this.name == "faceColor") {
+            $('#colorSelector div').css('background-color', colorList[this.value]);
+            $('#colorSelector').ColorPicker({ color:colorList[this.value]});
+        } else { // キーボード設定.
+            keyTable[parseInt(this.value)] = this.name;
+            var keyTableString = "";
+            jQuery.each(keyTable, function (i, v) {
+                keyTableString += i + ':' + v + ',';
             });
+            store.set('keyTable', keyTableString);
         }
     });
-    $('select').change(function(){
-        keyTable[parseInt(this.value)] = this.name;
-        var keyTableString = "";
-        jQuery.each( keyTable, function(i,v){
-            keyTableString += i + ':' + v + ',';
+    var rgbTo16 = function(col){
+        return "#" + col.match(/\d+/g).map(function(a){return ("0" + parseInt(a).toString(16)).slice(-2)}).join("");
+    }
+    $('.colorpicker_submit').click(function(){
+        var newBg = $('#colorSelector div').css('background-color');
+        var faceType = $('select[name="faceColor"]').val();
+        $('.'+faceType+"Color").css('background-color',newBg);
+        colorList[faceType] = rgbTo16(newBg);
+        var ColorListString = "";
+        jQuery.each(colorList, function (i, v) {
+            ColorListString += i + ':' + v + ',';
         });
-        store.set('keyTable', keyTableString);
+        store.set('colorList', ColorListString);
     });
+
     $('#backFace').click(function(){
+        var ope = "";
         if( this.checked ) {
-            $('.face').css('-webkit-backface-visibility','visible');
+            ope = 'visible';
         } else {
-            $('.face').css('-webkit-backface-visibility','hidden');
+            ope = 'hidden';
         }
+        $('.face').css('-webkit-backface-visibility',ope)
+                    .css('-moz-backface-visibility',ope)
+                    .css('-ms-backface-visibility',ope)
+                    .css('-o-backface-visibility',ope);
+
     })
+
 
     // 回転時処理---------------------------------------------------
     document.querySelector('#cubeViewPort').addEventListener("mousemove", mouseOver, false);

@@ -1,3 +1,11 @@
+#fc2_footer {
+    display: none;
+}
+
+.fc2 {
+    display: none;
+}
+
 #cubeContainer{
     position:absolute;
     top: 10%;
@@ -7,12 +15,21 @@
 #cubeViewPort{
     -webkit-perspective: 1200px;
     -webkit-perspective-origin: 50% 50%;
+    -moz-perspective: 1200px;
+    -moz-perspective-origin: 50% 50%;
+    -ms-perspective: 1200px;
+    -ms-perspective-origin: 50% 50%;
+    -o-perspective: 1200px;
+    -o-perspective-origin: 50% 50%;
 }
 
 #faces{
     height: 541.421356px;
     width: 541.421356px;
     -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
 }
 
 #time {
@@ -51,20 +68,30 @@
     height: 131.421356px; /* 200 / 2 * sqrt(2) - 20 */
 }
 
+#colorSelector {
+    display: inline;
+    font-size: 12px;
+    color: #ffffff;
+
+}
+.colorpicker {
+    z-index: 10;
+}
+
 .UColor {
     background-color: white;
 }
 .FColor {
-    background-color: red;
+    background-color: #FF0000;
 }
 .BColor {
-    background-color: orange;
+    background-color: #FFA500;
 }
 .LColor {
     background-color: green;
 }
 .RColor {
-    background-color: yellow;
+    background-color: #FFFF00;
 }
 .DColor {
     background-color: blue;
@@ -91,73 +118,176 @@
 
 .moving {
     -webkit-transition: all .5s linear 0;
+    -moz-transition: all .5s linear 0;
+    -ms-transition: all .5s linear 0;
+    -o-transition: all .5s linear 0;
 }
 
 #plane {
     -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+
 }
 
 .U-Plane, .DP-Plane {
     -webkit-transform-origin: 270.710678px 270.710678px;
+    -moz-transform-origin: 270.710678px 270.710678px;
+    -ms-transform-origin: 270.710678px 270.710678px;
+    -o-transform-origin: 270.710678px 270.710678px;
+
     -webkit-transform: rotateY(-90deg);
+    -moz-transform: rotateY(-90deg);
+    -ms-transform: rotateY(-90deg);
+    -o-transform: rotateY(-90deg);
+
 }
 
 .UP-Plane, .D-Plane {
     -webkit-transform-origin: 270.710678px 270.710678px;
+    -moz-transform-origin: 270.710678px 270.710678px;
+    -ms-transform-origin: 270.710678px 270.710678px;
+    -o-transform-origin: 270.710678px 270.710678px;
+
     -webkit-transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg);
+    -o-transform: rotateY(90deg);
+
 }
 
 .F-Plane, .BP-Plane {
     -webkit-transform-origin: 270.710678px 270.710678px;
+    -moz-transform-origin: 270.710678px 270.710678px;
+    -ms-transform-origin: 270.710678px 270.710678px;
+    -o-transform-origin: 270.710678px 270.710678px;
+
     -webkit-transform: rotateZ(90deg);
+    -moz-transform: rotateZ(90deg);
+    -ms-transform: rotateZ(90deg);
+    -o-transform: rotateZ(90deg);
+
 }
 
 .FP-Plane, .B-Plane {
     -webkit-transform-origin: 270.710678px 270.710678px;
+    -moz-transform-origin: 270.710678px 270.710678px;
+    -ms-transform-origin: 270.710678px 270.710678px;
+    -o-transform-origin: 270.710678px 270.710678px;
+
     -webkit-transform: rotateZ(-90deg);
+    -moz-transform: rotateZ(-90deg);
+    -ms-transform: rotateZ(-90deg);
+    -o-transform: rotateZ(-90deg);
+
 }
 
 
 .L-Plane, .RP-Plane {
     -webkit-transform-origin: 270.710678px 270.710678px;
+    -moz-transform-origin: 270.710678px 270.710678px;
+    -ms-transform-origin: 270.710678px 270.710678px;
+    -o-transform-origin: 270.710678px 270.710678px;
+
     -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    -ms-transform: rotateX(-90deg);
+    -o-transform: rotateX(-90deg);
+
 }
 
 .LP-Plane, .R-Plane {
     -webkit-transform-origin: 270.710678px 270.710678px;
+    -moz-transform-origin: 270.710678px 270.710678px;
+    -ms-transform-origin: 270.710678px 270.710678px;
+    -o-transform-origin: 270.710678px 270.710678px;
+
     -webkit-transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    -ms-transform: rotateX(90deg);
+    -o-transform: rotateX(90deg);
+
 }
 
 .EP-Plane {
     -webkit-transform-origin: 270.710678px 270.710678px;
+    -moz-transform-origin: 270.710678px 270.710678px;
+    -ms-transform-origin: 270.710678px 270.710678px;
+    -o-transform-origin: 270.710678px 270.710678px;
+
     -webkit-transform: rotateY(-45deg);
+    -moz-transform: rotateY(-45deg);
+    -ms-transform: rotateY(-45deg);
+    -o-transform: rotateY(-45deg);
+
 }
 
 .E-Plane {
     -webkit-transform-origin: 270.710678px 270.710678px;
+    -moz-transform-origin: 270.710678px 270.710678px;
+    -ms-transform-origin: 270.710678px 270.710678px;
+    -o-transform-origin: 270.710678px 270.710678px;
+
     -webkit-transform: rotateY(45deg);
+    -moz-transform: rotateY(45deg);
+    -ms-transform: rotateY(45deg);
+    -o-transform: rotateY(45deg);
+
 }
 
 
 .S-Plane {
     -webkit-transform-origin: 270.710678px 270.710678px;
+    -moz-transform-origin: 270.710678px 270.710678px;
+    -ms-transform-origin: 270.710678px 270.710678px;
+    -o-transform-origin: 270.710678px 270.710678px;
+
     -webkit-transform: rotateZ(45deg);
+    -moz-transform: rotateZ(45deg);
+    -ms-transform: rotateZ(45deg);
+    -o-transform: rotateZ(45deg);
+
 }
 
 .SP-Plane {
     -webkit-transform-origin: 270.710678px 270.710678px;
+    -moz-transform-origin: 270.710678px 270.710678px;
+    -ms-transform-origin: 270.710678px 270.710678px;
+    -o-transform-origin: 270.710678px 270.710678px;
+
     -webkit-transform: rotateZ(-45deg);
+    -moz-transform: rotateZ(-45deg);
+    -ms-transform: rotateZ(-45deg);
+    -o-transform: rotateZ(-45deg);
+
 }
 
 
 .M-Plane {
     -webkit-transform-origin: 270.710678px 270.710678px;
+    -moz-transform-origin: 270.710678px 270.710678px;
+    -ms-transform-origin: 270.710678px 270.710678px;
+    -o-transform-origin: 270.710678px 270.710678px;
+
     -webkit-transform: rotateX(-45deg);
+    -moz-transform: rotateX(-45deg);
+    -ms-transform: rotateX(-45deg);
+    -o-transform: rotateX(-45deg);
+
 }
 
 .MP-Plane {
     -webkit-transform-origin: 270.710678px 270.710678px;
+    -moz-transform-origin: 270.710678px 270.710678px;
+    -ms-transform-origin: 270.710678px 270.710678px;
+    -o-transform-origin: 270.710678px 270.710678px;
+
     -webkit-transform: rotateX(45deg);
+    -moz-transform: rotateX(45deg);
+    -ms-transform: rotateX(45deg);
+    -o-transform: rotateX(45deg);
+
 }
 
 #control {
