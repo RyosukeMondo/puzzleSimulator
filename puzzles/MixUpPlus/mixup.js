@@ -393,6 +393,7 @@ jQuery(function(){
         var tmpClassName = $target[0].className;
         tmpClassName = tmpClassName.replace(colorTbl[pre], colorTbl[after]);
         $target[0].className = tmpClassName;
+        $target.css('background-color',colorList[colorTbl[after][0]]);
     }
 
     var history = [];
@@ -452,18 +453,25 @@ jQuery(function(){
     jQuery.merge( turns, faceNameMiddle );
     $('body').keyup(function(e){
         console.log(e.which);
-        if( keyTable[e.which] == undefined ) {
-            if(e.which == 32) { // spaceのとき
-                if( isFinish() ) {
-                    for( var i = 0; i < 100; i++ ){
-                        turn( turns[Math.floor(Math.random()*turns.length)] );
-                    }
-                    $('#hint').addClass('off');
+        if(e.which == 32) { // spaceのとき
+            if( isFinish() ) {
+                for( var i = 0; i < 100; i++ ){
+                    turn( turns[Math.floor(Math.random()*turns.length)] );
                 }
+                $('#hint').addClass('off');
             }
             return;
         }
-        turn( keyTable[e.which] );
+
+        var turnName = "";
+        jQuery.each( keyTable, function(i,v){
+            if( v == e.which ) {
+                turnName = i;
+            }
+        });
+        if( turnName != "" ) {
+            turn( turnName );
+        }
         if( isFinish() ) {
             $('#hint').removeClass('off');
         } else {
@@ -527,20 +535,24 @@ jQuery(function(){
         init();
         $('#hint').removeClass('off');
     });
-    var keyTable = {
-        74:"B",87:"BP",75:"D",77:"DP",190:"E",67:"EP",84:"F",69:"FP",79:"L",65:"LP",73:"M",68:"MP",
-        83:"R",78:"RP",71:"S",80:"SP",72:"U",85:"UP",27:"undo",55:'fP',86:'r',81:'rP',90:"u",187:"uP",
-        76:"f",55:'fP'
-    };
+    var keyTable = {  };
     // 前回の設定.
     store.get('keyTable', function(ok, val) {
         if (ok) {
             if( val != null) {
-                jQuery.each( val.split(','), function(i,v){
-                    var tmp = v.split(':');
-                    keyTable[tmp[0]] = tmp[1];
-                    $('select[name=' + tmp[1] +']').val( tmp[0]);
-                });
+                var tmpAry = val.split(',');
+                if( tmpAry.length <= 25) {
+                    jQuery.each( val.split(','), function(i,v){
+                        var tmp = v.split(':');
+                        if( isFinite(tmp[1]) ) { // 数値であれば.
+                            keyTable[tmp[0]] = parseInt(tmp[1]);
+                            var $update = $('select[name=' + tmp[0] +']');
+                            if( $update.val() == "-1") {
+                                $update.val( tmp[1]);
+                            }
+                        }
+                    });
+                }
             }
         }
     });
@@ -571,12 +583,12 @@ jQuery(function(){
             $('#colorSelector div').css('background-color', colorList[this.value]);
             $('#colorSelector').ColorPicker({ color:colorList[this.value]});
         } else { // キーボード設定.
-            keyTable[parseInt(this.value)] = this.name;
+            keyTable[this.name] = parseInt(this.value);
             var keyTableString = "";
             jQuery.each(keyTable, function (i, v) {
                 keyTableString += i + ':' + v + ',';
             });
-            store.set('keyTable', keyTableString);
+            store.set('keyTable', keyTableString.slice(0,-1));
         }
     });
     var rgbTo16 = function(col){

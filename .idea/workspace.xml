@@ -22,28 +22,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="mixup.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/puzzles/MixUpPlus/mixup.html">
+      <file leaf-file-name="mosaiccube.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/puzzles/mosaiccube/mosaiccube.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="302" column="22" selection-start="25310" selection-end="25310" vertical-scroll-proportion="0.20104438">
+            <state line="52" column="52" selection-start="2590" selection-end="2590" vertical-scroll-proportion="0.75651044">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mixup.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/puzzles/MixUpPlus/mixup.css">
+      <file leaf-file-name="mosaiccube.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/puzzles/mosaiccube/mosaiccube.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="300" column="22" selection-start="7021" selection-end="7021" vertical-scroll-proportion="0.0">
+            <state line="57" column="35" selection-start="1049" selection-end="1049" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mixup.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/puzzles/MixUpPlus/mixup.js">
+      <file leaf-file-name="mosaiccube.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/puzzles/mosaiccube/mosaiccube.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="546" column="36" selection-start="24842" selection-end="24842" vertical-scroll-proportion="-4.16">
+            <state line="543" column="8" selection-start="23685" selection-end="23734" vertical-scroll-proportion="-10.56">
               <folding />
             </state>
           </provider>
@@ -66,14 +66,17 @@
         <option value="$PROJECT_DIR$/puzzles/MixUpPlus/mixup.css" />
         <option value="$PROJECT_DIR$/puzzles/MixUpPlus/mixup.html" />
         <option value="$PROJECT_DIR$/puzzles/MixUpPlus/mixup.js" />
+        <option value="$PROJECT_DIR$/puzzles/mosaiccube/mosaiccube.js" />
+        <option value="$PROJECT_DIR$/puzzles/mosaiccube/mosaiccube.css" />
+        <option value="$PROJECT_DIR$/puzzles/mosaiccube/mosaiccube.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1955" />
-    <option name="y" value="3" />
-    <option name="width" value="1459" />
-    <option name="height" value="957" />
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1696" />
+    <option name="height" value="984" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -101,6 +104,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -116,6 +129,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="puzzleSimulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="puzzleSimulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="puzzleSimulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="puzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mosaiccube" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -153,7 +184,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -162,7 +192,7 @@
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
       <JSDebuggerConfigurationSettings>
-        <option name="engineId" />
+        <option name="engineId" value="embedded" />
         <option name="fileUrl" />
       </JSDebuggerConfigurationSettings>
       <method>
@@ -174,32 +204,33 @@
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+      <changelist id="b2397e18-9227-47d1-bb56-4da20d4ed4e9" name="Default" comment="" />
       <created>1347165718816</created>
       <updated>1347165718816</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1955" y="3" width="1459" height="957" extended-state="0" />
+    <frame x="1912" y="-8" width="1696" height="984" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19555874" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17023882" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -259,28 +290,45 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="36" selection-start="199" selection-end="199" vertical-scroll-proportion="0.1775457">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/puzzles/MixUpPlus/mixup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="546" column="36" selection-start="24842" selection-end="24842" vertical-scroll-proportion="-4.16">
-          <folding />
-        </state>
+        <state line="8" column="36" selection-start="199" selection-end="199" vertical-scroll-proportion="0.1775457" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/puzzles/MixUpPlus/mixup.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="300" column="22" selection-start="7021" selection-end="7021" vertical-scroll-proportion="0.0">
+        <state line="284" column="33" selection-start="6690" selection-end="6690" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puzzles/MixUpPlus/mixup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="557" column="30" selection-start="25165" selection-end="25165" vertical-scroll-proportion="0.68709254">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/puzzles/MixUpPlus/mixup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="302" column="22" selection-start="25310" selection-end="25310" vertical-scroll-proportion="0.20104438">
+        <state line="174" column="70" selection-start="13949" selection-end="13949" vertical-scroll-proportion="0.096368715">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puzzles/mosaiccube/mosaiccube.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="543" column="8" selection-start="23685" selection-end="23734" vertical-scroll-proportion="-10.56">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puzzles/mosaiccube/mosaiccube.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="35" selection-start="1049" selection-end="1049" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puzzles/mosaiccube/mosaiccube.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="52" selection-start="2590" selection-end="2590" vertical-scroll-proportion="0.75651044">
           <folding />
         </state>
       </provider>
