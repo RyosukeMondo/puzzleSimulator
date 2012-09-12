@@ -1,5 +1,5 @@
 body {
-    background-color: white;
+    background-color: black;
 }
 
 
@@ -129,16 +129,12 @@ body {
 
 }
 
-.U-Plane, .DP-Plane {
-    -webkit-transform-origin: 270.710678px 270.710678px;
-    -moz-transform-origin: 270.710678px 270.710678px;
-    -ms-transform-origin: 270.710678px 270.710678px;
-    -o-transform-origin: 270.710678px 270.710678px;
+.UU-Plane, .DP-Plane {
+    background-color: red;
 
-    -webkit-transform: rotateY(-90deg);
-    -moz-transform: rotateY(-90deg);
-    -ms-transform: rotateY(-90deg);
-    -o-transform: rotateY(-90deg);
+    -webkit-transform-origin: 50% 50%;
+
+    -webkit-transform: rotateY(-30deg);
 
 }
 

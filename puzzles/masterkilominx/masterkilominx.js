@@ -11,15 +11,9 @@ var facePos = 0;
 var faceKind = 1;
 
 jQuery(function(){
-    var $faces = $('#faces');
+    var $faces = $('#faces>svg');
     var faceName = ['UU','FF','LL','LB','RB','RR',"FL","DL","BB","DR","FR","DD"];
     var store = new Persist.Store('state');
-
-    function genFaces( $dst ) {
-        jQuery.each( faceName, function(i,name){
-        });
-    };
-
     // cssTbl.
     var mag = 200;
     var x = 1;
@@ -69,12 +63,12 @@ jQuery(function(){
             .css('-o-transform',cssOpe);
     };
     function updateFaces (){
-        jQuery.each($faces.children(), function(){
+        jQuery.each($faces, function(){
             applyTransform( this );
         });
     };
     function updateLayout(){
-        jQuery.each($faces.children(), function(i,target){
+        jQuery.each($faces, function(i,target){
             if( $(target).hasClass('faceCenter')) {
                 var len = mag * Math.sqrt(2) / 2 - 5;
                 $(target).css('width',len).css('height',len);
@@ -108,7 +102,6 @@ jQuery(function(){
 
     // 面の作成-------------------
     function initCube(){
-        genFaces($faces);
         updateFaces(); // 描画処理.
         updateLayout();
         getLastColorSetting();
@@ -132,9 +125,9 @@ jQuery(function(){
         "C21":["C2","E3","E2","C1"],
         "C12":["C1","E2","E3","C2"],
         "E29":["E2","T1","T0","E9"],
-        "E92":["E3","T0","T1","E2"],
+        "E92":["E9","T0","T1","E2"],
         "C10":["C1","E1","E0","C0"],
-        "C01":["C0","E8","E1","C1"]
+        "C01":["C0","E0","E1","C1"]
     }
     var convTable = {
         "UU1":["FF","C32","RR","C32","RB","C32","LB","C32","LL","C32"],
@@ -149,14 +142,14 @@ jQuery(function(){
         "RB2":["UU","E92","RR","E58","DR","E92","BB","E70","LB","E14"],
         "RR1":["UU","C12","FF","C34","FR","C01","DR","C40","RB","C12"],
         "RR2":["UU","E14","FF","E58","FR","E92","DR","E70","RB","E14"],
-        "FL1":["FF","C01","FL","C40","DL","C12","DD","C40","FR","C34"],
-        "FL2":["FF","E92","FL","E70","DL","E14","DD","E70","FR","E58"],
-        "DL1":["FL","C01","LB","C40","BB","C12","DD","C34","FL","C34"],
-        "DL2":["FL","E92","LB","E70","BB","E14","DD","E58","FL","E58"],
-        "BB1":["LB","C01","RB","C40","DR","C12","DD","C23","FL","C34"],
-        "BB2":["LB","E92","RB","E70","DR","E14","DD","E36","FL","E58"],
-        "DR1":["RR","C01","FR","C12","DD","C12","BB","C34","RB","C12"],
-        "DR2":["RR","E92","FR","E14","DD","E14","BB","E58","RB","E14"],
+        "FL1":["FF","C01","LL","C40","DL","C12","DD","C40","FR","C34"],
+        "FL2":["FF","E92","LL","E70","DL","E14","DD","E70","FR","E58"],
+        "DL1":["LL","C01","LB","C40","BB","C12","DD","C34","FL","C34"],
+        "DL2":["LL","E92","LB","E70","BB","E14","DD","E58","FL","E58"],
+        "BB1":["LB","C01","RB","C40","DR","C12","DD","C23","DL","C34"],
+        "BB2":["LB","E92","RB","E70","DR","E14","DD","E36","DL","E58"],
+        "DR1":["RR","C40","FR","C12","DD","C12","BB","C34","RB","C01"],
+        "DR2":["RR","E07","FR","E14","DD","E14","BB","E58","RB","E29"],
         "FR1":["FF","C40","FL","C12","DD","C01","DR","C34","RR","C01"],
         "FR2":["FF","E70","FL","E14","DD","E92","DR","E58","RR","E92"],
         "DD1":["FL","C23","DL","C23","BB","C23","DR","C23","FR","C23"],
@@ -171,153 +164,158 @@ jQuery(function(){
         },
         "FF3":{
             "top":"FF1",
-            "first":["UU","C0","RR","C4","FR","C2","FL","C3","LL","C1"],
-            "second":["LB","C3","RB","C2","DR","C4","DD","C0","DL","C1"],
+            "first":["UU","C0","LL","C1","FL","C3","FR","C2","RR","C4"],
+            "second":["LB","C3","DL","C1","DD","C0","DR","C4","RB","C2"],
             "bottom":"BB1P"
         },
         "LL3":{
             "top":"LL1",
-            "first":["UU","C1","FF","C0","FL","C2","DL","C3","LB","C1"],
-            "second":["DD","C4","BB","C1","RB","C3","RR","C2","FR","C4"],
+            "first":["UU","C1","LB","C1","DL","C3","FL","C2","FF","C4"],
+            "second":["DD","C4","FR","C4","RR","C2","RB","C3","BB","C1"],
             "bottom":"DR1P"
         },
         "LB3":{
             "top":"LB1",
-            "first":["UU","C2","LL","C4","DL","C2","BB","C3","RB","C1"],
-            "second":["RR","C3","FF","C2","FL","C4","DD","C3","DR","C1"],
+            "first":["UU","C2","RB","C1","BB","C3","DL","C2","LL","C4"],
+            "second":["RR","C3","DR","C1","DD","C3","FL","C4","FF","C2"],
             "bottom":"FR1P"
         },
         "RB3":{
             "top":"RB1",
-            "first":["UU","C3","LB","C4","BB","C2","DR","C3","RR","C1"],
-            "second":["FL","C2","DL","C4","DD","C2","FR","C1","FF","C3"],
+            "first":["UU","C3","RR","C1","DR","C3","BB","C2","LB","C4"],
+            "second":["LL","C2","FF","C3","FR","C1","DD","C2","DL","C4"],
             "bottom":"FL1P"
         },
         "RR3":{
             "top":"RR1",
-            "first":["UU","C4","FF","C1","DR","C3","DR","C2","RB","C4"],
+            "first":["UU","C4","FF","C1","FR","C3","DR","C2","RB","C4"],
             "second":["LL","C3","FL","C2","DD","C1","BB","C4","LB","C2"],
             "bottom":"DL1P"
         }
     }
 
+
     var targetFaces = {
         "UU1":[
-            "UUC3","UUC2","UUC1","UUC0","UUC4",
-            "UUE7","UUE6","UUE5","UUE4","UUE3","UUE2","UUE1","UUE0","UUE9","UUE8",
-            "UUT3","UUT2","UUT1","UUT0","UUT4"
+            "UUC0","UUE0","UUE1","UUT0",
+            "UUC1","UUE2","UUE3","UUT1",
+            "UUC2","UUE4","UUE5","UUT2",
+            "UUC3","UUE6","UUE7","UUT3",
+            "UUC4","UUE8","UUE9","UUT4"
         ],
         "UU1P":[
-            "UUC4","UUC3","UUC2","UUC1","UUC0",
-            "UUE9","UUE8","UUE7","UUE6","UUE5","UUE4","UUE3","UUE2","UUE1","UUE0",
-            "UUT4","UUT3","UUT2","UUT1","UUT0",
+            "UUC4","UUE8","UUE9","UUT4",
+            "UUC0","UUE0","UUE1","UUT0",
+            "UUC1","UUE2","UUE3","UUT1",
+            "UUC2","UUE4","UUE5","UUT2",
+            "UUC3","UUE6","UUE7","UUT3"
         ],
-        "FF1":[
+        "FF1P":[
             "FFC3","FFC2","FFC1","FFC0","FFC4",
             "FFE7","FFE6","FFE5","FFE4","FFE3","FFE2","FFE1","FFE0","FFE9","FFE8",
             "FFT3","FFT2","FFT1","FFT0","FFT4"
         ],
-        "FF1P":[
+        "FF1":[
             "FFC4","FFC3","FFC2","FFC1","FFC0",
             "FFE9","FFE8","FFE7","FFE6","FFE5","FFE4","FFE3","FFE2","FFE1","FFE0",
             "FFT4","FFT3","FFT2","FFT1","FFT0"
         ],
-        "LL1":[
+        "LL1P":[
             "LLC3","LLC2","LLC1","LLC0","LLC4",
             "LLE7","LLE6","LLE5","LLE4","LLE3","LLE2","LLE1","LLE0","LLE9","LLE8",
             "LLT3","LLT2","LLT1","LLT0","LLT4",
         ],
-        "LL1P":[
+        "LL1":[
             "LLC4","LLC3","LLC2","LLC1","LLC0",
             "LLE9","LLE8","LLE7","LLE6","LLE5","LLE4","LLE3","LLE2","LLE1","LLE0",
             "LLT4","LLT3","LLT2","LLT1","LLT0",
         ],
-        "LB1":[
+        "LB1P":[
             "LBC3","LBC2","LBC1","LBC0","LBC4",
             "LBE7","LBE6","LBE5","LBE4","LBE3","LBE2","LBE1","LBE0","LBE9","LBE8",
             "LBT3","LBT2","LBT1","LBT0","LBT4",
         ],
-        "LB1P":[
+        "LB1":[
             "LBC4","LBC3","LBC2","LBC1","LBC0",
             "LBE9","LBE8","LBE7","LBE6","LBE5","LBE4","LBE3","LBE2","LBE1","LBE0",
             "LBT4","LBT3","LBT2","LBT1","LBT0",
         ],
-        "RB1":[
+        "RB1P":[
             "RBC3","RBC2","RBC1","RBC0","RBC4",
             "RBE7","RBE6","RBE5","RBE4","RBE3","RBE2","RBE1","RBE0","RBE9","RBE8",
             "RBT3","RBT2","RBT1","RBT0","RBT4",
         ],
-        "RB1P":[
+        "RB1":[
             "RBC4","RBC3","RBC2","RBC1","RBC0",
             "RBE9","RBE8","RBE7","RBE6","RBE5","RBE4","RBE3","RBE2","RBE1","RBE0",
             "RBT4","RBT3","RBT2","RBT1","RBT0",
         ],
-        "RR1":[
+        "RR1P":[
             "RRC3","RRC2","RRC1","RRC0","RRC4",
             "RRE7","RRE6","RRE5","RRE4","RRE3","RRE2","RRE1","RRE0","RRE9","RRE8",
             "RRT3","RRT2","RRT1","RRT0","RRT4",
         ],
-        "RR1P":[
+        "RR1":[
             "RRC4","RRC3","RRC2","RRC1","RRC0",
             "RRE9","RRE8","RRE7","RRE6","RRE5","RRE4","RRE3","RRE2","RRE1","RRE0",
             "RRT4","RRT3","RRT2","RRT1","RRT0",
         ],
-        "FL1":[
+        "FL1P":[
             "FLC3","FLC2","FLC1","FLC0","FLC4",
             "FLE7","FLE6","FLE5","FLE4","FLE3","FLE2","FLE1","FLE0","FLE9","FLE8",
             "FLT3","FLT2","FLT1","FLT0","FLT4",
         ],
-        "FL1P":[
+        "FL1":[
             "FLC4","FLC3","FLC2","FLC1","FLC0",
             "FLE9","FLE8","FLE7","FLE6","FLE5","FLE4","FLE3","FLE2","FLE1","FLE0",
             "FLT4","FLT3","FLT2","FLT1","FLT0"
         ],
-        "DL1":[
+        "DL1P":[
             "DLC3","DLC2","DLC1","DLC0","DLC4",
             "DLE7","DLE6","DLE5","DLE4","DLE3","DLE2","DLE1","DLE0","DLE9","DLE8",
             "DLT3","DLT2","DLT1","DLT0","DLT4"
         ],
-        "DL1P":[
+        "DL1":[
             "DLC4","DLC3","DLC2","DLC1","DLC0",
             "DLE9","DLE8","DLE7","DLE6","DLE5","DLE4","DLE3","DLE2","DLE1","DLE0",
             "DLT4","DLT3","DLT2","DLT1","DLT0"
         ],
-        "BB1":[
+        "BB1P":[
             "BBC3","BBC2","BBC1","BBC0","BBC4",
             "BBE7","BBE6","BBE5","BBE4","BBE3","BBE2","BBE1","BBE0","BBE9","BBE8",
             "BBT3","BBT2","BBT1","BBT0","BBT4"
         ],
-        "BB1P":[
+        "BB1":[
             "BBC4","BBC3","BBC2","BBC1","BBC0",
             "BBE9","BBE8","BBE7","BBE6","BBE5","BBE4","BBE3","BBE2","BBE1","BBE0",
             "BBT4","BBT3","BBT2","BBT1","BBT0"
         ],
-        "DR1":[
+        "DR1P":[
             "DRC3","DRC2","DRC1","DRC0","DRC4",
             "DRE7","DRE6","DRE5","DRE4","DRE3","DRE2","DRE1","DRE0","DRE9","DRE8",
             "DRT3","DRT2","DRT1","DRT0","DRT4",
         ],
-        "DR1P":[
+        "DR1":[
             "DRC4","DRC3","DRC2","DRC1","DRC0",
             "DRE9","DRE8","DRE7","DRE6","DRE5","DRE4","DRE3","DRE2","DRE1","DRE0",
             "DRT4","DRT3","DRT2","DRT1","DRT0",
         ],
-        "FR1":[
+        "FR1P":[
             "FRC3","FRC2","FRC1","FRC0","FRC4",
             "FRE7","FRE6","FRE5","FRE4","FRE3","FRE2","FRE1","FRE0","FRE9","FRE8",
             "FRT3","FRT2","FRT1","FRT0","FRT4",
         ],
-        "FR1P":[
+        "FR1":[
             "FRC4","FRC3","FRC2","FRC1","FRC0",
             "FRE9","FRE8","FRE7","FRE6","FRE5","FRE4","FRE3","FRE2","FRE1","FRE0",
             "FRT4","FRT3","FRT2","FRT1","FRT0",
         ],
-        "DD1":[
+        "DD1P":[
             "DDC3","DDC2","DDC1","DDC0","DDC4",
             "DDE7","DDE6","DDE5","DDE4","DDE3","DDE2","DDE1","DDE0","DDE9","DDE8",
             "DDT3","DDT2","DDT1","DDT0","DDT4",
         ],
-        "DD1P":[
+        "DD1":[
             "DDC4","DDC3","DDC2","DDC1","DDC0",
             "DDE9","DDE8","DDE7","DDE6","DDE5","DDE4","DDE3","DDE2","DDE1","DDE0",
             "DDT4","DDT3","DDT2","DDT1","DDT0"
@@ -392,7 +390,9 @@ jQuery(function(){
             }
         }
         targetFaces[name] = result.slice();
+        targetFaces[pack["bottom"].replace("1","3")] = result.slice();
         targetFaces[name+"P"] = resultP.slice();
+        targetFaces[pack["bottom"].replace("1P","3")] = resultP.slice();
     });
 
     var targetPositions = {}; // F0 -> F0P ...　の連想配列を作成.
@@ -413,10 +413,6 @@ jQuery(function(){
     function replaceClass(pre,after,$target, colorTbl) {
         // $facesから該当するクラスのdivを取得してclassを置き換え.
         $target.attr('fill',colorTbl[after]);
-        /*var tmpClassName = $target[0].className;
-        tmpClassName = tmpClassName.replace(colorTbl[pre], colorTbl[after]);
-        $target[0].className = tmpClassName;
-        $target.css('background-color',colorList[colorTbl[after][0]]);*/
     }
 
     var history = [];
@@ -437,12 +433,13 @@ jQuery(function(){
         var colorTbl = {};
         // 関係するfaceを取得.
         var targetFace = targetFaces[turnType];
+
         // 実回転処理.
-        jQuery.each( $faces.children(), function(){
+        jQuery.each( $faces, function(){
             jQuery.each( $(this).children(), function(){
                 targetName = this.className.animVal;
                 if( targetFace == undefined ) {
-                    console.log( this.className.animVal);
+                    console.log( turnType);
                 }
                 var index = targetFace.indexOf( targetName );
                 if( index == -1) return;
@@ -450,7 +447,7 @@ jQuery(function(){
             });
         });
 
-        jQuery.each( $faces.children(), function(i,v){
+        jQuery.each( $faces, function(i,v){
             jQuery.each( $(this).children(), function(){
                 targetName = this.className.animVal;
                 var index = targetFace.indexOf( targetName );
@@ -473,9 +470,14 @@ jQuery(function(){
         console.log(e.which);
         if(e.which == 32) { // spaceのとき
             if( isFinish() ) {
+                var lastLayer = layer;
                 for( var i = 0; i < 100; i++ ){
-                    //turn( turns[Math.floor(Math.random()*turns.length)] );
+                    var target = turns[Math.floor(Math.random()*turns.length)];
+                    layer = target[2];
+                    target = target.replace(target[2],"");
+                    turn( target );
                 }
+                layer = lastLayer;
                 $('#hint').addClass('off');
             }
             return;
@@ -508,7 +510,7 @@ jQuery(function(){
     });
 
     function isFinish(){
-        var $planes = $faces.children();
+        var $planes = $faces;
         for( var i = 0; i < $planes.length; i ++ ){
             var $stickers = $planes.eq(i).children();
             var color = $stickers.eq(0).attr('fill');
@@ -531,7 +533,8 @@ jQuery(function(){
         81:"Q",82:"R",83:"S",84:"T",
         85:"U",86:"V",87:"W",88:"X",
         89:"Y",90:"Z",44:",",190:".",
-        47:"/", 7:"'",187:";",27:"ESC"}
+        47:"/", 7:"'",187:";",27:"ESC",
+        48:"0",49:"1",50:"2",51:"3",52:"4",53:"5",55:"6",56:"7","57":"8",59:"9"}
     var availableOperation = [
         "UU","UUP","FF","FFP","LL","LLP",
         "LB","LBP","RB","RBP","RR","RRP",
@@ -599,9 +602,6 @@ jQuery(function(){
 
     })
     $("button[name='reset']").click(function(){
-        jQuery.each( $faces.children(), function(){
-            $(this).remove();
-        })
         initCube();
         $('#hint').removeClass('off');
     });
@@ -643,10 +643,10 @@ jQuery(function(){
         "DD":"#bababa"
     }
     jQuery.each( colorList, function(name,hex){
-        $('.'+name+"Color")
-            .children()
-                .attr('fill', hex)
-                .attr('stroke-width','2px');
+        var $target = $('.'+name+"Color").children();
+        jQuery.each( $target, function(){
+            $target.attr('fill', hex).attr('stroke-width','2px');
+        })
     })
     // 前回の設定が読み込められれば適用.
     function getLastColorSetting(){
@@ -656,7 +656,11 @@ jQuery(function(){
                     jQuery.each( val.split(','), function(i,v){
                         var tmp = v.split(':');
                         colorList[tmp[0]] = tmp[1];
-                        $('.'+tmp[0]+"Color").children().attr('fill', tmp[1]);
+                        var $target = $('.'+tmp[0]+"Color").children();
+                        jQuery.each( $target, function(){
+                            $(this).attr('fill', tmp[1]);
+                        })
+
                     });
                 }
             }
