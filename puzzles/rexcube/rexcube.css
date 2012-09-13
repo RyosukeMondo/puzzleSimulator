@@ -32,30 +32,25 @@ body {
     -o-perspective-origin: 50% 50%;
 }
 
-#faces{
-    font-size: 10px;
-    padding: 50px;
-    height: 541.421356px;
-    width: 541.421356px;
+#faces {
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     -ms-transform-style: preserve-3d;
     -o-transform-style: preserve-3d;
 }
 
-#time {
-    top: 99%;
-    left: 90%;
+#faces>div {
+    background-color: blue;
+    width: 400px;
+    height: 400px;
+    display: none;
 }
 
 .face {
     position:absolute;
-    margin: 1px;
-
-    border-radius: 20px;
-    opacity: 1;
+    top:0%;
+    left:0%;
     z-index: -1;
-    text-align: center;
 }
 
 /* 141.421356 , 70.710678*/
@@ -87,24 +82,7 @@ body {
     z-index: 1000;
 }
 
-.UUColora {
-    background-color: white;
-}
-.FFColora {
-    background-color: #FF0000;
-}
-.BBColora {
-    background-color: #FFA500;
-}
-.LLColora {
-    background-color: green;
-}
-.RRColora {
-    background-color: #FFFF00;
-}
-.DDColora {
-    background-color: blue;
-}
+
 
 .NColor {
     display: none;
@@ -304,9 +282,8 @@ body {
 
 #hint {
     position: fixed;
-    right: 0;
-    bottom: 200px;
-
+    right: 5%;
+    bottom: 10%;
     background: rgba(3,5,6,0.5);
     color: #EEE;
     text-align: center;

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/puzzles/rexcube/rexcube.js" line="520" mnemonic="1" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b2397e18-9227-47d1-bb56-4da20d4ed4e9" name="Default" comment="" />
     <ignored path="puzzleSimulator.iws" />
@@ -22,77 +25,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="tmp.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/puzzles/tmp/tmp.html">
+      <file leaf-file-name="rexcube.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/puzzles/rexcube/rexcube.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="66" selection-start="326" selection-end="326" vertical-scroll-proportion="-7.1923075">
+            <state line="64" column="51" selection-start="2880" selection-end="2880" vertical-scroll-proportion="-5.983051">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="masterkilominx.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.html">
+      <file leaf-file-name="rexcube.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/puzzles/rexcube/rexcube.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="664" column="64" selection-start="71480" selection-end="71480" vertical-scroll-proportion="-13.807693">
-              <folding>
-                <element signature="tag#svg#0;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#svg#1;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#svg#2;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#svg#3;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#svg#4;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#svg#5;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#svg#6;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#svg#7;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#svg#8;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#svg#9;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#svg#10;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#svg#11;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="masterkilominx.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="486" column="58" selection-start="18943" selection-end="18943" vertical-scroll-proportion="0.6291834">
+            <state line="19" column="16" selection-start="206" selection-end="206" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rubik-simple.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/CardMem/trunk/dferreiroval-html5rubik-cabcc4c/tutorial/step3/rubik-simple.js">
+      <file leaf-file-name="rexcube.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/puzzles/rexcube/rexcube.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="344" column="34" selection-start="16816" selection-end="16822" vertical-scroll-proportion="-13.84">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tmp.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/puzzles/tmp/tmp.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="55" selection-start="225" selection-end="225" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tmp.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/puzzles/tmp/tmp.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="16" selection-start="363" selection-end="363" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="masterkilominx.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="136" column="33" selection-start="2050" selection-end="2050" vertical-scroll-proportion="-9.96">
+            <state line="600" column="111" selection-start="24240" selection-end="24240" vertical-scroll-proportion="-0.24839948">
               <folding />
             </state>
           </provider>
@@ -121,16 +75,20 @@
         <option value="$PROJECT_DIR$/puzzles/tmp/tmp.html" />
         <option value="$PROJECT_DIR$/puzzles/tmp/tmp.css" />
         <option value="$PROJECT_DIR$/puzzles/tmp/tmp.js" />
-        <option value="$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.css" />
-        <option value="$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.html" />
         <option value="$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.js" />
+        <option value="$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.html" />
+        <option value="$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.css" />
+        <option value="$PROJECT_DIR$/puzzles/rexcube/rexcube.css" />
+        <option value="$PROJECT_DIR$/puzzles/rexcube/rexcube.html" />
+        <option value="$PROJECT_DIR$/puzzles/rexcube/rexcube.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1915" />
-    <option name="width" value="1148" />
-    <option name="height" value="957" />
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1696" />
+    <option name="height" value="984" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -158,16 +116,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -200,7 +148,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tmp" />
+              <option name="myItemId" value="rexcube" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -238,10 +186,40 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="187" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="205" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="198" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="210" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1001" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="997" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="206" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="202" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
@@ -256,6 +234,24 @@
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <configuration useDefault="false">C:\Users\mon576r\AppData\Roaming\Subversion</configuration>
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="b2397e18-9227-47d1-bb56-4da20d4ed4e9" name="Default" comment="" />
@@ -265,23 +261,23 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1915" y="0" width="1148" height="957" extended-state="1" />
+    <frame x="1912" y="-8" width="1696" height="984" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938388" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2562212" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22412737" sideWeight="0.6812796" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31872037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -344,125 +340,86 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/puzzles/MixUpPlus/mixup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="557" column="30" selection-start="25165" selection-end="25165" vertical-scroll-proportion="0.68709254">
-          <folding />
-        </state>
+        <state line="557" column="30" selection-start="25165" selection-end="25165" vertical-scroll-proportion="0.68709254" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/puzzles/MixUpPlus/mixup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="174" column="70" selection-start="13949" selection-end="13949" vertical-scroll-proportion="0.096368715">
-          <folding />
-        </state>
+        <state line="174" column="70" selection-start="13949" selection-end="13949" vertical-scroll-proportion="0.096368715" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/puzzles/mosaiccube/mosaiccube.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="40" selection-start="1115" selection-end="1115" vertical-scroll-proportion="0.048177082">
-          <folding />
-        </state>
+        <state line="20" column="40" selection-start="1115" selection-end="1115" vertical-scroll-proportion="0.048177082" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/puzzles/mosaiccube/mosaiccube.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="35" selection-start="1049" selection-end="1049" vertical-scroll-proportion="0.83028084">
-          <folding />
-        </state>
+        <state line="57" column="35" selection-start="1049" selection-end="1049" vertical-scroll-proportion="0.83028084" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/puzzles/mosaiccube/mosaiccube.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="543" column="8" selection-start="23685" selection-end="23734" vertical-scroll-proportion="0.3324937">
-          <folding />
-        </state>
+        <state line="543" column="8" selection-start="23685" selection-end="23734" vertical-scroll-proportion="0.3324937" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="30" selection-start="483" selection-end="483" vertical-scroll-proportion="-9.153846">
-          <folding />
-        </state>
+        <state line="14" column="30" selection-start="483" selection-end="483" vertical-scroll-proportion="-9.153846" />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/CardMem/trunk/dferreiroval-html5rubik-cabcc4c/tutorial/common.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="36" selection-start="2532" selection-end="2535" vertical-scroll-proportion="-2.04">
-          <folding />
-        </state>
+        <state line="105" column="36" selection-start="2532" selection-end="2535" vertical-scroll-proportion="-2.04" />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/CardMem/trunk/dferreiroval-html5rubik-cabcc4c/tutorial/step3/cube.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="34" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="7" column="34" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/CardMem/trunk/dferreiroval-html5rubik-cabcc4c/tutorial/step3/cube.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="12" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/CardMem/trunk/dferreiroval-html5rubik-cabcc4c/tutorial/step3/rubik-simple.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="344" column="34" selection-start="16816" selection-end="16822" vertical-scroll-proportion="-13.84">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="33" selection-start="2050" selection-end="2050" vertical-scroll-proportion="-9.96">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/puzzles/tmp/tmp.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="16" selection-start="363" selection-end="363" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/puzzles/tmp/tmp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="55" selection-start="225" selection-end="225" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/puzzles/tmp/tmp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="66" selection-start="326" selection-end="326" vertical-scroll-proportion="-7.1923075">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="664" column="64" selection-start="71480" selection-end="71480" vertical-scroll-proportion="-13.807693">
-          <folding>
-            <element signature="tag#svg#0;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#svg#1;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#svg#2;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#svg#3;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#svg#4;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#svg#5;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#svg#6;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#svg#7;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#svg#8;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#svg#9;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#svg#10;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#svg#11;tag#div#0;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="3" column="12" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="486" column="58" selection-start="18943" selection-end="18943" vertical-scroll-proportion="0.6291834">
+        <state line="486" column="58" selection-start="18943" selection-end="18943" vertical-scroll-proportion="-49.4" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/CardMem/trunk/dferreiroval-html5rubik-cabcc4c/tutorial/step3/rubik-simple.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="344" column="34" selection-start="16816" selection-end="16822" vertical-scroll-proportion="-13.84" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="61" selection-start="68" selection-end="68" vertical-scroll-proportion="-3.4" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="669" column="27" selection-start="71778" selection-end="71778" vertical-scroll-proportion="22.442148" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puzzles/rexcube/rexcube.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="51" selection-start="2880" selection-end="2880" vertical-scroll-proportion="-5.983051">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puzzles/rexcube/rexcube.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="16" selection-start="206" selection-end="206" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puzzles/rexcube/rexcube.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="600" column="111" selection-start="24240" selection-end="24240" vertical-scroll-proportion="-0.24839948">
           <folding />
         </state>
       </provider>
