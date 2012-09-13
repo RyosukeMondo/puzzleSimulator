@@ -571,6 +571,8 @@ jQuery(function(){
 
         cube.style.webkitTransform = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
         cube.style.MozTransform = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
+        cube.style.MsTransform = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
+        cube.style.OTransform = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
         //cube.style.transform = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
     }
     // キューブがクリックされたとき最後のクリック位置情報からoffsetを取得

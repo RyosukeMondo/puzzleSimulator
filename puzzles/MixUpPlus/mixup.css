@@ -2,6 +2,11 @@
     display: none;
 }
 
+#fb {
+    position: absolute;
+    bottom:0;
+}
+
 .fc2 {
     display: none;
 }

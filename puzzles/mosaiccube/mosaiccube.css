@@ -2,7 +2,10 @@ body {
     background-color: black;
 }
 
-
+#fb {
+    position: absolute;
+    bottom:0;
+}
 #fc2_footer {
     display: none;
 }
