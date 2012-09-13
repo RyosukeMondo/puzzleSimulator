@@ -24,44 +24,7 @@
     <favorites_list name="puzzleSimulator" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="rexcube.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/puzzles/rexcube/rexcube.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="27" selection-start="1972" selection-end="1978" vertical-scroll-proportion="-4.237288">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="26" selection-start="553" selection-end="553" vertical-scroll-proportion="-11.029411">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rexcube.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/puzzles/rexcube/rexcube.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="107" column="11" selection-start="1485" selection-end="1491" vertical-scroll-proportion="0.55289674">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rexcube.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/puzzles/rexcube/rexcube.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="574" column="25" selection-start="23848" selection-end="23854" vertical-scroll-proportion="-10.4">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -83,13 +46,13 @@
         <option value="$PROJECT_DIR$/puzzles/tmp/tmp.html" />
         <option value="$PROJECT_DIR$/puzzles/tmp/tmp.css" />
         <option value="$PROJECT_DIR$/puzzles/tmp/tmp.js" />
-        <option value="$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.js" />
-        <option value="$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.html" />
         <option value="$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/puzzles/rexcube/rexcube.html" />
         <option value="$PROJECT_DIR$/puzzles/rexcube/rexcube.css" />
         <option value="$PROJECT_DIR$/puzzles/rexcube/rexcube.js" />
+        <option value="$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.html" />
+        <option value="$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.js" />
       </list>
     </option>
   </component>
@@ -271,14 +234,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1696" height="984" extended-state="7" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938388" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22412737" sideWeight="0.6812796" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22412737" sideWeight="0.6812796" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -387,11 +350,6 @@
         <state line="3" column="12" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="486" column="58" selection-start="18943" selection-end="18943" vertical-scroll-proportion="-49.4" />
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/CardMem/trunk/dferreiroval-html5rubik-cabcc4c/tutorial/step3/rubik-simple.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="344" column="34" selection-start="16816" selection-end="16822" vertical-scroll-proportion="-13.84" />
@@ -402,14 +360,16 @@
         <state line="5" column="61" selection-start="68" selection-end="68" vertical-scroll-proportion="-3.4" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="669" column="27" selection-start="71778" selection-end="71778" vertical-scroll-proportion="22.442148" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/puzzles/rexcube/rexcube.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="40" column="27" selection-start="1972" selection-end="1978" vertical-scroll-proportion="-4.237288">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puzzles/rexcube/rexcube.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="107" column="11" selection-start="1485" selection-end="1491" vertical-scroll-proportion="-17.56">
           <folding />
         </state>
       </provider>
@@ -428,9 +388,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/puzzles/rexcube/rexcube.css">
+    <entry file="file://$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="11" selection-start="1485" selection-end="1491" vertical-scroll-proportion="0.55289674">
+        <state line="38" column="27" selection-start="1908" selection-end="1914" vertical-scroll-proportion="-4.220339">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="705" column="26" selection-start="26271" selection-end="26271" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>

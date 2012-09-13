@@ -703,7 +703,7 @@ jQuery(function(){
         } else {
             ope = 'hidden';
         }
-        $('.face').css('-webkit-backface-visibility',ope)
+        $('.face').css('---backface-visibility',ope)
                     .css('-moz-backface-visibility',ope)
                     .css('-ms-backface-visibility',ope)
                     .css('-o-backface-visibility',ope);
