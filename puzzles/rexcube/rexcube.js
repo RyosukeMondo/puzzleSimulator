@@ -218,7 +218,11 @@ var Cube = function(){
                 jQuery.each( $shadow, function(i,shadowPlane){
                     var name = shadowPlane.className.animVal.split(' ')[1];
                     clearInterval( currentAnimation[name]["time"] );
-                    $(shadowPlane).css('-webkit-transform',currentAnimation[name]["matrix"]);
+                    $(shadowPlane)
+                        .css('-webkit-transform',currentAnimation[name]["matrix"])
+                        .css('-moz-transform',currentAnimation[name]["matrix"])
+                        .css('-ms-transform',currentAnimation[name]["matrix"])
+                        .css('-o-transform',currentAnimation[name]["matrix"]);
                     turnExecuteEnd(shadowPlane);
                 });
                 currentOperation = turnOperation;
@@ -245,7 +249,16 @@ var Cube = function(){
             var axesIndex = availableTurn.indexOf(operation["turn"]);
             var axes = turnAxes[axesIndex];
             jQuery.each( $shadow, function(i,shadowPlane){
-                var matrix = $(this).css('-webkit-transform');
+                var matrix = "";
+                var webkit = $(this).css('-webkit-transform');
+                matrix = ( webkit != "") ? webkit : "";
+                var moz = $(this).css('-moz-transform');
+                matrix = ( moz != "") ? webkit : "";
+                var ms = $(this).css('-ms-transform');
+                matrix = ( ms != "") ? webkit : "";
+                var o = $(this).css('-o-transform');
+                matrix = ( o != "") ? webkit : "";
+
                 var rotate = 0;
                 var name = shadowPlane.className.animVal.split(' ')[1];
                 var isPrime = operation["isPrime"];
@@ -258,9 +271,17 @@ var Cube = function(){
 
                     if( Math.abs(rotate) < 120 ) {
                         var operation = "rotate3d(" + axes + "," + rotate + "deg) " + matrix;
-                        $(shadowPlane).css('-webkit-transform',operation);
+                        $(shadowPlane)
+                            .css('-webkit-transform',operation)
+                            .css('-moz-transform',operation)
+                            .css('-ms-transform',operation)
+                            .css('-o-transform',operation);
                     } else {
-                        $(shadowPlane).css('-webkit-transform',matrix);
+                        $(shadowPlane)
+                            .css('-webkit-transform',matrix)
+                            .css('-moz-transform',matrix)
+                            .css('-ms-transform',matrix)
+                            .css('-o-transform',matrix);
                         clearInterval( time );
                         turnExecuteEnd(shadowPlane);
                         delete currentAnimation[name];
