@@ -427,7 +427,8 @@ var Control = function(turns){
             $('.colorpicker_submit').click(function(){
                 var newBg = $('#colorSelector div').css('background-color');
                 var faceType = $('select[name="faceColor"]').val();
-                $('#faces>svg:not(.shadow).'+faceType+'>path').attr('fill',rgbTo16(newBg));
+                $('#faces>svg:not(.shadow).'+faceType+'>path')
+                    .attr('fill',rgbTo16(newBg));
                 colorList[faceType] = rgbTo16(newBg);
                 var ColorListString = "";
                 jQuery.each(colorList, function (i, v) {
@@ -497,7 +498,9 @@ var Control = function(turns){
                             if( tmp[0] != "") {
                                 var $target = $('#faces>svg.'+tmp[0]).children();
                                 jQuery.each( $target, function(){
-                                    $(this).attr('fill', tmp[1]);
+                                    $(this)
+                                        .attr('fill', tmp[1])
+                                        .attr('stroke', "#000000");
                                 })
                             }
                         });
@@ -505,7 +508,9 @@ var Control = function(turns){
                         jQuery.each( colorList, function(name,hex){
                             var $target = $('#faces>svg.'+name).children();
                             jQuery.each( $target, function(){
-                                $(this).attr('fill', hex);
+                                $(this)
+                                    .attr('fill', hex)
+                                    .attr('stroke', "#000000");
                             })
                         })
                     }
