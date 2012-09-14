@@ -52,12 +52,12 @@ var Cube = function(){
     var r = mag; // 半径.
     var facePosition = [
         // rotateZ,translateZ,rotateY,rotateX
-        [0,0,90,[0,0,0.825]],
+        [0,0,90,[0,0,0.82]],
         [90,0,0,[0,0,1]],
         [90,0,-90,[0,0,1]],
         [90,0,-180,[0,0,1]],
         [90,0,-270,[0,0,1]],
-        [0,0,-90,[0,0,0.825]]
+        [0,0,-90,[0,0,0.82]]
     ];
     var faceColor = {
         'U':"#FFFFFF",
@@ -168,53 +168,21 @@ var Cube = function(){
 
     var getTargetSticker = function(turnOperation){
         var operation = parseTurnOperation( turnOperation );
-        // F
-        var currentTurnIndex = availableTurn.indexOf( operation["turn"]);
-        var targetAry = turnTable[ currentTurnIndex ];
+        var process = turnTable["layer" + operation["layer"]][operation["turn"]];
+        var targetAry = process[0];
+        var turnLabel = process[1];
         var order = [];
-        var next = ( currentTurnIndex % 2 == 0 ) ? 1 : -1;
-        var nextTargetAry = turnTable[currentTurnIndex + next];
+
         if( !operation["isPrime"] ) {
             for ( var i = 0 ; i < targetAry.length; i++ )order.push( targetAry[i][0] );
-            if( operation["layer"] == 2 ) {
-                for ( var i = nextTargetAry.length - 1; i >= 0; i-- )order.push( nextTargetAry[i][0] );
-            }
         } else {
             for ( var i = targetAry.length - 1; i >= 0; i-- )order.push( targetAry[i][0] );
-            if( operation["layer"] == 2 ) {
-                for ( var i = 0 ; i < nextTargetAry.length; i++ )order.push( nextTargetAry[i][0] );
-            }
         }
         var targetStickers = {};
-        jQuery.each( faceName, function(i,v){
-            targetStickers[v] = [];
-        })
-        if( operation["layer"] == 1 ) {
-            for( var i = 0; i < targetAry.length; i++ ) {
-                var currentFaceName = targetAry[i]; // U2...
-                targetStickers[currentFaceName[0]].push( currentFaceName[0] + "T8");
-                var baseNum = (parseInt(currentFaceName[1] - 2 + 8)%8);
-                for( var index = 0; index < 5; index++ ) {
-                    var type = (index % 2 == 0) ? "C": "E";
-                    targetStickers[currentFaceName[0]].push( currentFaceName[0] + type + (baseNum + index) % 8 );
-                }
-            }
-        } else if( operation["layer"] == 2 ) {
-            var table = [];
-            jQuery.merge(table, targetAry);
-            jQuery.merge(table, nextTargetAry);
-            var indexTable = {};
-            for( var i = 0; i < table.length; i++ ) {
-                indexTable[table[i][0]] = parseInt( table[i][1] );
-            }
-            for( var index = 0; index < faceName.length; index++ ) {
-                targetStickers[faceName[index]].push( faceName[index] + "T8");
-                for( var i = 0; i < 8; i++ ) {
-                    var offsetIndex = (indexTable[faceName[index]] + i) % 8;
-                    var type = (offsetIndex % 2 == 0) ? "C": "E";
-                    targetStickers[faceName[index]].push( faceName[index] + type + offsetIndex );
-                }
-            }
+        for( var i = 0; i < turnLabel.length; i++ ){
+            if( targetStickers[turnLabel[i][0]] == undefined )
+                targetStickers[turnLabel[i][0]] = [];
+            targetStickers[turnLabel[i][0]].push(turnLabel[i]);
         }
         return { "stickers":targetStickers, "order":order };
     };
@@ -247,6 +215,7 @@ var Cube = function(){
             $home[0].appendChild( this );
         });
         that.checkComplete();
+        $('.shadow').addClass('hide');
     };
 
     var currentState = {};
@@ -329,9 +298,9 @@ var Cube = function(){
                 currentOperation = turnOperation;
                 currentAnimation = {};
                 currentState = {};
-                $shadow.removeClass('moving');
+                $shadow.addClass('hide');
             }
-            $shadow.addClass('moving');
+            $shadow.removeClass('hide');
 
             backUpCurrentState(); // 現在の色のリストを取得.
             currentOperation = turnOperation;
@@ -339,11 +308,13 @@ var Cube = function(){
             var targetStickers = currentTargetStickers["stickers"];
             jQuery.each( $shadow, function(i,val){
                 var currentFaceName = this.className.animVal.split(" ")[1];
-                for( var i = 0; i < targetStickers[currentFaceName].length; i++ ){
-                    try {
-                        val.appendChild( $('#faces>svg>path.' + targetStickers[currentFaceName][i])[0]);
-                    } catch(e) {
-                        console.log(e);
+                if( targetStickers[currentFaceName] != undefined) {
+                    for( var i = 0; i < targetStickers[currentFaceName].length; i++ ){
+                        try {
+                            val.appendChild( $('#faces>svg>path.' + targetStickers[currentFaceName][i])[0]);
+                        } catch(e) {
+                            console.log(e);
+                        }
                     }
                 }
             });
