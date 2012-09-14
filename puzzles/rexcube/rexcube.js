@@ -354,16 +354,18 @@ var Control = function(turns){
         'D':"#0033ff"
     }
     var keyTable = {  };
+    var btnPos = {};
 
     var availableTurns = turns;
 
     var generateSelection = function($target, name){
+        var $div = $('<div class="bn"></div>').html('[o]').css('display','inline');
         var $button = $('<button/>');
         $button.html(name)
             .attr('type','button')
             .css('width','50px')
             .css('height','50px');
-        $target.append($button);
+        $div.append($button);
         var $select = $('<select/>');
         $select.attr('name',name)
             .css('width','80px')
@@ -376,7 +378,23 @@ var Control = function(turns){
         var $option = $('<option/>');
         $option.attr('value',-1).html('none').attr('selected',"");
         $select.append($option);
-        $target.append($select);
+        $div.append($select);
+
+        $target.append($div);
+
+        function start(){};
+        function stop(){
+            var $btn = $(this).children().eq(0);
+            btnPos[$btn.html()] = [$(this).css('left'),$(this).css('top')];
+            var btnPosStr = "";
+            jQuery.each( btnPos, function(i,v){
+                console.log( i + " " + v );
+                btnPosStr += i + ":[" + v[0] + ',' + v[1] + "]@@@";
+            });
+            store.set('ButtonPos', btnPosStr.slice(0,-1));
+        };
+        function drag(){};
+        $('.bn').draggable({start:start,stop:stop,drag:drag});
     }
 
     var isShow = true;
@@ -398,6 +416,7 @@ var Control = function(turns){
             // show/hideボタン.
             $("button[name='toggle']").click(function(){
                 $('#panel').slideToggle();
+                $('select').slideToggle();
                 if( isShow ) {
                     isShow = false;
                     setTimeout(function(){
@@ -522,6 +541,29 @@ var Control = function(turns){
                 }
             });
 
+            // ボタンの位置情報.
+            store.get('ButtonPos', function(ok, val) {
+                if (ok) {
+                    if( val != null) {
+                        try {
+                            var tmpAry = val.split('@@@');
+                            jQuery.each( tmpAry, function(i,v){
+                                var tmp = v.split(':');
+                                if( isFinite(tmp[1]) ) { // 数値であれば.
+                                    keyTable[tmp[0]] = parseInt(tmp[1]);
+                                    var $update = $('select[name=' + tmp[0] +']');
+                                    if( $update.val() == "-1") {
+                                        $update.val( tmp[1]);
+                                    }
+                                }
+                            });
+                        } catch (e) {
+                            keyTable = {};
+                        }
+                    }
+                }
+            });
+
         },
         getTurnName: function(keyCode){
             var turnName = "";
@@ -575,6 +617,7 @@ var WindowControl = function(){
             lastY = e.pageY - offsetY;
         }
     }
+
     // 回転実処理------------------------------------------------------------
     function rotate(newX,newY,newZ){
         var x = parseInt((newX || 0)),
@@ -654,7 +697,7 @@ jQuery(function(){
     });
 
 
-    $('#keys>button').click(function(){
+    $('.bn>button').click(function(){
         parseTurnName( $(this).html() );
     });
 
@@ -689,6 +732,7 @@ jQuery(function(){
             window.onorientationchange = setView;
         }else if(agent.search(/iPad/) != -1){
             $("body").addClass("ipad"); //iPadには「body class="ipad"」追加
+            $('#fb').css('display','none');
             window.onorientationchange = setView;
         }else if(agent.search(/Android/) != -1){
             $("body").addClass("android"); //Androidには「body class="android"」追加
