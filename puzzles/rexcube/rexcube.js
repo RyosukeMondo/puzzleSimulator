@@ -365,6 +365,9 @@ var Control = function(turns){
             .attr('type','button')
             .css('width','50px')
             .css('height','50px');
+        $div.addClass(name)
+            .css('margin-left','auto')
+            .css('margin-right','auto');
         $div.append($button);
         var $select = $('<select/>');
         $select.attr('name',name)
@@ -380,7 +383,7 @@ var Control = function(turns){
         $select.append($option);
         $div.append($select);
 
-        $target.append($div);
+        $('body').append($div);
 
         function start(){};
         function stop(){
@@ -389,7 +392,7 @@ var Control = function(turns){
             var btnPosStr = "";
             jQuery.each( btnPos, function(i,v){
                 console.log( i + " " + v );
-                btnPosStr += i + ":[" + v[0] + ',' + v[1] + "]@@@";
+                btnPosStr += i + "," + v[0] + "," + v[1] + "@";
             });
             store.set('ButtonPos', btnPosStr.slice(0,-1));
         };
@@ -546,16 +549,19 @@ var Control = function(turns){
                 if (ok) {
                     if( val != null) {
                         try {
-                            var tmpAry = val.split('@@@');
+                            var tmpAry = val.split('@');
                             jQuery.each( tmpAry, function(i,v){
-                                var tmp = v.split(':');
-                                if( isFinite(tmp[1]) ) { // 数値であれば.
-                                    keyTable[tmp[0]] = parseInt(tmp[1]);
-                                    var $update = $('select[name=' + tmp[0] +']');
-                                    if( $update.val() == "-1") {
-                                        $update.val( tmp[1]);
+                                var tmp = v.split(',');
+                                var $target = $('div.'+tmp[0]);
+                                jQuery.each( $target, function(i,v){
+                                    if( $(this).hasClass(tmp[0]) ){
+                                        $(this)
+                                            .css('position','relative')
+                                            .css('left',tmp[1])
+                                            .css('top',tmp[2]);
                                     }
-                                }
+                                });
+                                btnPos[tmp[0]] = [tmp[1],tmp[2]];
                             });
                         } catch (e) {
                             keyTable = {};
