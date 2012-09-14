@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/puzzles/rexcube/rexcube.js" line="546" mnemonic="1" />
+    <bookmark url="file://$PROJECT_DIR$/puzzles/rexcube/rexcube.js" line="551" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2397e18-9227-47d1-bb56-4da20d4ed4e9" name="Default" comment="" />
@@ -24,7 +24,35 @@
     <favorites_list name="puzzleSimulator" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="bubbloid.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/puzzles/bubbloid/bubbloid.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="59" column="33" selection-start="925" selection-end="925" vertical-scroll-proportion="-2.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bubbloid.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/puzzles/bubbloid/bubbloid.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="28" selection-start="1038" selection-end="1038" vertical-scroll-proportion="-12.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bubbloid.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/puzzles/bubbloid/bubbloid.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="173" column="36" selection-start="17458" selection-end="17458" vertical-scroll-proportion="0.58386683">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -37,22 +65,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/puzzles/MixUpPlus/mixup.js" />
-        <option value="$PROJECT_DIR$/puzzles/tmp/tmp.html" />
-        <option value="$PROJECT_DIR$/puzzles/tmp/tmp.css" />
-        <option value="$PROJECT_DIR$/puzzles/tmp/tmp.js" />
-        <option value="$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.css" />
-        <option value="$PROJECT_DIR$/puzzles/rexcube/rexcube.css" />
         <option value="$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.html" />
         <option value="$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/puzzles/rexcube/rexcube.js" />
         <option value="$PROJECT_DIR$/puzzles/mosaiccube/mosaiccube.js" />
         <option value="$PROJECT_DIR$/puzzles/mosaiccube/mosaiccube.css" />
-        <option value="$PROJECT_DIR$/puzzles/MixUpPlus/mixup.css" />
         <option value="$PROJECT_DIR$/puzzles/MixUpPlus/mixup.html" />
-        <option value="$PROJECT_DIR$/puzzles/rexcube/rexcube.html" />
         <option value="$PROJECT_DIR$/puzzles/mosaiccube/mosaiccube.html" />
+        <option value="$PROJECT_DIR$/puzzles/MixUpPlus/mixup.css" />
+        <option value="$PROJECT_DIR$/puzzles/rexcube/rexcube.css" />
+        <option value="$PROJECT_DIR$/puzzles/rexcube/rexcube.html" />
+        <option value="$PROJECT_DIR$/puzzles/rexcube/rexcube.js" />
+        <option value="$PROJECT_DIR$/puzzles/bubbloid/bubboild.html" />
+        <option value="$PROJECT_DIR$/puzzles/bubbloid/bubbloild.html" />
+        <option value="$PROJECT_DIR$/puzzles/bubbloid/bubbloid.html" />
+        <option value="$PROJECT_DIR$/puzzles/bubbloid/bubbloid.css" />
+        <option value="$PROJECT_DIR$/puzzles/bubbloid/bubbloid.js" />
       </list>
     </option>
   </component>
@@ -129,6 +157,24 @@
               <option name="myItemId" value="puzzles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rexcube" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="puzzleSimulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="puzzleSimulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="puzzles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -144,7 +190,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MixUpPlus" />
+              <option name="myItemId" value="bubbloid" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -215,15 +261,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1696" height="984" extended-state="7" />
-    <editor active="false" />
+    <frame x="1912" y="-8" width="1696" height="984" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938388" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22412737" sideWeight="0.6812796" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22412737" sideWeight="0.6812796" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -292,21 +338,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/CardMem/trunk/dferreiroval-html5rubik-cabcc4c/tutorial/step3/cube.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="34" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/CardMem/trunk/dferreiroval-html5rubik-cabcc4c/tutorial/step3/cube.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="12" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/CardMem/trunk/dferreiroval-html5rubik-cabcc4c/tutorial/step3/rubik-simple.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="344" column="34" selection-start="16816" selection-end="16822" vertical-scroll-proportion="-13.84" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/puzzles/masterkilominx/masterkilominx.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="61" selection-start="68" selection-end="68" vertical-scroll-proportion="-3.4" />
@@ -333,27 +364,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/puzzles/rexcube/rexcube.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="501" column="23" selection-start="21544" selection-end="21544" vertical-scroll-proportion="0.4609475">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/puzzles/MixUpPlus/mixup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="349" column="63" selection-start="28158" selection-end="28158" vertical-scroll-proportion="0.80569947">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/puzzles/MixUpPlus/mixup.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="1" selection-start="81" selection-end="81" vertical-scroll-proportion="0.21367522">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/puzzles/mosaiccube/mosaiccube.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="76" selection-start="151" selection-end="151" vertical-scroll-proportion="0.44080603">
@@ -368,13 +378,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/puzzles/rexcube/rexcube.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="66" selection-start="3354" selection-end="3354" vertical-scroll-proportion="-9.694915">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/puzzles/mosaiccube/mosaiccube.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="66" column="30" selection-start="3051" selection-end="3051" vertical-scroll-proportion="0.6437824">
@@ -382,16 +385,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/puzzles/rexcube/rexcube.css">
+    <entry file="file://$PROJECT_DIR$/puzzles/mosaiccube/mosaiccube.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="39" selection-end="84" vertical-scroll-proportion="0.12594458">
+        <state line="585" column="25" selection-start="25293" selection-end="25293" vertical-scroll-proportion="0.81389576">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/puzzles/mosaiccube/mosaiccube.js">
+    <entry file="file://$PROJECT_DIR$/puzzles/MixUpPlus/mixup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="585" column="25" selection-start="25293" selection-end="25293" vertical-scroll-proportion="0.81389576">
+        <state line="336" column="25" selection-start="27618" selection-end="27618" vertical-scroll-proportion="-9.735294">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puzzles/MixUpPlus/mixup.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="1" selection-start="81" selection-end="81" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puzzles/rexcube/rexcube.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="6" selection-start="3144" selection-end="3144" vertical-scroll-proportion="-5.881356">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puzzles/rexcube/rexcube.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="33" selection-start="1344" selection-end="1344" vertical-scroll-proportion="-21.56">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puzzles/rexcube/rexcube.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="180" column="38" selection-start="7995" selection-end="7995" vertical-scroll-proportion="0.27248678">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puzzles/bubbloid/bubbloid.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="33" selection-start="925" selection-end="925" vertical-scroll-proportion="-2.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puzzles/bubbloid/bubbloid.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="28" selection-start="1038" selection-end="1038" vertical-scroll-proportion="-12.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puzzles/bubbloid/bubbloid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="173" column="36" selection-start="17458" selection-end="17458" vertical-scroll-proportion="0.58386683">
           <folding />
         </state>
       </provider>

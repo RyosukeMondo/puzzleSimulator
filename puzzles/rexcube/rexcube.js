@@ -168,7 +168,6 @@ var Cube = function(){
                 var $shadow = $('<svg class="face ' + faceName[faceNum] + ' shadow"></svg>');
                 for( var i = 0; i < svgData.length; i++ ) {
                     var svgNS = "http://www.w3.org/2000/svg";
-                    var svg = document.createElementNS(svgNS, "svg");
                     var c = document.createElementNS(svgNS, "path");
                     var name = faceName[faceNum];
                     c.setAttribute("fill", faceColor[name]);
@@ -359,11 +358,16 @@ var Control = function(turns){
     var availableTurns = turns;
 
     var generateSelection = function($target, name){
-        var $span = $('<span/>');
-        $span.html(name + "->");
-        $target.append($span);
+        var $button = $('<button/>');
+        $button.html(name)
+            .attr('type','button')
+            .css('width','50px')
+            .css('height','50px');
+        $target.append($button);
         var $select = $('<select/>');
-        $select.attr('name',name);
+        $select.attr('name',name)
+            .css('width','80px')
+            .css('height','50px');
         jQuery.each( availableKeys, function(keyCode,letter){
             var $option = $('<option/>');
             $option.attr('value',keyCode).html(letter);
@@ -385,9 +389,9 @@ var Control = function(turns){
                 generateSelection( $keys, val + "P" );
                 $keys.append($('<br/>'));
             });
-            generateSelection( $keys, "layer_Minus" );
+            generateSelection( $keys, "Minus" );
             $keys.append($('<br/>'));
-            generateSelection( $keys, "layer_Plus-" );
+            generateSelection( $keys, "Plus" );
             $keys.append($('<br/>'));
         },
         eventBind: function(){
@@ -414,6 +418,7 @@ var Control = function(turns){
                 });
                 store.set('keyBindSetting', keyTableString.slice(0,-1));
             });
+
 
             // 色変更 -------------------------------------------------
             $('select[name="faceColor"]').change(function() {
@@ -587,7 +592,7 @@ var WindowControl = function(){
         $('#rotate').trigger('click');
         offsetX = e.pageX - lastX;
         offsetY = e.pageY - lastY;
-    });
+    }).css('cursor','pointer');
 
     var that = {
         updateLayout: function(){
@@ -619,17 +624,14 @@ jQuery(function(){
     var layerCtrl = LayerControl();
     var windowCtrl = WindowControl();
 
-    $('body').keyup(function(e){
-        console.log(e.which);
-        if(e.which == 32) { // spaceのとき
-            cube.scramble();
-            cube.checkComplete();
-        }
-        var turnName = control.getTurnName(e.which);
+    var parseTurnName = function (turnName) {
         if( turnName == "") return;
-        if( turnName.match("layer") != null){ // 操作レイヤーの変更.
-            if( turnName.match('Minus') != null)layerCtrl.minus();
-            if( turnName.match('Plus') != null)layerCtrl.plus();
+        if( turnName.match('Minus') != null) {
+            layerCtrl.minus();
+            return;
+        }
+        if( turnName.match('Plus') != null) {
+            layerCtrl.plus();
             return;
         } else {
             var turn = turnName[0];
@@ -638,7 +640,24 @@ jQuery(function(){
         }
 
         cube.checkComplete();
+    }
+
+    $('body').keyup(function(e){
+        console.log(e.which);
+        if(e.which == 32) { // spaceのとき
+            cube.scramble();
+            cube.checkComplete();
+        }
+
+        var turnName = control.getTurnName(e.which);
+        parseTurnName(turnName);
     });
+
+
+    $('#keys>button').click(function(){
+        parseTurnName( $(this).html() );
+    });
+
 
     $('svg:not(.shadow)>path').dblclick( function(){
         console.log( this );
@@ -657,4 +676,27 @@ jQuery(function(){
         control.restoreLastSettings();
         $('#hint').removeClass('off');
     });
+
+    // faceBookのコメントを縮小.
+    $('button[name="hide"]').click(function(){
+        $('.fb-comments').slideToggle();
+    });
+
+    function setOperate(){
+        var agent = navigator.userAgent;
+        if(agent.search(/iPhone/) != -1){
+            $("body").addClass("iphone"); //iPhoneには「body class="iphone"」追加
+            window.onorientationchange = setView;
+        }else if(agent.search(/iPad/) != -1){
+            $("body").addClass("ipad"); //iPadには「body class="ipad"」追加
+            window.onorientationchange = setView;
+        }else if(agent.search(/Android/) != -1){
+            $("body").addClass("android"); //Androidには「body class="android"」追加
+            window.onresize = setView;
+        }else{
+            $("body").addClass("other"); //上記以外には「body class="other"」追加
+            window.onorientationchange = setView;
+        }
+    }
+
 });
