@@ -46,7 +46,7 @@
       <file leaf-file-name="bubbloid.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/puzzles/bubbloid/bubbloid.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="173" column="36" selection-start="17458" selection-end="17458" vertical-scroll-proportion="0.58386683">
+            <state line="168" column="101" selection-start="17231" selection-end="17231" vertical-scroll-proportion="0.4238156">
               <folding />
             </state>
           </provider>
@@ -262,7 +262,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1696" height="984" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -443,7 +443,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/puzzles/bubbloid/bubbloid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="173" column="36" selection-start="17458" selection-end="17458" vertical-scroll-proportion="0.58386683">
+        <state line="168" column="101" selection-start="17231" selection-end="17231" vertical-scroll-proportion="0.4238156">
           <folding />
         </state>
       </provider>
