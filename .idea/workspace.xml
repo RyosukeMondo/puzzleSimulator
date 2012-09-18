@@ -6,27 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2397e18-9227-47d1-bb56-4da20d4ed4e9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proto/3x3x3.svg" afterPath="$PROJECT_DIR$/proto/3x3x3.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proto/bubloid side.svg" afterPath="$PROJECT_DIR$/proto/bubloid side.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proto/bubloid top.svg" afterPath="$PROJECT_DIR$/proto/bubloid top.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proto/copter 3x3.svg" afterPath="$PROJECT_DIR$/proto/copter 3x3.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proto/grigorusha star cube.svg" afterPath="$PROJECT_DIR$/proto/grigorusha star cube.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proto/hexoid side.svg" afterPath="$PROJECT_DIR$/proto/hexoid side.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proto/hexoid.svg" afterPath="$PROJECT_DIR$/proto/hexoid.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proto/hyper X.svg" afterPath="$PROJECT_DIR$/proto/hyper X.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proto/mental block.svg" afterPath="$PROJECT_DIR$/proto/mental block.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proto/mixup plus 3x3x3.svg" afterPath="$PROJECT_DIR$/proto/mixup plus 3x3x3.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proto/mixup plus 4x4x4.svg" afterPath="$PROJECT_DIR$/proto/mixup plus 4x4x4.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proto/mixup plus 5x5x5.svg" afterPath="$PROJECT_DIR$/proto/mixup plus 5x5x5.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proto/mqo/dodecahedron.mqo" afterPath="$PROJECT_DIR$/proto/mqo/dodecahedron.mqo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proto/mqo/mental block.mqo" afterPath="$PROJECT_DIR$/proto/mqo/mental block.mqo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/puzzles/bubbloid/bubbloid.css" afterPath="$PROJECT_DIR$/puzzles/bubbloid/bubbloid.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/puzzles/bubbloid/bubbloid.js" afterPath="$PROJECT_DIR$/puzzles/bubbloid/bubbloid.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/puzzles/rexcube/rexcube.css" afterPath="$PROJECT_DIR$/puzzles/rexcube/rexcube.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/puzzles/rexcube/rexcube.html" afterPath="$PROJECT_DIR$/puzzles/rexcube/rexcube.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/puzzles/rexcube/rexcube.js" afterPath="$PROJECT_DIR$/puzzles/rexcube/rexcube.js" />
     </list>
     <ignored path="puzzleSimulator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,25 +40,25 @@
       <file leaf-file-name="bubbloid.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/puzzles/bubbloid/bubbloid.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="24" selection-start="1827" selection-end="1827" vertical-scroll-proportion="0.0">
+            <state line="34" column="24" selection-start="1827" selection-end="1827" vertical-scroll-proportion="-0.625">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bubbloid.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="bubbloid.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/puzzles/bubbloid/bubbloid.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="240" column="36" selection-start="21287" selection-end="21287" vertical-scroll-proportion="-5.8846154">
+            <state line="236" column="47" selection-start="21015" selection-end="21015" vertical-scroll-proportion="0.28106508">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="10" selection-start="24" selection-end="24" vertical-scroll-proportion="0.07853403">
+            <state line="2" column="10" selection-start="24" selection-end="24" vertical-scroll-proportion="-1.25">
               <folding />
             </state>
           </provider>
@@ -101,6 +81,7 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="REBASE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -288,16 +269,16 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="198" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="210" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="997" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1001" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1001" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="997" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="206" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="202" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
@@ -339,14 +320,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1366" height="742" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32868218" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32868218" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18787879" sideWeight="0.6713178" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19090909" sideWeight="0.6713178" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -357,6 +337,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938388" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32868218" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -466,13 +447,6 @@
         <state line="761" column="18" selection-start="30209" selection-end="30209" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/puzzles/bubbloid/bubbloid.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="24" selection-start="1827" selection-end="1827" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/puzzles/rexcube/rexcube.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="10" selection-start="70" selection-end="70" vertical-scroll-proportion="0.14563107" />
@@ -492,16 +466,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/puzzles/bubbloid/bubbloid.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="240" column="36" selection-start="21287" selection-end="21287" vertical-scroll-proportion="-5.8846154">
+        <state line="2" column="10" selection-start="24" selection-end="24" vertical-scroll-proportion="-1.25">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/puzzles/bubbloid/bubbloid.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="10" selection-start="24" selection-end="24" vertical-scroll-proportion="0.07853403">
+        <state line="34" column="24" selection-start="1827" selection-end="1827" vertical-scroll-proportion="-0.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puzzles/bubbloid/bubbloid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="236" column="47" selection-start="21015" selection-end="21015" vertical-scroll-proportion="0.28106508">
           <folding />
         </state>
       </provider>
