@@ -50,15 +50,17 @@ var Cube = function(){
 
     var mag = 200; // 拡大率.
     var r = mag; // 半径.
-    var facePosition = [
+    var facePosition = {
         // rotateZ,translateZ,rotateY,rotateX
-        [0,0,90,[0,0,0.82]],
-        [90,0,0,[0,0,1]],
-        [90,0,-90,[0,0,1]],
-        [90,0,-180,[0,0,1]],
-        [90,0,-270,[0,0,1]],
-        [0,0,-90,[0,0,0.82]]
-    ];
+        "U":[0,0,90,[0,0,0.82]],
+        "F":[90,0,0,[0,0,1]],
+        "L":[90,0,-90,[0,0,1]],
+        "B":[90,0,-180,[0,0,1]],
+        "R":[90,0,-270,[0,0,1]],
+        "D":[0,0,-90,[0,0,0.82]]
+    };
+
+
     var faceColor = {
         'U':"#FFFFFF",
         'F':"#FF0000",
@@ -128,8 +130,23 @@ var Cube = function(){
         "D":svgDataBubbloidTop
     }
 
-    var availableTurn = ["F","b","L","r","R","l","B","f"];
-    var turnAxes = [["1,-1,1"],["-1,1,-1"],["-1,-1,1"],["1,1,-1"],["1,-1,-1"],["-1,1,1"],["-1,-1,-1"],["1,1,1"]];
+    var availableTurn = ["F","I","L","K","R","J","B","M","X","Y","Z"]; // 回転名を変更するときはturnTableも変更すること.
+    var turnAxesAry = [
+        {"axis":["1,-1,1"]  ,"offset":[0,34,0]  ,"rotate":120},
+        {"axis":["-1,1,-1"] ,"offset":[0,-34,0] ,"rotate":120},
+        {"axis":["-1,-1,1"] ,"offset":[0,34,0]  ,"rotate":120},
+        {"axis":["1,1,-1"]  ,"offset":[0,-34,0] ,"rotate":120},
+        {"axis":["1,-1,-1"] ,"offset":[0,34,0]  ,"rotate":120},
+        {"axis":["-1,1,1"]  ,"offset":[0,-34,0] ,"rotate":120},
+        {"axis":["-1,-1,-1"],"offset":[0,34,0]  ,"rotate":120},
+        {"axis":["1,1,1"]   ,"offset":[0,-34,0] ,"rotate":120},
+        {"axis":["1,0,0"]   ,"offset":[0,0,0]   ,"rotate":180},
+        {"axis":["0,0,1"]   ,"offset":[0,0,0]   ,"rotate":180},
+        {"axis":["0,-1,0"]  ,"offset":[0,0,0]   ,"rotate":90}];
+    var turnAxes = {};
+    for( var i = 0; i < turnAxesAry.length; i++ )turnAxes[availableTurn[i]] = turnAxesAry[i];
+
+
     var turnTable = [
         ["U2","F0","R6"],["D4","L4","B2"],["U4","L0","F6"],["D2","B4","R2"],
         ["U0","R0","B6"],["D6","F4","L2"],["U6","B0","L6"],["D0","R4","F2"]
@@ -148,42 +165,128 @@ var Cube = function(){
     }
     var turnTable = {
         'layer2': {
-            'b': [['D', 'L', 'B'],['DF06', 'DF20', 'DF21', 'DF10', 'LF00', 'LF07', 'LF08', 'LF04', 'BF13', 'BF18', 'BF19', 'BF00']],
-            'F': [['U', 'F', 'R'],['UF02', 'UF18', 'UF19', 'UF06', 'FF10', 'FF17', 'FF18', 'FF14', 'RF03', 'RF08', 'RF09', 'RF10']],
-            'f': [['D', 'R', 'F'],['DF14', 'DF16', 'DF17', 'DF02', 'RF00', 'RF07', 'RF08', 'RF04', 'FF13', 'FF18', 'FF19', 'FF00']],
-            'L': [['U', 'L', 'F'],['UF06', 'UF20', 'UF21', 'UF10', 'LF10', 'LF17', 'LF18', 'LF14', 'FF03', 'FF08', 'FF09', 'FF10']],
-            'l': [['D', 'F', 'L'],['DF10', 'DF22', 'DF23', 'DF14', 'FF00', 'FF07', 'FF08', 'FF04', 'LF13', 'LF18', 'LF19', 'LF00']],
-            'R': [['U', 'R', 'B'],['UF14', 'UF16', 'UF17', 'UF02', 'RF10', 'RF17', 'RF18', 'RF14', 'BF03', 'BF08', 'BF09', 'BF10']],
-            'B': [['U', 'B', 'L'],['UF10', 'UF22', 'UF23', 'UF14', 'BF10', 'BF17', 'BF18', 'BF14', 'LF03', 'LF08', 'LF09', 'LF10']],
-            'r': [['D', 'B', 'R'],['DF02', 'DF18', 'DF19', 'DF06', 'BF00', 'BF07', 'BF08', 'BF04', 'RF13', 'RF18', 'RF19', 'RF00']]},
+            'I': [[['D', 'L', 'B'],['DF06', 'DF20', 'DF21', 'DF10', 'LF00', 'LF07', 'LF08', 'LF04', 'BF13', 'BF18', 'BF19', 'BF00']]],
+            'F': [[['U', 'F', 'R'],['UF02', 'UF18', 'UF19', 'UF06', 'FF10', 'FF17', 'FF18', 'FF14', 'RF03', 'RF08', 'RF09', 'RF10']]],
+            'M': [[['D', 'R', 'F'],['DF14', 'DF16', 'DF17', 'DF02', 'RF00', 'RF07', 'RF08', 'RF04', 'FF13', 'FF18', 'FF19', 'FF00']]],
+            'L': [[['U', 'L', 'F'],['UF06', 'UF20', 'UF21', 'UF10', 'LF10', 'LF17', 'LF18', 'LF14', 'FF03', 'FF08', 'FF09', 'FF10']]],
+            'J': [[['D', 'F', 'L'],['DF10', 'DF22', 'DF23', 'DF14', 'FF00', 'FF07', 'FF08', 'FF04', 'LF13', 'LF18', 'LF19', 'LF00']]],
+            'R': [[['U', 'R', 'B'],['UF14', 'UF16', 'UF17', 'UF02', 'RF10', 'RF17', 'RF18', 'RF14', 'BF03', 'BF08', 'BF09', 'BF10']]],
+            'B': [[['U', 'B', 'L'],['UF10', 'UF22', 'UF23', 'UF14', 'BF10', 'BF17', 'BF18', 'BF14', 'LF03', 'LF08', 'LF09', 'LF10']]],
+            'K': [[['D', 'B', 'R'],['DF02', 'DF18', 'DF19', 'DF06', 'BF00', 'BF07', 'BF08', 'BF04', 'RF13', 'RF18', 'RF19', 'RF00']]]
+        },
         'layer1': {
-            'r': [['D', 'B', 'R'],['DF03', 'DF04', 'DF05', 'BF01', 'BF02', 'BF03', 'RF14', 'RF15', 'RF16']],
-            'B': [['U', 'R', 'B'],['UF15', 'UF00', 'UF01', 'RF11', 'RF12', 'RF13', 'BF04', 'BF05', 'BF06']],
-            'f': [['D', 'R', 'F'],['DF15', 'DF00', 'DF01', 'RF01', 'RF02', 'RF03', 'FF14', 'FF15', 'FF16']],
-            'F': [['U', 'F', 'R'],['UF03', 'UF04', 'UF05', 'FF11', 'FF12', 'FF13', 'RF04', 'RF05', 'RF06']],
-            'L': [['U', 'B', 'L'],['UF11', 'UF12', 'UF13', 'BF11', 'BF12', 'BF13', 'LF04', 'LF05', 'LF06']],
-            'l': [['D', 'F', 'L'],['DF11', 'DF12', 'DF13', 'FF01', 'FF02', 'FF03', 'LF14', 'LF15', 'LF16']],
-            'R': [['U', 'R', 'B'],['UF15', 'UF00', 'UF01', 'RF11', 'RF12', 'RF13', 'BF04', 'BF05', 'BF06']],
-            'b': [['L', 'B', 'D'],['LF01', 'LF02', 'LF03', 'BF14', 'BF15', 'BF16', 'DF07', 'DF08', 'DF09']]}};
+            'K': [[['D', 'B', 'R'],['DF03', 'DF04', 'DF05', 'BF01', 'BF02', 'BF03', 'RF14', 'RF15', 'RF16']]],
+            'L': [[['U', 'L', 'F'],["UF07", "UF08", "UF09", "LF11", "LF12", "LF13", "FF04", "FF05", "FF06"]]],
+            'M': [[['D', 'R', 'F'],['DF15', 'DF00', 'DF01', 'RF01', 'RF02', 'RF03', 'FF14', 'FF15', 'FF16']]],
+            'F': [[['U', 'F', 'R'],['UF03', 'UF04', 'UF05', 'FF11', 'FF12', 'FF13', 'RF04', 'RF05', 'RF06']]],
+            'B': [[['U', 'B', 'L'],['UF11', 'UF12', 'UF13', 'BF11', 'BF12', 'BF13', 'LF04', 'LF05', 'LF06']]],
+            'J': [[['D', 'F', 'L'],['DF11', 'DF12', 'DF13', 'FF01', 'FF02', 'FF03', 'LF14', 'LF15', 'LF16']]],
+            'R': [[['U', 'R', 'B'],['UF15', 'UF00', 'UF01', 'RF11', 'RF12', 'RF13', 'BF04', 'BF05', 'BF06']]],
+            'I': [[['L', 'B', 'D'],['LF01', 'LF02', 'LF03', 'BF14', 'BF15', 'BF16', 'DF07', 'DF08', 'DF09']]],
+            'X': [
+                [['U', "D"],[
+                    "UF00","UF01","UF02","UF03","UF04","UF05","UF06","UF07","UF08","UF09","UF10","UF11",
+                    "UF12","UF13","UF14","UF15","UF16","UF17","UF18","UF19","UF20","UF21","UF22","UF23",
+                    "UF24",
+                    "DF00","DF01","DF02","DF03","DF04","DF05","DF06","DF07","DF08","DF09","DF10","DF11",
+                    "DF12","DF13","DF14","DF15","DF16","DF17","DF18","DF19","DF20","DF21","DF22","DF23",
+                    "DF24"
+                ]],    
+                [["F", "B"],[
+                    "FF00","FF01","FF02","FF03","FF04","FF05","FF06","FF07","FF08","FF09",
+                    "FF10","FF11","FF12","FF13","FF14","FF15","FF16","FF17","FF18","FF19","FF20",
+                    "BF10","BF11","BF12","BF13","BF14","BF15","BF16","BF17","BF18","BF19",
+                    "BF00","BF01","BF02","BF03","BF04","BF05","BF06","BF07","BF08","BF09","BF20"
+                ]],
+                [["L"],[
+                    "LF00","LF10","LF01","LF11","LF02","LF12","LF03","LF13","LF04","LF14",
+                    "LF05","LF15","LF06","LF16","LF07","LF17","LF08","LF18","LF09","LF19","LF20","LF20"
+                ]],
+                [["R"],[
+                    "RF00","RF10","RF01","RF11","RF02","RF12","RF03","RF13","RF04","RF14",
+                    "RF05","RF15","RF06","RF16","RF07","RF17","RF08","RF18","RF09","RF19","RF20","RF20"
+                ]]],
+            'Y': [
+                [['U', "D"],[
+                    "UF00","UF01","UF02","UF03","UF04","UF05","UF06","UF07","UF08","UF09","UF10","UF11",
+                    "UF12","UF13","UF14","UF15","UF16","UF17","UF18","UF19","UF20","UF21","UF22","UF23",
+                    "UF24",
+                    "DF08","DF09","DF10","DF11","DF12","DF13","DF14","DF15","DF00","DF01","DF02","DF03",
+                    "DF04","DF05","DF06","DF07","DF20","DF21","DF22","DF23","DF16","DF17","DF18","DF19",
+                    "DF24"
+
+
+                ]],
+                [["L", "R"],[
+                    "LF00","LF01","LF02","LF03","LF04","LF05","LF06","LF07","LF08","LF09",
+                    "LF10","LF11","LF12","LF13","LF14","LF15","LF16","LF17","LF18","LF19",
+                    "LF20",
+                    "RF10","RF11","RF12","RF13","RF14","RF15","RF16","RF17","RF18","RF19",
+                    "RF00","RF01","RF02","RF03","RF04","RF05","RF06","RF07","RF08","RF09",
+                    "RF20"
+                ]],
+                [["F"],[
+                    "FF00","FF10","FF01","FF11","FF02","FF12","FF03","FF13","FF04","FF14",
+                    "FF05","FF15","FF06","FF16","FF07","FF17","FF08","FF18","FF09","FF19","FF20","FF20"
+                ]],
+                [["B"],[
+                    "BF00","BF10","BF01","BF11","BF02","BF12","BF03","BF13","BF04","BF14",
+                    "BF05","BF15","BF06","BF16","BF07","BF17","BF08","BF18","BF09","BF19","BF20","BF20"
+                ]]], 
+            'Z': [
+                [["U"],[
+                    "UF00","UF08","UF01","UF09","UF02","UF10","UF03","UF11","UF04","UF12","UF05","UF13",
+                    "UF06","UF14","UF07","UF15","UF16","UF20","UF17","UF21","UF18","UF22","UF19","UF23",
+                    "UF24","UF24"]],
+                [["D"],[
+                    "DF00","DF08","DF01","DF09","DF02","DF10","DF03","DF11","DF04","DF12","DF05","DF13",
+                    "DF06","DF14","DF07","DF15","DF16","DF20","DF17","DF21","DF18","DF22","DF19","DF23",
+                    "DF24","DF24"]],
+                [["R","B","L","F"],[
+                    "FF00","FF01","FF02","FF03","FF04","FF05","FF06","FF07","FF08","FF09",
+                    "FF10","FF11","FF12","FF13","FF14","FF15","FF16","FF17","FF18","FF19",
+                    "FF20",
+                    "LF10","LF11","LF12","LF13","LF14","LF15","LF16","LF17","LF18","LF19",
+                    "LF00","LF01","LF02","LF03","LF04","LF05","LF06","LF07","LF08","LF09",
+                    "LF20",
+                    "BF00","BF01","BF02","BF03","BF04","BF05","BF06","BF07","BF08","BF09",
+                    "BF10","BF11","BF12","BF13","BF14","BF15","BF16","BF17","BF18","BF19",
+                    "BF20",
+                    "RF10","RF11","RF12","RF13","RF14","RF15","RF16","RF17","RF18","RF19",
+                    "RF00","RF01","RF02","RF03","RF04","RF05","RF06","RF07","RF08","RF09",
+                    "RF20"
+                ]]]
+        }};
+    turnTable["layer2"]["x"] = turnTable["layer1"]["x"];
+    turnTable["layer2"]["y"] = turnTable["layer1"]["y"];
+    turnTable["layer2"]["z"] = turnTable["layer1"]["z"];
 
     var getTargetSticker = function(turnOperation){
         var operation = parseTurnOperation( turnOperation );
-        var process = turnTable["layer" + operation["layer"]][operation["turn"]];
-        var targetAry = process[0];
-        var turnLabel = process[1];
-        var order = [];
+        var processAry = turnTable["layer" + operation["layer"]][operation["turn"]]; // [[],[]] ....
 
-        if( !operation["isPrime"] ) {
-            for ( var i = 0 ; i < targetAry.length; i++ )order.push( targetAry[i][0] );
-        } else {
-            for ( var i = targetAry.length - 1; i >= 0; i-- )order.push( targetAry[i][0] );
-        }
-        var targetStickers = {};
-        for( var i = 0; i < turnLabel.length; i++ ){
-            if( targetStickers[turnLabel[i][0]] == undefined )
-                targetStickers[turnLabel[i][0]] = [];
-            targetStickers[turnLabel[i][0]].push(turnLabel[i]);
-        }
+        var order = [];
+        var targetStickers = [];
+        jQuery.each(processAry, function(pcsIdx, process) {
+            var targetAry = process[0];
+            var turnLabel = process[1];
+
+            order[pcsIdx] = [];
+            if( !operation["isPrime"] ) {
+                for ( var index = 0 ; index < targetAry.length; index++ )order[pcsIdx].push( targetAry[index] );
+            } else {
+                for ( var index = targetAry.length - 1; index >= 0; index-- )order[pcsIdx].push( targetAry[index] );
+            }
+            for( var i = 0; i < turnLabel.length; i++ ){
+                if( targetStickers[pcsIdx] == undefined) {
+                    targetStickers[pcsIdx] = {};
+                }
+                if( targetStickers[pcsIdx][turnLabel[i][0]] == undefined )
+                    targetStickers[pcsIdx][turnLabel[i][0]] = [];
+                targetStickers[pcsIdx][turnLabel[i][0]].push(turnLabel[i]);
+            }
+        });
+
         return { "stickers":targetStickers, "order":order };
     };
 
@@ -191,31 +294,49 @@ var Cube = function(){
         var home = shadow.className.animVal.split(" ")[1];
         var $home = $('#faces>svg:not(.shadow).' + home);
 
-        var order = currentTargetStickers["order"];
-        var stickers = currentTargetStickers["stickers"];
+        var orderAry = currentTargetStickers["order"];
+        var stickersAry = currentTargetStickers["stickers"];
         var preFace = home;
         var afterFace = "";
-        var tmpIndex = order.indexOf( home );
-        if( order.length != faceName.length ){
-            afterFace = order[ (tmpIndex + 1) % 3 ];
-        } else {
-            var adjIndex = tmpIndex % 3; // 0,1,2
-            var adjIndex2 = (adjIndex + 1) % 3 ;
-            adjIndex2 += (tmpIndex >= 3) ? 3 : 0;
-            afterFace = order[ adjIndex2 ];
-        }
+        for( var i = 0; i < orderAry.length; i ++ ) {
+            var order = orderAry[i];
+            var stickers = stickersAry[i];
+            var tmpIndex = order.indexOf( preFace );
+            if( tmpIndex == -1 ) continue;
+            var len = order.length;
+            if( len == 1 ) {
+                afterFace = preFace;
+                jQuery.each( $(shadow).children(),function(){
+                    var preLabel = this.className.animVal;
+                    var preIndex = stickers[preFace].indexOf( preLabel );
+                    var afterIndex = (preIndex % 2 == 0) ? preIndex + 1 : preIndex - 1;
+                    var afterLabel = stickers[afterFace][afterIndex];
 
-        jQuery.each( $(shadow).children(),function(){
-            var preLabel = this.className.animVal;
-            var index = stickers[preFace].indexOf( preLabel );
-            var afterLabel = stickers[afterFace][index];
+                    var $pre = $('#faces>svg>path.' + preLabel);
+                    $pre.attr('fill',currentState[afterLabel]);
+                    $home[0].appendChild( this );
+                });
+                // 1面だけの入れ替え.
+            } else { // 2面に渡る入れ替え.
+                var adjIndex = tmpIndex % len;
+                var adjIndex2 = (adjIndex + 1) % len ;
+                adjIndex2 += (tmpIndex >= len) ? len : 0;
+                afterFace = order[ adjIndex2 ];
 
-            var $pre = $('#faces>svg>path.' + preLabel);
-            $pre.attr('fill',currentState[afterLabel]);
-            $home[0].appendChild( this );
-        });
+                jQuery.each( $(shadow).children(),function(){
+                    var preLabel = this.className.animVal;
+                    var index = stickers[preFace].indexOf( preLabel );
+                    var afterLabel = stickers[afterFace][index];
+
+                    var $pre = $('#faces>svg>path.' + preLabel);
+                    $pre.attr('fill',currentState[afterLabel]);
+                    $home[0].appendChild( this );
+                });
+            }
+        };
+
         that.checkComplete();
-        $('.shadow').addClass('hide');
+        $(shadow).addClass('hide');
     };
 
     var currentState = {};
@@ -255,7 +376,7 @@ var Cube = function(){
             var planes = $faces.children();
             for( var i = 0; i < planes.length; i ++ ) {
                 var currentFaceName = $(planes[i]).attr('class').split(" ")[1];
-                var currentPosAry = facePosition[faceName.indexOf(currentFaceName)];
+                var currentPosAry = facePosition[currentFaceName];
 
                 var cssOpe =
                     'rotateZ(' + currentPosAry[0] + 'deg)' +
@@ -305,23 +426,26 @@ var Cube = function(){
             backUpCurrentState(); // 現在の色のリストを取得.
             currentOperation = turnOperation;
             currentTargetStickers = getTargetSticker(currentOperation);
-            var targetStickers = currentTargetStickers["stickers"];
+            var targetStickersAry = currentTargetStickers["stickers"];
             jQuery.each( $shadow, function(i,val){
                 var currentFaceName = this.className.animVal.split(" ")[1];
-                if( targetStickers[currentFaceName] != undefined) {
-                    for( var i = 0; i < targetStickers[currentFaceName].length; i++ ){
-                        try {
-                            val.appendChild( $('#faces>svg>path.' + targetStickers[currentFaceName][i])[0]);
-                        } catch(e) {
-                            console.log(e);
+                jQuery.each( targetStickersAry, function(i,targetStickers){
+                    if( targetStickers[currentFaceName] != undefined) {
+                        for( var i = 0; i < targetStickers[currentFaceName].length; i++ ){
+                            try {
+                                val.appendChild( $('#faces>svg>path.' + targetStickers[currentFaceName][i])[0]);
+                            } catch(e) {
+                                console.log(e);
+                            }
                         }
                     }
-                }
+                });
             });
 
             var operation = parseTurnOperation( currentOperation );
-            var axesIndex = availableTurn.indexOf(operation["turn"]);
-            var axes = turnAxes[axesIndex];
+            var axes = turnAxes[operation["turn"]]["axis"];
+            var axisOffset = turnAxes[operation["turn"]]["offset"];
+            var rotateDeg = turnAxes[operation["turn"]]["rotate"];
             jQuery.each( $shadow, function(i,shadowPlane){
                 var matrix = "";
                 var webkit = $(this).css('-webkit-transform');
@@ -336,15 +460,27 @@ var Cube = function(){
                 var rotate = 0;
                 var name = shadowPlane.className.animVal.split(' ')[1];
                 var isPrime = operation["isPrime"];
+                var axOffsetPre = 'translate3d('+
+                    axisOffset[0]+'px,'+
+                    axisOffset[1]+'px,'+
+                    axisOffset[2]+'px) ';
+                var axOffsetAfter = 'translate3d('+
+                    -axisOffset[0]+'px,'+
+                    -axisOffset[1]+'px,'+
+                    -axisOffset[2]+'px) ';
+                var frameRate = 33;
+                var meanTime = 0.5;
                 var time = setInterval(function(){
                     if( isPrime ) {
-                        rotate -= 120 / 33 * 2;
+                        rotate -= rotateDeg / frameRate / meanTime;
                     } else {
-                        rotate += 120 / 33 * 2;
+                        rotate += rotateDeg / frameRate / meanTime;
                     }
 
-                    if( Math.abs(rotate) < 120 ) {
-                        var operation = "rotate3d(" + axes + "," + rotate + "deg) " + matrix;
+                    if( Math.abs(rotate) < rotateDeg ) {
+                        var operation = axOffsetPre +
+                            "rotate3d(" + axes + "," + rotate + "deg) " +
+                            axOffsetAfter + matrix;
                         $(shadowPlane)
                             .css('-webkit-transform',operation)
                             .css('-moz-transform',operation)
@@ -363,7 +499,7 @@ var Cube = function(){
                             currentOperation = "";
                         }
                     }
-                },33);
+                },frameRate);
                 currentAnimation[name] = {"time":time,"matrix":matrix};
             });
         },

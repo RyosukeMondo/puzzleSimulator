@@ -359,20 +359,13 @@ var Control = function(turns){
     var availableTurns = turns;
 
     var generateSelection = function($target, name){
-        var $div = $('<div class="bn"></div>').html('[o]').css('display','inline');
+        var $div = $('<div class="bn"></div>').css('display','inline');
         var $button = $('<button/>');
         $button.html(name)
-            .attr('type','button')
-            .css('width','50px')
-            .css('height','50px');
-        $div.addClass(name)
-            .css('margin-left','auto')
-            .css('margin-right','auto');
+            .attr('type','button');
         $div.append($button);
         var $select = $('<select/>');
-        $select.attr('name',name)
-            .css('width','80px')
-            .css('height','50px');
+        $select.attr('name',name);
         jQuery.each( availableKeys, function(keyCode,letter){
             var $option = $('<option/>');
             $option.attr('value',keyCode).html(letter);
@@ -383,7 +376,7 @@ var Control = function(turns){
         $select.append($option);
         $div.append($select);
 
-        $('body').append($div);
+        $target.append($div);
 
         function start(){};
         function stop(){
@@ -402,6 +395,12 @@ var Control = function(turns){
 
     var isShow = true;
 
+    var btnPosTbl = [
+        ["55%","36%"],["35%","34%"],["30%","04%"],["62%","04%"],["25%","61%"],["40%","03%"],
+        ["69%","29%"],["50%","90%"],["52%","04%"],["65%","62%"],["40%","90%"],["22%","31%"],
+        ["28%","13%"],["64%","13%"],["61%","73%"],["29%","73%"],["74%","47%"],["74%","40%"]];
+
+
     var that = {
         generateKeys: function(){
             var $keys = $('#keys');
@@ -418,17 +417,37 @@ var Control = function(turns){
         eventBind: function(){
             // show/hideボタン.
             $("button[name='toggle']").click(function(){
-                $('#panel').slideToggle();
-                $('select').slideToggle();
                 if( isShow ) {
                     isShow = false;
                     setTimeout(function(){
                         $('#control').css('background','rgba(0,0,0,0.0)');
                     },500);
+                    $('body').append(
+                        $('.bn').addClass('floatBtn'));
+                    $('select').addClass('hideSelect');
+
+                    jQuery.each( $('.bn'), function(i){
+                        $(this)
+                            .css('left',btnPosTbl[i][0])
+                            .css('top',btnPosTbl[i][1])
+                            .css('position','absolute');
+                    });
+                    $('#keys').empty();
                 } else {
                     isShow = true;
-                    $('#control').css('background','rgba(0,0,0,0.5)');
+                    $('#panel').css('background','rgba(0,0,0,0.5)');
+                    jQuery.each( $('.bn'), function(i){
+                        $(this).removeClass('floatBtn')
+                            .css('position','static');
+                        $('#keys').append( this );
+                        if( i % 2 == 1) {
+                            $('#keys').append($('<br/>'));
+                        }
+                    })
+                    $('select').removeClass('hideSelect')
+
                 }
+                $('#panel').slideToggle();
             });
 
             // キーバインド設定 -----------------------------------
@@ -489,6 +508,7 @@ var Control = function(turns){
                     .css('-ms-backface-visibility',ope)
                     .css('-o-backface-visibility',ope);
             })
+
         },
         restoreLastSettings: function(){
             // キーボード設定.
@@ -556,7 +576,7 @@ var Control = function(turns){
                                 jQuery.each( $target, function(i,v){
                                     if( $(this).hasClass(tmp[0]) ){
                                         $(this)
-                                            .css('position','relative')
+                                            .css('position','absolute')
                                             .css('left',tmp[1])
                                             .css('top',tmp[2]);
                                     }
@@ -611,8 +631,6 @@ var LayerControl = function(){
 var WindowControl = function(){
     // 回転時処理---------------------------------------------------
     document.querySelector('#cubeViewPort').addEventListener("mousemove", mouseOver, false);
-    var lastX =  315 + 270, offsetX = 0; // + 270
-    var lastY = -35  - 20, offsetY = 0; // + 20
     function mouseOver(e){
         var y = (e.pageX - offsetX) * 1 + 90,
             x = (e.pageY - offsetY) * -1 - 90;
@@ -621,8 +639,30 @@ var WindowControl = function(){
             rotate(x,y,0);
             lastX = e.pageX - offsetX;
             lastY = e.pageY - offsetY;
+            while( lastX > 360) lastX -= 360;while( lastX < 0) lastX += 360;
+            while( lastY > 360) lastY -= 360;while( lastY < 0) lastY += 360;
         }
     }
+    // キューブがクリックされたとき最後のクリック位置情報からoffsetを取得
+    var defX = 315 + 270,
+        defY = -35 - 20;
+    var lastX =  315 + 270, offsetX = 0; // + 270
+    var lastY = -35 - 20, offsetY = 0; // + 20
+
+    $('#cubeViewPort').click(function(e){
+        $('#rotate').trigger('click');
+        offsetX = e.pageX - lastX;
+        offsetY = e.pageY - lastY;
+        if( $('#rotate').attr('checked') != 'checked' ) {
+            //var adjX = Math.round((lastX + 60)/90) * 90;
+            //$('#faces').addClass('moving');
+            rotate(-35, 315, 0);
+            lastX = defX;
+            lastY = defY;
+            console.log( lastX );
+        }
+    }).css('cursor','pointer');
+
 
     // 回転実処理------------------------------------------------------------
     function rotate(newX,newY,newZ){
@@ -636,12 +676,6 @@ var WindowControl = function(){
         cube.style.MSTransform      = operation;
         cube.style.OTransform       = operation;
     }
-    // キューブがクリックされたとき最後のクリック位置情報からoffsetを取得
-    $('#cubeViewPort').click(function(e){
-        $('#rotate').trigger('click');
-        offsetX = e.pageX - lastX;
-        offsetY = e.pageY - lastY;
-    }).css('cursor','pointer');
 
     var that = {
         updateLayout: function(){
@@ -726,27 +760,15 @@ jQuery(function(){
         $('#hint').removeClass('off');
     });
 
-    // faceBookのコメントを縮小.
-    $('button[name="hide"]').click(function(){
-        $('.fb-comments').slideToggle();
+
+    // [btn toggle].
+    $('button[name="btnToggle"]').click(function(){
+        $('body>div.bn').slideToggle();
     });
 
-    function setOperate(){
-        var agent = navigator.userAgent;
-        if(agent.search(/iPhone/) != -1){
-            $("body").addClass("iphone"); //iPhoneには「body class="iphone"」追加
-            window.onorientationchange = setView;
-        }else if(agent.search(/iPad/) != -1){
-            $("body").addClass("ipad"); //iPadには「body class="ipad"」追加
-            $('#fb').css('display','none');
-            window.onorientationchange = setView;
-        }else if(agent.search(/Android/) != -1){
-            $("body").addClass("android"); //Androidには「body class="android"」追加
-            window.onresize = setView;
-        }else{
-            $("body").addClass("other"); //上記以外には「body class="other"」追加
-            window.onorientationchange = setView;
-        }
-    }
+    // faceBookのコメントを縮小.
+    $('button[name="hide"]').click(function(){
+        $('.fb-comments').css('display','none');
+    });
 
 });
