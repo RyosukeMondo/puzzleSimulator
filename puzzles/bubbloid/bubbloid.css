@@ -6,6 +6,10 @@ button {
     font-family:monospace;
 }
 
+.shadow {
+
+}
+
 #fb {
     position: absolute;
     bottom:0;

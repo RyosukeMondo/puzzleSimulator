@@ -130,7 +130,7 @@ var Cube = function(){
         "D":svgDataBubbloidTop
     }
 
-    var availableTurn = ["F","I","L","K","R","J","B","M","X","Y","Z"]; // 回転名を変更するときはturnTableも変更すること.
+    var availableTurn = ["F","I","L","K","R","J","B","N","X","Y","Z"]; // 回転名を変更するときはturnTableも変更すること.
     var turnAxesAry = [
         {"axis":["1,-1,1"]  ,"offset":[0,34,0]  ,"rotate":120},
         {"axis":["-1,1,-1"] ,"offset":[0,-34,0] ,"rotate":120},
@@ -142,7 +142,7 @@ var Cube = function(){
         {"axis":["1,1,1"]   ,"offset":[0,-34,0] ,"rotate":120},
         {"axis":["1,0,0"]   ,"offset":[0,0,0]   ,"rotate":180},
         {"axis":["0,0,1"]   ,"offset":[0,0,0]   ,"rotate":180},
-        {"axis":["0,-1,0"]  ,"offset":[0,0,0]   ,"rotate":90}];
+        {"axis":["0,-1,0"]  ,"offset":[0,0,0]   ,"rotate":180}];
     var turnAxes = {};
     for( var i = 0; i < turnAxesAry.length; i++ )turnAxes[availableTurn[i]] = turnAxesAry[i];
 
@@ -167,7 +167,7 @@ var Cube = function(){
         'layer2': {
             'I': [[['D', 'L', 'B'],['DF06', 'DF20', 'DF21', 'DF10', 'LF00', 'LF07', 'LF08', 'LF04', 'BF13', 'BF18', 'BF19', 'BF00']]],
             'F': [[['U', 'F', 'R'],['UF02', 'UF18', 'UF19', 'UF06', 'FF10', 'FF17', 'FF18', 'FF14', 'RF03', 'RF08', 'RF09', 'RF10']]],
-            'M': [[['D', 'R', 'F'],['DF14', 'DF16', 'DF17', 'DF02', 'RF00', 'RF07', 'RF08', 'RF04', 'FF13', 'FF18', 'FF19', 'FF00']]],
+            'N': [[['D', 'R', 'F'],['DF14', 'DF16', 'DF17', 'DF02', 'RF00', 'RF07', 'RF08', 'RF04', 'FF13', 'FF18', 'FF19', 'FF00']]],
             'L': [[['U', 'L', 'F'],['UF06', 'UF20', 'UF21', 'UF10', 'LF10', 'LF17', 'LF18', 'LF14', 'FF03', 'FF08', 'FF09', 'FF10']]],
             'J': [[['D', 'F', 'L'],['DF10', 'DF22', 'DF23', 'DF14', 'FF00', 'FF07', 'FF08', 'FF04', 'LF13', 'LF18', 'LF19', 'LF00']]],
             'R': [[['U', 'R', 'B'],['UF14', 'UF16', 'UF17', 'UF02', 'RF10', 'RF17', 'RF18', 'RF14', 'BF03', 'BF08', 'BF09', 'BF10']]],
@@ -177,7 +177,7 @@ var Cube = function(){
         'layer1': {
             'K': [[['D', 'B', 'R'],['DF03', 'DF04', 'DF05', 'BF01', 'BF02', 'BF03', 'RF14', 'RF15', 'RF16']]],
             'L': [[['U', 'L', 'F'],["UF07", "UF08", "UF09", "LF11", "LF12", "LF13", "FF04", "FF05", "FF06"]]],
-            'M': [[['D', 'R', 'F'],['DF15', 'DF00', 'DF01', 'RF01', 'RF02', 'RF03', 'FF14', 'FF15', 'FF16']]],
+            'N': [[['D', 'R', 'F'],['DF15', 'DF00', 'DF01', 'RF01', 'RF02', 'RF03', 'FF14', 'FF15', 'FF16']]],
             'F': [[['U', 'F', 'R'],['UF03', 'UF04', 'UF05', 'FF11', 'FF12', 'FF13', 'RF04', 'RF05', 'RF06']]],
             'B': [[['U', 'B', 'L'],['UF11', 'UF12', 'UF13', 'BF11', 'BF12', 'BF13', 'LF04', 'LF05', 'LF06']]],
             'J': [[['D', 'F', 'L'],['DF11', 'DF12', 'DF13', 'FF01', 'FF02', 'FF03', 'LF14', 'LF15', 'LF16']]],
@@ -235,31 +235,37 @@ var Cube = function(){
                 ]]], 
             'Z': [
                 [["U"],[
-                    "UF00","UF04","UF01","UF05","UF02","UF06","UF03","UF07","UF08","UF12","UF09","UF13",
-                    "UF10","UF14","UF11","UF15","UF16","UF18","UF17","UF19","UF20","UF22","UF21","UF23",
+                    "UF00","UF08","UF01","UF09","UF02","UF10","UF03","UF11","UF04","UF12","UF05","UF13",
+                    "UF06","UF14","UF07","UF15","UF16","UF20","UF17","UF21","UF18","UF22","UF19","UF23",
                     "UF24","UF24"]],
                 [["D"],[
-                    "DF00","DF04","DF01","DF05","DF02","DF06","DF03","DF07","DF08","DF12","DF09","DF13",
-                    "DF10","DF14","DF11","DF15","DF16","DF18","DF17","DF19","DF20","DF22","DF21","DF23",
+                    "DF00","DF08","DF01","DF09","DF02","DF10","DF03","DF11","DF04","DF12","DF05","DF13",
+                    "DF06","DF14","DF07","DF15","DF16","DF20","DF17","DF21","DF18","DF22","DF19","DF23",
                     "DF24","DF24"]],
-                [["R","B","L","F"],[
-                    "FF00","FF01","FF02","FF03","FF04","FF05","FF06","FF07","FF08","FF09",
-                    "FF10","FF11","FF12","FF13","FF14","FF15","FF16","FF17","FF18","FF19",
-                    "FF20",
+                [["L","R"],[
                     "LF00","LF01","LF02","LF03","LF04","LF05","LF06","LF07","LF08","LF09",
                     "LF10","LF11","LF12","LF13","LF14","LF15","LF16","LF17","LF18","LF19",
                     "LF20",
+                    "RF00","RF01","RF02","RF03","RF04","RF05","RF06","RF07","RF08","RF09",
+                    "RF10","RF11","RF12","RF13","RF14","RF15","RF16","RF17","RF18","RF19",
+                    "RF20"]],
+                [["B","F"],[
                     "BF00","BF01","BF02","BF03","BF04","BF05","BF06","BF07","BF08","BF09",
                     "BF10","BF11","BF12","BF13","BF14","BF15","BF16","BF17","BF18","BF19",
                     "BF20",
-                    "RF00","RF01","RF02","RF03","RF04","RF05","RF06","RF07","RF08","RF09",
-                    "RF10","RF11","RF12","RF13","RF14","RF15","RF16","RF17","RF18","RF19",
-                    "RF20"
+                    "FF00","FF01","FF02","FF03","FF04","FF05","FF06","FF07","FF08","FF09",
+                    "FF10","FF11","FF12","FF13","FF14","FF15","FF16","FF17","FF18","FF19",
+                    "FF20"
                 ]]]
         }};
-    turnTable["layer2"]["x"] = turnTable["layer1"]["x"];
-    turnTable["layer2"]["y"] = turnTable["layer1"]["y"];
-    turnTable["layer2"]["z"] = turnTable["layer1"]["z"];
+    jQuery.each( turnTable["layer1"], function(i,v){
+        if( turnTable["layer2"][i] == undefined ) {
+            turnTable["layer2"][i] = v;
+        }
+    });
+//    turnTable["layer2"]["X"] = turnTable["layer1"]["X"];
+//    turnTable["layer2"]["Y"] = turnTable["layer1"]["Y"];
+//    turnTable["layer2"]["Z"] = turnTable["layer1"]["Z"];
 
     var getTargetSticker = function(turnOperation){
         var operation = parseTurnOperation( turnOperation );
@@ -336,7 +342,7 @@ var Cube = function(){
         };
 
         that.checkComplete();
-        $(shadow).addClass('hide');
+        //$(shadow).addClass('hide');
     };
 
     var currentState = {};
@@ -367,27 +373,30 @@ var Cube = function(){
                     c.setAttribute('class', name + "F" + ("00" + i).slice(-2));
                     c.setAttribute("style", "position:absolute");
                     $svg[0].appendChild( c );
+
                 }
                 $faces[0].appendChild( $svg[0]);
                 $faces[0].appendChild( $shadow[0]);
             }
         },
+        getOperation: function(faceName){
+            var currentPosAry = facePosition[faceName];
+            var cssOpe =
+                'rotateZ(' + currentPosAry[0] + 'deg)' +
+                    'rotateY(' + currentPosAry[1] + 'deg)' +
+                    'rotateX(' + currentPosAry[2] + 'deg)' +
+                    'translate3d(' +
+                    currentPosAry[3][0] + 'px,' +
+                    currentPosAry[3][1] + 'px,' +
+                    currentPosAry[3][2] * mag + 'px)' +
+                    "scale3d(" + mag / 200 + ',' + mag / 200 + ',' + mag / 200 + ')';
+            return cssOpe;
+        },
         setPosition: function() {
             var planes = $faces.children();
             for( var i = 0; i < planes.length; i ++ ) {
                 var currentFaceName = $(planes[i]).attr('class').split(" ")[1];
-                var currentPosAry = facePosition[currentFaceName];
-
-                var cssOpe =
-                    'rotateZ(' + currentPosAry[0] + 'deg)' +
-                        'rotateY(' + currentPosAry[1] + 'deg)' +
-                        'rotateX(' + currentPosAry[2] + 'deg)' +
-                        'translate3d(' +
-                        currentPosAry[3][0] + 'px,' +
-                        currentPosAry[3][1] + 'px,' +
-                        currentPosAry[3][2] * mag + 'px)' +
-                        "scale3d(" + mag / 200 + ',' + mag / 200 + ',' + mag / 200 + ')';
-
+                var cssOpe = that.getOperation( currentFaceName );
                 $(planes[i])
                     .css('-webkit-transform-origin', "50% 50%")
                     .css('-moz-transform-origin', "50% 50%")
@@ -447,19 +456,13 @@ var Cube = function(){
             var axisOffset = turnAxes[operation["turn"]]["offset"];
             var rotateDeg = turnAxes[operation["turn"]]["rotate"];
             jQuery.each( $shadow, function(i,shadowPlane){
-                var matrix = "";
-                var webkit = $(this).css('-webkit-transform');
-                matrix = ( webkit != "") ? webkit : "";
-                var moz = $(this).css('-moz-transform');
-                matrix = ( moz != "") ? webkit : "";
-                var ms = $(this).css('-ms-transform');
-                matrix = ( ms != "") ? webkit : "";
-                var o = $(this).css('-o-transform');
-                matrix = ( o != "") ? webkit : "";
+                var currentFaceName = $(this).attr('class').split(" ")[1];
+                var matrix = that.getOperation( currentFaceName );
 
                 var rotate = 0;
                 var name = shadowPlane.className.animVal.split(' ')[1];
                 var isPrime = operation["isPrime"];
+                //console.log( "axisOffset :" + axisOffset[1]);
                 var axOffsetPre = 'translate3d('+
                     axisOffset[0]+'px,'+
                     axisOffset[1]+'px,'+
@@ -481,6 +484,7 @@ var Cube = function(){
                         var operation = axOffsetPre +
                             "rotate3d(" + axes + "," + rotate + "deg) " +
                             axOffsetAfter + matrix;
+
                         $(shadowPlane)
                             .css('-webkit-transform',operation)
                             .css('-moz-transform',operation)
@@ -532,8 +536,9 @@ var Cube = function(){
                 for( var i = 0; i < 100; i++ ){
                     var rand = Math.floor(Math.random()*availableTurn.length);
                     var targetTurn = availableTurn[rand];
-                    var prime =  ((i % 2) == 0) ? "P":"";
-                    that.turnExecute( targetTurn + "1" + prime );
+                    var prime =  ((Math.floor(Math.random()*2) % 2) == 0) ? "P":"";
+                    var layer =  ((Math.floor(Math.random()*2) % 2) == 0) ? "1":"2";
+                    that.turnExecute( targetTurn + layer + prime );
                 }
             }
         },
@@ -576,14 +581,21 @@ var Control = function(turns){
         $select.attr('name',name)
             .css('width','80px')
             .css('height','50px');
+
+        var $option = $('<option/>');
+        $option.attr('value',-1).html('none'); // .attr('selected',"")
+        $select.append($option);
+
         jQuery.each( availableKeys, function(keyCode,letter){
             var $option = $('<option/>');
             $option.attr('value',keyCode).html(letter);
+            if( name[0] == letter && name[1] != "P") {
+                keyTable[name] = name.charCodeAt(0);
+                $option.attr('selected','');
+            }
             $select.append($option);
         });
-        var $option = $('<option/>');
-        $option.attr('value',-1).html('none').attr('selected',"");
-        $select.append($option);
+
         $target.append($select);
     }
 
@@ -678,10 +690,11 @@ var Control = function(turns){
         },
         restoreLastSettings: function(){
             // キーボード設定.
+            //store.set('keyBindSetting');
             store.get('keyBindSetting', function(ok, val) {
                 if (ok) {
                     if( val != null) {
-                        keyTable = {  };
+                        //keyTable = {  };
                         try {
                             var tmpAry = val.split(',');
                             jQuery.each( tmpAry, function(i,v){
@@ -689,9 +702,9 @@ var Control = function(turns){
                                 if( isFinite(tmp[1]) ) { // 数値であれば.
                                     keyTable[tmp[0]] = parseInt(tmp[1]);
                                     var $update = $('select[name=' + tmp[0] +']');
-                                    if( $update.val() == "-1") {
+                                    //if( $update.val() == "-1") {
                                         $update.val( tmp[1]);
-                                    }
+                                    //}
                                 }
                             });
                         } catch (e) {
@@ -745,7 +758,7 @@ var Control = function(turns){
 };
 
 var LayerControl = function(){
-    var levels = ["single","whole"];
+    var levels = ["outer","inner"];
     var min = 1;
     var max = 2;
     var currentLayer = min;
@@ -832,7 +845,7 @@ jQuery(function(){
     var layerCtrl = LayerControl();
     var windowCtrl = WindowControl();
 
-    var parseTurnName = function (turnName) {
+    var parseTurnName = function (turnName, isShift) {
         if( turnName == "") return;
         if( turnName.match('Minus') != null) {
             layerCtrl.minus();
@@ -844,6 +857,7 @@ jQuery(function(){
         } else {
             var turn = turnName[0];
             var prime = ( turnName[1] != undefined) ? turnName[1] : "";
+            prime = (isShift && prime == "") ? "P" : "";
             cube.turnExecute( turn + layerCtrl.getValue() + prime);
         }
 
@@ -856,9 +870,10 @@ jQuery(function(){
             cube.scramble();
             cube.checkComplete();
         }
+        var isShift = (e.shiftKey) ? true : false;
 
         var turnName = control.getTurnName(e.which);
-        parseTurnName(turnName);
+        parseTurnName(turnName, isShift);
     });
 
 
@@ -885,23 +900,7 @@ jQuery(function(){
         $('.fb-comments').slideToggle();
     });
 
-    function setOperate(){
-        var agent = navigator.userAgent;
-        if(agent.search(/iPhone/) != -1){
-            $("body").addClass("iphone"); //iPhoneには「body class="iphone"」追加
-            window.onorientationchange = setView;
-        }else if(agent.search(/iPad/) != -1){
-            $("body").addClass("ipad"); //iPadには「body class="ipad"」追加
-            window.onorientationchange = setView;
-        }else if(agent.search(/Android/) != -1){
-            $("body").addClass("android"); //Androidには「body class="android"」追加
-            window.onresize = setView;
-        }else{
-            $("body").addClass("other"); //上記以外には「body class="other"」追加
-            window.onorientationchange = setView;
-        }
-    }
-
+    // debug.
     var barNum = 0;
     $('svg:not(.shadow)>path').mouseover( function(){
         console.log( this.className.animVal + "------------------------------" );
