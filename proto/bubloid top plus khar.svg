@@ -61,8 +61,4 @@
 	c10.534-10.665,20.069-22.302,28.443-34.703c8.368,12.392,17.896,24.025,28.416,34.675l2.098,2.098
 	c10.673,10.542,22.313,20.078,34.709,28.449c-12.393,8.368-24.023,17.897-34.676,28.416l-2.094,2.094
 	C217.9,241.193,208.365,252.832,200,265.223L200,265.223z"/>
-<text transform="matrix(1 0 0 1 18.5002 45.5)" font-family="'KozGoPro-Regular-90ms-RKSJ-H'" font-size="33">左上</text>
-<text transform="matrix(1 0 0 1 314.844 44.8438)" font-family="'KozGoPro-Regular-90ms-RKSJ-H'" font-size="33">右上</text>
-<text transform="matrix(1 0 0 1 20.0002 376)" font-family="'KozGoPro-Regular-90ms-RKSJ-H'" font-size="33">左下</text>
-<text transform="matrix(1 0 0 1 317.5002 376.5)" font-family="'KozGoPro-Regular-90ms-RKSJ-H'" font-size="33">右下</text>
 </svg>
