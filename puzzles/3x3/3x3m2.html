@@ -1,0 +1,261 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>3x3 M2R2 explain</title>
+</head>
+<body>
+
+<p>http://www.stefan-pochmann.info/spocc/blindsolving/M2R2/</p>
+<p>Stefan Pochmannの M2R2法です。<br />
+    目隠し用解法の一つで、特徴は向き/位置を同時に揃えられること、M2やR2を多用することです。<br />
+    M2は、エッジ用　R2はコーナー用の解法です。  <br />
+    本文章では、M2法についてのみ解説します。<br />
+    (R2は例外状態が多いため、あまりうまみがないためです）</p>
+<p>まずキューブの面単位で名前を付けます。</p>
+<table width="200" border="1">
+    <tr>
+        <td colspan="3" rowspan="3">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>え</td>
+        <td>&nbsp;</td>
+        <td colspan="6" rowspan="3">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>う</td>
+        <td>U</td>
+        <td>あ</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>い</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>し</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>く</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>と</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>た</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>さ</td>
+        <td>L</td>
+        <td>け</td>
+        <td>き</td>
+        <td>F</td>
+        <td>お</td>
+        <td>て</td>
+        <td>R</td>
+        <td>ち</td>
+        <td>そ</td>
+        <td>B</td>
+        <td>す</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>こ</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>か</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>つ</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>せ</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="3">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>ね</td>
+        <td>&nbsp;</td>
+        <td colspan="6" rowspan="3">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>ぬ</td>
+        <td>D</td>
+        <td>な</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>に</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<p>今後、キューブの面を指定する際には「あ」「ぬ」という具合に指定します。</p>
+<p>まず概要です。この方法では二つの特別な面を定義します。<br />
+    一番簡単な手順、M2は、「ね」と「え」の交換を意味します。この「ね」をバッファ、「え」をターゲットとします。<br />
+    また、セットアップをset、逆セットアップをset'と表記します。<br />
+    バッファ「ね」にある面を、「え」に飛ばすためには、M2を使います。</p>
+<p><br />
+    たとえば、「ね」を「さ」に飛ばす時には、セットアップ手順を用いてM列にある4つのパーツの内、「え」だけを「さ」に交換します。<br />
+    そしてM2をして、逆セットアップ手順をします。すると結果的に、「ね」が、「さ」に行き、「さ」がバッファの「ね」に来ます。<br />
+    そのため、「ね」以外のすべての面ごとにセットアップ手順が存在し、また逆セットアップ手順が存在します。<br />
+    そのため、「ね」にどこの面があるかを見れば、どの手順をすべきかが一つに決まります。</p>
+<p>手順は基本的には、set M2 set' の形になります。ただし、M列にあるパーツ3つについてはM2では交換出来ないため、特別な手順を必要とします。<br />
+    しかしながら、「い」「に」手順は簡単です。「た」は、UBエッジとDFエッジを、F2でセットアップ、マヌーバでひっくり返して、セットアップ戻し、そしてM2です。<br />
+    「く」手順は、「ね」-&gt;「く」-&gt;「え」交換の後、M2をしています。「ねくえ」交換は、F'でセットアップ、(E R U R') (E' R U' R) で交換、Fでセットアップ戻し、最後にM2してます。 <br />
+    「せ」手順は、「く」の逆回転手順です。</p>
+<p>手順一覧</p>
+<table width="200" border="1">
+    <tr>
+        <td width="57"><div align="center">      ターゲット</div></td>
+        <td width="127"><div align="center">      手順</div></td>
+    </tr>
+    <tr>
+        <td colspan="2"><div align="center">L列</div></td>
+    </tr>
+    <tr>
+        <td><div align="center">      き</div></td>
+        <td><div align="center">      U'L'U M2 U'L U </div></td>
+    </tr>
+    <tr>
+        <td><div align="center">      ぬ</div></td>
+        <td><div align="center">      U'L2U M2 U'L2U</div></td>
+    </tr>
+    <tr>
+        <td><div align="center">      す</div></td>
+        <td><div align="center">      U'LU M2 U'L'U </div></td>
+    </tr>
+    <tr>
+        <td><div align="center">      う</div></td>
+        <td><div align="center">      LU'L'U M2 U'LUL' </div></td>
+    </tr>
+    <tr>
+        <td colspan="2"><div align="center">R列</div></td>
+    </tr>
+    <tr>
+        <td><div align="center">      お</div></td>
+        <td><div align="center">      URU' M2 UR'U' </div></td>
+    </tr>
+    <tr>
+        <td><div align="center">      な</div></td>
+        <td><div align="center">      UR2U' M2 UR2U' </div></td>
+    </tr>
+    <tr>
+        <td><div align="center">      そ</div></td>
+        <td><div align="center">      UR'U' M2 URU' </div></td>
+    </tr>
+    <tr>
+        <td><div align="center">      あ</div></td>
+        <td><div align="center">      R'URU' M2 UR'U'R </div></td>
+    </tr>
+    <tr>
+        <td colspan="2"><div align="center">L面</div></td>
+    </tr>
+    <tr>
+        <td><div align="center">      こ</div></td>
+        <td><div align="center">      BLB' M2 BL'B' </div></td>
+    </tr>
+    <tr>
+        <td><div align="center">      け</div></td>
+        <td><div align="center">      BL2B' M2 BL2B' </div></td>
+    </tr>
+    <tr>
+        <td><div align="center">      し</div></td>
+        <td><div align="center">      BL'B' M2 BLB' </div></td>
+    </tr>
+    <tr>
+        <td><div align="center">      さ</div></td>
+        <td><div align="center">      LBL'B' M2 BLB'L' </div></td>
+    </tr>
+    <tr>
+        <td colspan="2"><div align="center">R面</div></td>
+    </tr>
+    <tr>
+        <td><div align="center">      つ</div></td>
+        <td><div align="center">      B'R'B M2 B'RB </div></td>
+    </tr>
+    <tr>
+        <td><div align="center">      て</div></td>
+        <td><div align="center">      B'R2B M2 B'R2B </div></td>
+    </tr>
+    <tr>
+        <td><div align="center">      と</div></td>
+        <td><div align="center">      B'RB M2 B'R'B</div></td>
+    </tr>
+    <tr>
+        <td><div align="center">      ち</div></td>
+        <td><div align="center">      R'B'RB M2 B'R'BR </div></td>
+    </tr>
+    <tr>
+        <td colspan="2"><div align="center">M列</div></td>
+    </tr>
+    <tr>
+        <td><div align="center">      い</div></td>
+        <td><div align="center">      U2 M' U2 M' </div></td>
+    </tr>
+    <tr>
+        <td><div align="center">      に</div></td>
+        <td><div align="center">      M U2 M U2 </div></td>
+    </tr>
+    <tr>
+        <td><div align="center"> く      </div></td>
+        <td><div align="center">      FERUR'E'RU'R'F' M2 </div></td>
+    </tr>
+    <tr>
+        <td><div align="center">      せ</div></td>
+        <td><div align="center">      M2 FRUR'ERU'R'E'F' </div></td>
+    </tr>
+    <tr>
+        <td><div align="center">      た</div></td>
+        <td><div align="center">      F2 (MU)*3 (UM')*3 <br />
+            U2 F2 M2 </div></td>
+    </tr>
+    <tr>
+        <td><div align="center">      え</div></td>
+        <td><div align="center">      M2</div></td>
+    </tr>
+</table>
+'
+<p>ここで注意です。M列に関する手順の場合、いまM2を偶数回やったか奇数回やったかを意識する必要があります。<br />
+    「い」「に」と「く」「せ」については、M2で場所がひっくり返るので、M2が奇数回目の場合には、回すべき手順が「い」と「に」、「く」と「せ」で逆になります。<br />
+    なので、M2が奇数回目の場合、バッファに「い」があれば、「に」の手順をするということです。</p>
+<p>試しに、適当に崩して「ね」がどこに行くべきかをみて、手順表から手順を実行してみてください。「ね」に在ったパーツがそこに揃います。</p>
+<p>解き終わったとき、M2が奇数回目で終わる時があります。このときは、「い」の手順などをしてDFとDB交換などにしておきます。その後、CPなどと絡ませて修正します。</p>
+<p>●分析・記憶</p>
+<p>　まず「ね」にある面に注目します。それが「つ」だったとします。次に「つ」にある面に注目します。「し」だったとします。おなじように、見ていき「こ」「と」「さ」「ち」「く」「に」だったとします。<br />
+    次に、2文字一セットで覚えて行きます。「つし」-「こと」-「さち」-「くに」 これを文章化、あるいはイメージ化します。</p>
+<p>津市(つし)に引っ越した子供(こと)は幸（さち)が薄くて国(くに)に帰った。</p>
+<p>目隠し後は、手順を順に行うだけです。「つ」-「し」-「こ」-「と」-「さ」-「ち」-「く」-「い」<br />
+    そう、最後だけはM列に在る面で、かつM2が奇数回目なので、反対の位置の手順「い」を行います。</p>
+<p>●実例</p>
+<p>スクランブル</p>
+<p>U F2 B2 U2 D B2 U B2 L F2 L2 U L' B F L' U2 L' B2 U' F U' L' U B</p>
+<p>「なあ」「さに」「いお」「けし」「ぬた」ですね。<br />
+    この場合、「さに」の「に」だけが、実際回す手順が「い」になります。</p>
+<p>説明用のスクランブルなどは、stefanのページにもあります。</p>
+<p>●例外</p>
+<p>　・位置が揃っていて、向きが間違っているパーツ</p>
+<p>　　　これについては、別途EO手順が必要になります。それか、「う」「し」のように、同じパーツで二つの面の手順を続けて行うことでも修正出来ます。</p>
+<p>　・「ね」がすでに揃っている場合</p>
+<p>　　最初から揃っているか、ループが二つ以上になるときです。たとえば、「あ」-「い」-「う」などのループがある場合は、「あ」-「い」-「う」-「あ」のように、最初と最後を同じ手順にすると解消できます。実際に手順を回すときは、「あにうあ」になります。「い」は偶数回目なので、「に」に変わります。</p>
+<p>・ループ補足説明</p>
+<p>　完成状態から、PLLの十字交換をしてください。このときのループは、「う」-「あ」、「い」-「え」の二つです。しかし、「うあ」手順と、「いえ」手順を行うだけでは揃いません。ループは、「ね」から始まっているという暗黙の了解があります。そのため、記憶する段階で、このようにしておきます。<br />
+    　
+    「う」-「あ」-「う」-「い」-「え」-「い」<br />
+    もしくは、<br />
+    　「あ」-「う」-「あ」-「え」-「い」-「え」<br />
+    ほかにも、<br />
+    　「い」-「え」-「い」-「う」-「あ」-「う」<br />
+    と、一つではありません。<br />
+    こういう風に、記憶時に一つのループにしておけば、解く段階でいろいろ考えなくて済みます。</p>
+<p>質問、訂正、アドバイスなどは ももんが　mon_576r at yahoo.co.jpまでお願いします。</p>
+<p>訂正履歴<br />
+    2007/09/05 もろもろ<br />
+    2007/09/11 手順表直後2行目，入れ替わる面の説明を修正<br />
+    2007/09/12 分析・記憶の章を一部修正</p>
+<p>訂正協力<br />
+    　Raidenさん えすさん　takafumiさん</p>
+<p>&nbsp; </p>
+
+</body>
+</html>

@@ -14,7 +14,6 @@ var Cube = function(){
     var $faces = $('#faces');
 
     var faceName = ['U','F','L','B','R','D'];
-    var faceNum = 9;
 
     var mag = 200; // 拡大率.
     var r = mag; // 半径.
@@ -38,43 +37,62 @@ var Cube = function(){
         "D":"#0000FF"
     }
 
-    var svgData3x3 = [
-        "M394,121.333c0,3.3-2.7,6-6,6H278.667c-3.3,0-6-2.7-6-6V12c0-3.3,2.7-6,6-6H388c3.3,0,6,2.7,6,6V121.333z",
-        "M394,254.667c0,3.3-2.7,6-6,6H278.667c-3.3,0-6-2.7-6-6V145.334c0-3.3,2.7-6,6-6H388c3.3,0,6,2.7,6,6		V254.667z",
-        "M394,388c0,3.3-2.7,6-6,6H278.667c-3.3,0-6-2.7-6-6V278.667c0-3.3,2.7-6,6-6H388c3.3,0,6,2.7,6,6V388z",
-        "M260.667,388c0,3.3-2.7,6-6,6H145.334c-3.3,0-6-2.7-6-6V278.667c0-3.3,2.7-6,6-6h109.333c3.3,0,6,2.7,6,6		V388z",
-        "M127.333,388c0,3.3-2.7,6-6,6H12c-3.3,0-6-2.7-6-6V278.667c0-3.3,2.7-6,6-6h109.334c3.3,0,6,2.7,6,6V388z",
-        "M127.333,254.667c0,3.3-2.7,6-6,6H12c-3.3,0-6-2.7-6-6V145.334c0-3.3,2.7-6,6-6h109.333c3.3,0,6,2.7,6,6		V254.667z",
-        "M127.334,121.332c0,3.3-2.7,6-6,6H12c-3.3,0-6-2.7-6-6V12c0-3.3,2.7-6,6-6h109.334c3.3,0,6,2.7,6,6V121.332z",
-        "M260.667,121.333c0,3.3-2.7,6-6,6H145.334c-3.3,0-6-2.7-6-6V12c0-3.3,2.7-6,6-6h109.333c3.3,0,6,2.7,6,6		V121.333z",
-        "M260.667,254.667c0,3.3-2.7,6-6,6H145.334c-3.3,0-6-2.7-6-6V145.334c0-3.3,2.7-6,6-6h109.333		c3.3,0,6,2.7,6,6V254.667z"
+    var svgDataMixUpPlus444 = [
+        "M394,135.757c0,3.3-2.7,6-6,6h-55.879c-3.3,0-8.7,0-12,0h-55.879c-3.3,0-6-2.7-6-6V79.878			c0-3.3,0-8.7,0-12V12c0-3.3,2.7-6,6-6h55.879c3.3,0,8.7,0,12,0H388c3.3,0,6,2.7,6,6v55.878c0,3.3,0,8.7,0,12V135.757z",
+        "M394,188c0,3.3-2.7,6-6,6h-49.879c-3.3,0-6-2.7-6-6v-28.243c0-3.3,2.7-6,6-6H388			c3.3,0,6,2.7,6,6V188z",
+        "M394,240.241c0,3.3-2.7,6-6,6h-49.879c-3.3,0-6-2.7-6-6v-28.24c0-3.3,2.7-6,6-6H388			c3.3,0,6,2.7,6,6V240.241z",
+        "M320.121,240.241c0,3.3-2.7,6-6,6h-49.88c-3.3,0-6-2.7-6-6V212c0-3.3,2.7-6,6-6h49.88			c3.3,0,6,2.7,6,6V240.241z",
+        "M320.121,188c0,3.3-2.7,6-6,6h-49.88c-3.3,0-6-2.7-6-6v-28.243c0-3.3,2.7-6,6-6h49.88			c3.3,0,6,2.7,6,6V188z",
+        "M246.241,188c0,3.3-2.7,6-6,6h-28.24c-3.3,0-6-2.7-6-6v-28.242c0-3.3,2.7-6,6-6h28.24			c3.3,0,6,2.7,6,6V188z",
+        "M394,388c0,3.3-2.7,6-6,6h-55.879c-3.3,0-8.7,0-12,0h-55.879c-3.3,0-6-2.7-6-6v-55.879			c0-3.3,0-8.7,0-12v-55.879c0-3.3,2.7-6,6-6h55.879c3.3,0,8.7,0,12,0H388c3.3,0,6,2.7,6,6v55.879c0,3.3,0,8.7,0,12V388z",
+        "M246.241,388c0,3.3-2.7,6-6,6h-28.24c-3.3,0-6-2.7-6-6v-49.879c0-3.3,2.7-6,6-6h28.24			c3.3,0,6,2.7,6,6V388z",
+        "M194,388c0,3.3-2.7,6-6,6h-28.24c-3.3,0-6-2.7-6-6v-49.879c0-3.3,2.7-6,6-6H188			c3.3,0,6,2.7,6,6V388z",
+        "M194,314.121c0,3.3-2.7,6-6,6h-28.241c-3.3,0-6-2.7-6-6v-49.88c0-3.3,2.7-6,6-6H188			c3.3,0,6,2.7,6,6V314.121z",
+        "M246.241,314.121c0,3.3-2.7,6-6,6H212c-3.3,0-6-2.7-6-6v-49.88c0-3.3,2.7-6,6-6h28.241			c3.3,0,6,2.7,6,6V314.121z",
+        "M246.241,240.241c0,3.3-2.7,6-6,6h-28.24c-3.3,0-6-2.7-6-6v-28.24c0-3.3,2.7-6,6-6h28.24			c3.3,0,6,2.7,6,6V240.241z",
+        "M141.759,388c0,3.3-2.7,6-6,6H79.878c-3.3,0-8.7,0-12,0H12.001c-3.3,0-6-2.7-6-6v-55.879			c0-3.3,0-8.7,0-12v-55.879c0-3.3,2.7-6,6-6h55.876c3.3,0,8.7,0,12,0h55.881c3.3,0,6,2.7,6,6v55.879c0,3.3,0,8.7,0,12V388z",
+        "M67.877,240.241c0,3.3-2.7,6-6,6H12c-3.3,0-6-2.7-6-6V212c0-3.3,2.7-6,6-6h49.877			c3.3,0,6,2.7,6,6V240.241z",
+        "M67.878,187.999c0,3.3-2.7,6-6,6H12c-3.3,0-6-2.7-6-6v-28.241c0-3.3,2.7-6,6-6h49.878			c3.3,0,6,2.7,6,6V187.999z",
+        "M141.758,187.999c0,3.3-2.7,6-6,6h-49.88c-3.3,0-6-2.7-6-6v-28.241c0-3.3,2.7-6,6-6h49.88			c3.3,0,6,2.7,6,6V187.999z",
+        "M141.758,240.241c0,3.3-2.7,6-6,6H85.879c-3.3,0-6-2.7-6-6v-28.24c0-3.3,2.7-6,6-6h49.879			c3.3,0,6,2.7,6,6V240.241z",
+        "M194,240.241c0,3.3-2.7,6-6,6H159.76c-3.3,0-6-2.7-6-6v-28.24c0-3.3,2.7-6,6-6H188			c3.3,0,6,2.7,6,6V240.241z",
+        "M141.757,135.757c0,3.3-2.7,6-6,6H79.878c-3.3,0-8.7,0-12,0H12.001c-3.3,0-6-2.7-6-6V79.878			c0-3.3,0-8.7,0-12V12.001c0-3.3,2.7-6,6-6h55.876c3.3,0,8.7,0,12,0h55.879c3.3,0,6,2.7,6,6v55.876c0,3.3,0,8.7,0,12V135.757z",
+        "M193.999,61.878c0,3.3-2.7,6-6,6h-28.241c-3.3,0-6-2.7-6-6V12c0-3.3,2.7-6,6-6h28.241			c3.3,0,6,2.7,6,6V61.878z",
+        "M246.241,61.877c0,3.3-2.7,6-6,6h-28.24c-3.3,0-6-2.7-6-6V12c0-3.3,2.7-6,6-6h28.24			c3.3,0,6,2.7,6,6V61.877z",
+        "M246.241,135.756c0,3.3-2.7,6-6,6h-28.24c-3.3,0-6-2.7-6-6V85.879c0-3.3,2.7-6,6-6h28.24			c3.3,0,6,2.7,6,6V135.756z",
+        "M193.999,135.758c0,3.3-2.7,6-6,6h-28.241c-3.3,0-6-2.7-6-6v-49.88c0-3.3,2.7-6,6-6h28.241			c3.3,0,6,2.7,6,6V135.758z",
+        "M193.999,187.999c0,3.3-2.7,6-6,6h-28.241c-3.3,0-6-2.7-6-6v-28.241c0-3.3,2.7-6,6-6h28.241			c3.3,0,6,2.7,6,6V187.999z"
     ];
-
     var generateFaceType = {
-        "U":svgData3x3,
-        "F":svgData3x3,
-        "L":svgData3x3,
-        "B":svgData3x3,
-        "R":svgData3x3,
-        "D":svgData3x3
-    }
+        "U":svgDataMixUpPlus444,
+        "F":svgDataMixUpPlus444,
+        "L":svgDataMixUpPlus444,
+        "B":svgDataMixUpPlus444,
+        "R":svgDataMixUpPlus444,
+        "D":svgDataMixUpPlus444
+    };
 
-    var availableTurn = ["U","F","L","B","R","D","M","E","S","X","Y","Z"]; // 回転名を変更するときはturnTableも変更すること.
+    var availableTurn = ["F","I","L","K","R","J","B","N","X","Y","Z"]; // 回転名を変更するときはturnTableも変更すること.
     var turnAxesAry = [
-        {"axis":[" 0,-1, 0"]  ,"offset":[0,0,0] ,"rotate": 90},
-        {"axis":[" 0, 0, 1"]  ,"offset":[0,0,0] ,"rotate": 90},
-        {"axis":["-1, 0, 0"]  ,"offset":[0,0,0] ,"rotate": 90},
-        {"axis":[" 0, 0,-1"]  ,"offset":[0,0,0] ,"rotate": 90},
-        {"axis":[" 1, 0, 0"]  ,"offset":[0,0,0] ,"rotate": 90},
-        {"axis":[" 0, 1, 0"]  ,"offset":[0,0,0] ,"rotate": 90},
-        {"axis":["-1, 0, 0"]  ,"offset":[0,0,0] ,"rotate": 90},
-        {"axis":[" 0, 1, 0"]  ,"offset":[0,0,0] ,"rotate": 90},
-        {"axis":[" 0, 0, 1"]  ,"offset":[0,0,0] ,"rotate": 90},
-        {"axis":[" 1, 0, 0"]  ,"offset":[0,0,0] ,"rotate": 90},
-        {"axis":[" 0, 0, 1"]  ,"offset":[0,0,0] ,"rotate": 90},
-        {"axis":[" 0,-1, 0"]  ,"offset":[0,0,0] ,"rotate": 90}];
+        {"axis":["1,-1,1"]  ,"offset":[0,34,0]  ,"rotate":120},
+        {"axis":["-1,1,-1"] ,"offset":[0,-34,0] ,"rotate":120},
+        {"axis":["-1,-1,1"] ,"offset":[0,34,0]  ,"rotate":120},
+        {"axis":["1,1,-1"]  ,"offset":[0,-34,0] ,"rotate":120},
+        {"axis":["1,-1,-1"] ,"offset":[0,34,0]  ,"rotate":120},
+        {"axis":["-1,1,1"]  ,"offset":[0,-34,0] ,"rotate":120},
+        {"axis":["-1,-1,-1"],"offset":[0,34,0]  ,"rotate":120},
+        {"axis":["1,1,1"]   ,"offset":[0,-34,0] ,"rotate":120},
+        {"axis":["1,0,0"]   ,"offset":[0,0,0]   ,"rotate":180},
+        {"axis":["0,0,1"]   ,"offset":[0,0,0]   ,"rotate":180},
+        {"axis":["0,-1,0"]  ,"offset":[0,0,0]   ,"rotate":180}];
     var turnAxes = {};
     for( var i = 0; i < turnAxesAry.length; i++ )turnAxes[availableTurn[i]] = turnAxesAry[i];
+
+
+    var turnTable = [
+        ["U2","F0","R6"],["D4","L4","B2"],["U4","L0","F6"],["D2","B4","R2"],
+        ["U0","R0","B6"],["D6","F4","L2"],["U6","B0","L6"],["D0","R4","F2"]
+    ];
 
     var currentAnimation = {};
     var currentOperation = "";
@@ -87,85 +105,109 @@ var Cube = function(){
         operation["isPrime"] = (turnOperation[2] == "P" );
         return operation;
     }
-
     var turnTable = {
+        'layer2': {
+            'I': [[['D', 'L', 'B'],['DF06', 'DF20', 'DF21', 'DF10', 'LF00', 'LF07', 'LF08', 'LF04', 'BF13', 'BF18', 'BF19', 'BF00']]],
+            'F': [[['U', 'F', 'R'],['UF02', 'UF18', 'UF19', 'UF06', 'FF10', 'FF17', 'FF18', 'FF14', 'RF03', 'RF08', 'RF09', 'RF10']]],
+            'N': [[['D', 'R', 'F'],['DF14', 'DF16', 'DF17', 'DF02', 'RF00', 'RF07', 'RF08', 'RF04', 'FF13', 'FF18', 'FF19', 'FF00']]],
+            'L': [[['U', 'L', 'F'],['UF06', 'UF20', 'UF21', 'UF10', 'LF10', 'LF17', 'LF18', 'LF14', 'FF03', 'FF08', 'FF09', 'FF10']]],
+            'J': [[['D', 'F', 'L'],['DF10', 'DF22', 'DF23', 'DF14', 'FF00', 'FF07', 'FF08', 'FF04', 'LF13', 'LF18', 'LF19', 'LF00']]],
+            'R': [[['U', 'R', 'B'],['UF14', 'UF16', 'UF17', 'UF02', 'RF10', 'RF17', 'RF18', 'RF14', 'BF03', 'BF08', 'BF09', 'BF10']]],
+            'B': [[['U', 'B', 'L'],['UF10', 'UF22', 'UF23', 'UF14', 'BF10', 'BF17', 'BF18', 'BF14', 'LF03', 'LF08', 'LF09', 'LF10']]],
+            'K': [[['D', 'B', 'R'],['DF02', 'DF18', 'DF19', 'DF06', 'BF00', 'BF07', 'BF08', 'BF04', 'RF13', 'RF18', 'RF19', 'RF00']]]
+        },
         'layer1': {
-            'U': [
-                [['F', 'R', 'B','L'],['FF04','FF05','FF06',"RF04","RF05","RF06","BF04","BF05","BF06","LF04","LF05","LF06"]],
-                [['U'],["UF00","UF01","UF02","UF03","UF04","UF05","UF06","UF07","UF08"]]
-            ],
-            'F': [
-                [['U', 'L', 'D','R'],["UF02","UF03","UF04","LF06","LF07","LF00","DF06","DF07","DF00","RF02","RF03","RF04"]],
-                [['F'],["FF00","FF01","FF02","FF03","FF04","FF05","FF06","FF07","FF08"]]
-            ],
-            'L': [
-                [['U', 'B', 'D', 'F'], ['UF04', 'UF05', 'UF06', 'BF06', 'BF07', 'BF00', 'DF04', 'DF05', 'DF06', 'FF02', 'FF03', 'FF04']],
-                [['L'],["LF00","LF01","LF02","LF03","LF04","LF05","LF06","LF07","LF08"]]
-            ],
-            'B': [
-                [['U', 'R', 'D', 'L'], ['UF06', 'UF07', 'UF00', 'RF06', 'RF07', 'RF00', 'DF02', 'DF03', 'DF04', 'LF02', 'LF03', 'LF04']],
-                [['B'],["BF00","BF01","BF02","BF03","BF04","BF05","BF06","BF07","BF08"]]
-            ],
-            'R': [
-                [['U', 'F', 'D', 'B'], ['UF00', 'UF01', 'UF02', 'FF06', 'FF07', 'FF00', 'DF00', 'DF01', 'DF02', 'BF02', 'BF03', 'BF04']],
-                [['R'],["RF00","RF01","RF02","RF03","RF04","RF05","RF06","RF07","RF08"]]
-            ],
-            'D': [
-                [['F', 'L', 'B', 'R'], ['FF00', 'FF01', 'FF02', 'LF00', 'LF01', 'LF02', 'BF00', 'BF01', 'BF02', 'RF00', 'RF01', 'RF02']],
-                [['D'],["DF00","DF01","DF02","DF03","DF04","DF05","DF06","DF07","DF08"]]
-            ],
-            'E':[
-                [['F', 'L', 'B', 'R'], ['FF07', 'FF08', 'FF03', 'LF07', 'LF08', 'LF03', 'BF07', 'BF08', 'BF03', 'RF07', 'RF08', 'RF03']]
-            ],
-            'M':[
-                [['U', 'B', 'D', 'F'], ['UF03', 'UF08', 'UF07', 'BF05', 'BF08', 'BF01', 'DF03', 'DF08', 'DF07', 'FF01', 'FF08', 'FF05']]
-            ],
-            'S':[
-                [['U', 'L', 'D', 'R'], ['UF01', 'UF08', 'UF05', 'LF05', 'LF08', 'LF01', 'DF05', 'DF08', 'DF01', 'RF01', 'RF08', 'RF05']]
-            ],
+            'K': [[['D', 'B', 'R'],['DF03', 'DF04', 'DF05', 'BF01', 'BF02', 'BF03', 'RF14', 'RF15', 'RF16']]],
+            'L': [[['U', 'L', 'F'],["UF07", "UF08", "UF09", "LF11", "LF12", "LF13", "FF04", "FF05", "FF06"]]],
+            'N': [[['D', 'R', 'F'],['DF15', 'DF00', 'DF01', 'RF01', 'RF02', 'RF03', 'FF14', 'FF15', 'FF16']]],
+            'F': [[['U', 'F', 'R'],['UF03', 'UF04', 'UF05', 'FF11', 'FF12', 'FF13', 'RF04', 'RF05', 'RF06']]],
+            'B': [[['U', 'B', 'L'],['UF11', 'UF12', 'UF13', 'BF11', 'BF12', 'BF13', 'LF04', 'LF05', 'LF06']]],
+            'J': [[['D', 'F', 'L'],['DF11', 'DF12', 'DF13', 'FF01', 'FF02', 'FF03', 'LF14', 'LF15', 'LF16']]],
+            'R': [[['U', 'R', 'B'],['UF15', 'UF00', 'UF01', 'RF11', 'RF12', 'RF13', 'BF04', 'BF05', 'BF06']]],
+            'I': [[['L', 'B', 'D'],['LF01', 'LF02', 'LF03', 'BF14', 'BF15', 'BF16', 'DF07', 'DF08', 'DF09']]],
             'X': [
-                [["U", "F","D","B"],[
-                    "UF00","UF01","UF02","UF03","UF04","UF05","UF06","UF07",
-                    "UF08",
-                    "FF06","FF07","FF00","FF01","FF02","FF03","FF04","FF05",
-                    "FF08",
-                    "DF00","DF01","DF02","DF03","DF04","DF05","DF06","DF07",
-                    "DF08",
-                    "BF02","BF03","BF04","BF05","BF06","BF07","BF00","BF01",
-                    "BF08"
+                [['U', "D"],[
+                    "UF00","UF01","UF02","UF03","UF04","UF05","UF06","UF07","UF08","UF09","UF10","UF11",
+                    "UF12","UF13","UF14","UF15","UF16","UF17","UF18","UF19","UF20","UF21","UF22","UF23",
+                    "UF24",
+                    "DF00","DF01","DF02","DF03","DF04","DF05","DF06","DF07","DF08","DF09","DF10","DF11",
+                    "DF12","DF13","DF14","DF15","DF16","DF17","DF18","DF19","DF20","DF21","DF22","DF23",
+                    "DF24"
+                ]],    
+                [["F", "B"],[
+                    "FF00","FF01","FF02","FF03","FF04","FF05","FF06","FF07","FF08","FF09",
+                    "FF10","FF11","FF12","FF13","FF14","FF15","FF16","FF17","FF18","FF19","FF20",
+                    "BF10","BF11","BF12","BF13","BF14","BF15","BF16","BF17","BF18","BF19",
+                    "BF00","BF01","BF02","BF03","BF04","BF05","BF06","BF07","BF08","BF09","BF20"
                 ]],
-                [["L"],["LF07","LF06","LF05","LF04","LF03","LF02","LF01","LF00","LF08"]],
-                [["R"],["RF00","RF01","RF02","RF03","RF04","RF05","RF06","RF07","RF08"]]
-            ],
+                [["L"],[
+                    "LF00","LF10","LF01","LF11","LF02","LF12","LF03","LF13","LF04","LF14",
+                    "LF05","LF15","LF06","LF16","LF07","LF17","LF08","LF18","LF09","LF19","LF20","LF20"
+                ]],
+                [["R"],[
+                    "RF00","RF10","RF01","RF11","RF02","RF12","RF03","RF13","RF04","RF14",
+                    "RF05","RF15","RF06","RF16","RF07","RF17","RF08","RF18","RF09","RF19","RF20","RF20"
+                ]]],
             'Y': [
-                [["U", "L","D","R"],[
-                    "UF00","UF01","UF02","UF03","UF04","UF05","UF06","UF07",
-                    "UF08",
-                    "LF04","LF05","LF06","LF07","LF00","LF01","LF02","LF03",
-                    "LF08",
-                    "DF04","DF05","DF06","DF07","DF00","DF01","DF02","DF03",
-                    "DF08",
-                    "RF00","RF01","RF02","RF03","RF04","RF05","RF06","RF07",
-                    "RF08"
+                [['U', "D"],[
+                    "UF00","UF01","UF02","UF03","UF04","UF05","UF06","UF07","UF08","UF09","UF10","UF11",
+                    "UF12","UF13","UF14","UF15","UF16","UF17","UF18","UF19","UF20","UF21","UF22","UF23",
+                    "UF24",
+                    "DF08","DF09","DF10","DF11","DF12","DF13","DF14","DF15","DF00","DF01","DF02","DF03",
+                    "DF04","DF05","DF06","DF07","DF20","DF21","DF22","DF23","DF16","DF17","DF18","DF19",
+                    "DF24"
+
+
                 ]],
-                [["F"],["FF00","FF01","FF02","FF03","FF04","FF05","FF06","FF07","FF08"]],
-                [["B"],["BF07","BF06","BF05","BF04","BF03","BF02","BF01","BF00","BF08"]]
-            ],
+                [["L", "R"],[
+                    "LF00","LF01","LF02","LF03","LF04","LF05","LF06","LF07","LF08","LF09",
+                    "LF10","LF11","LF12","LF13","LF14","LF15","LF16","LF17","LF18","LF19",
+                    "LF20",
+                    "RF10","RF11","RF12","RF13","RF14","RF15","RF16","RF17","RF18","RF19",
+                    "RF00","RF01","RF02","RF03","RF04","RF05","RF06","RF07","RF08","RF09",
+                    "RF20"
+                ]],
+                [["F"],[
+                    "FF00","FF10","FF01","FF11","FF02","FF12","FF03","FF13","FF04","FF14",
+                    "FF05","FF15","FF06","FF16","FF07","FF17","FF08","FF18","FF09","FF19","FF20","FF20"
+                ]],
+                [["B"],[
+                    "BF00","BF10","BF01","BF11","BF02","BF12","BF03","BF13","BF04","BF14",
+                    "BF05","BF15","BF06","BF16","BF07","BF17","BF08","BF18","BF09","BF19","BF20","BF20"
+                ]]], 
             'Z': [
-                [["F", "R","B","L"],[
-                    "FF06","FF07","FF00","FF01","FF02","FF03","FF04","FF05",
-                    "FF08",
-                    "RF06","RF07","RF00","RF01","RF02","RF03","RF04","RF05",
-                    "RF08",
-                    "BF06","BF07","BF00","BF01","BF02","BF03","BF04","BF05",
-                    "BF08",
-                    "LF06","LF07","LF00","LF01","LF02","LF03","LF04","LF05",
-                    "LF08"
-                ]],
-                [["U"],["UF00","UF01","UF02","UF03","UF04","UF05","UF06","UF07","UF08"]],
-                [["D"],["DF07","DF06","DF05","DF04","DF03","DF02","DF01","DF00","DF08"]]
-            ]
+                [["U"],[
+                    "UF00","UF08","UF01","UF09","UF02","UF10","UF03","UF11","UF04","UF12","UF05","UF13",
+                    "UF06","UF14","UF07","UF15","UF16","UF20","UF17","UF21","UF18","UF22","UF19","UF23",
+                    "UF24","UF24"]],
+                [["D"],[
+                    "DF00","DF08","DF01","DF09","DF02","DF10","DF03","DF11","DF04","DF12","DF05","DF13",
+                    "DF06","DF14","DF07","DF15","DF16","DF20","DF17","DF21","DF18","DF22","DF19","DF23",
+                    "DF24","DF24"]],
+                [["L","R"],[
+                    "LF00","LF01","LF02","LF03","LF04","LF05","LF06","LF07","LF08","LF09",
+                    "LF10","LF11","LF12","LF13","LF14","LF15","LF16","LF17","LF18","LF19",
+                    "LF20",
+                    "RF00","RF01","RF02","RF03","RF04","RF05","RF06","RF07","RF08","RF09",
+                    "RF10","RF11","RF12","RF13","RF14","RF15","RF16","RF17","RF18","RF19",
+                    "RF20"]],
+                [["B","F"],[
+                    "BF00","BF01","BF02","BF03","BF04","BF05","BF06","BF07","BF08","BF09",
+                    "BF10","BF11","BF12","BF13","BF14","BF15","BF16","BF17","BF18","BF19",
+                    "BF20",
+                    "FF00","FF01","FF02","FF03","FF04","FF05","FF06","FF07","FF08","FF09",
+                    "FF10","FF11","FF12","FF13","FF14","FF15","FF16","FF17","FF18","FF19",
+                    "FF20"
+                ]]]
         }};
+    jQuery.each( turnTable["layer1"], function(i,v){
+        if( turnTable["layer2"][i] == undefined ) {
+            turnTable["layer2"][i] = v;
+        }
+    });
+//    turnTable["layer2"]["X"] = turnTable["layer1"]["X"];
+//    turnTable["layer2"]["Y"] = turnTable["layer1"]["Y"];
+//    turnTable["layer2"]["Z"] = turnTable["layer1"]["Z"];
 
     var getTargetSticker = function(turnOperation){
         var operation = parseTurnOperation( turnOperation );
@@ -192,18 +234,6 @@ var Cube = function(){
                 targetStickers[pcsIdx][turnLabel[i][0]].push(turnLabel[i]);
             }
         });
-        if( operation["isPrime"] ) { // 逆向きの配列をセットし、回転を逆転させる。
-            for( var i = 0; i < order.length; i++ ) {
-                if( order[i].length == 1 ){
-                    jQuery.each( targetStickers[i], function(key,val){
-                        var tmp = val.pop();    // センターピースのみ取り外し。
-                        val = val.reverse();
-                        val.push( tmp );        // お尻につけておく。
-                        //targetStickers[key] = targetStickers[key].reverse();
-                    });
-                }
-            }
-        }
 
         return { "stickers":targetStickers, "order":order };
     };
@@ -222,21 +252,19 @@ var Cube = function(){
             var tmpIndex = order.indexOf( preFace );
             if( tmpIndex == -1 ) continue;
             var len = order.length;
-            if( len == 1 ) {      // 1面だけの入れ替え.
+            if( len == 1 ) {
                 afterFace = preFace;
                 jQuery.each( $(shadow).children(),function(){
                     var preLabel = this.className.animVal;
                     var preIndex = stickers[preFace].indexOf( preLabel );
-                    var afterIndex = (preIndex + 6) % 8; // 8 = 入れ替わる面の数.
+                    var afterIndex = (preIndex % 2 == 0) ? preIndex + 1 : preIndex - 1;
                     var afterLabel = stickers[afterFace][afterIndex];
 
-                    if( parseInt(preLabel.slice(-1)) != 8) { // 8 = Centerの場合は入れ替えなし.
-                        var $pre = $('#faces>svg>path.' + preLabel);
-                        $pre.attr('fill',currentState[afterLabel]);
-                    }
+                    var $pre = $('#faces>svg>path.' + preLabel);
+                    $pre.attr('fill',currentState[afterLabel]);
                     $home[0].appendChild( this );
-
                 });
+                // 1面だけの入れ替え.
             } else { // 2面に渡る入れ替え.
                 var adjIndex = tmpIndex % len;
                 var adjIndex2 = (adjIndex + 1) % len ;
@@ -256,8 +284,7 @@ var Cube = function(){
         };
 
         that.checkComplete();
-        var className = $(shadow).attr("class");
-        $(shadow).attr('class', className.replace(" moving", ""));
+        //$(shadow).addClass('hide');
     };
 
     var currentState = {};
@@ -273,256 +300,11 @@ var Cube = function(){
         return true;
     }
 
-    var partsGroup = [
-        ["UF01","RF05"],["UF03","FF05"],["UF05","LF05"],["UF07","BF05"],
-        ["FF03","LF07"],["LF03","BF07"],["BF03","RF07"],["RF03","FF07"],
-        ["DF07","FF01"],["DF01","RF01"],["DF03","BF01"],["DF05","LF01"],
-        ["UF02","FF06","RF04"],["UF04","FF04","LF06"],["UF06","LF04","BF06"],["UF00","BF04","RF06"],
-        ["DF00","FF00","RF02"],["DF06","FF02","LF00"],["DF04","LF02","BF00"],["DF02","RF00","BF02"]
-    ]
-    var getNextSticker = function(label){
-        var newLabel = "";
-
-        var faces = getFaces( label );
-        var dstLabel = getLabel( faces );
-
-        return dstLabel;
-    }
-
-    var getGroupLabels = function(label){
-        var group = null;
-        var labels = [];
-        for( var i = 0; i < partsGroup.length; i++ )
-        {
-            var idx = partsGroup[i].indexOf(label);
-            if( idx != -1) {
-                group = partsGroup[i];
-                for( var j = 0; j < group.length; j++ ){
-                    if( group[j] != label) {
-                        labels.push(group[j]);
-                    }
-                }
-                break;
-            }
-        }
-        return labels;
-    };
-
-    // ラベルから色の配列を取得.
-    var getFaces = function(label){
-        var group = null;
-        var colors = [];
-        colors.push($('.' + label).attr('fill'));
-        var labels = getGroupLabels(label);
-        for( i = 0; i < labels.length; i++ ){
-            colors.push($('.' + labels[i]).attr('fill'));
-        }
-
-        var faces = [];
-        for( var i = 0; i < colors.length; i++ ){
-            jQuery.each( faceColor, function(face,v){
-                if( colors[i] == v ) {
-                    faces.push( face );
-                }
-            });
-        }
-        return faces;
-    }
-
-    // 色の配列から、先頭色のラベル名を取得.
-    var getLabel = function(faces){
-        var relateGroup = [];
-        var partsGroupCopy = partsGroup.slice();
-        var tmpGroup = [];
-        for( var f = 0; f < faces.length; f++ )
-        {
-            for( var i = 0; i < partsGroupCopy.length; i++ )
-            {
-                var group = partsGroupCopy[i];
-                if( faces.length != group.length ) continue;
-                var hasFace = false;
-                for( var j = 0; j < group.length; j++ )
-                {
-                    var label = group[j];
-                    if( label[0] == faces[f])
-                    {
-                        hasFace = true;
-                        break;
-                    }
-                }
-                if( hasFace ) {
-                    tmpGroup.push(partsGroupCopy[i]);
-                }
-            }
-            partsGroupCopy = tmpGroup;
-            tmpGroup = [];
-        }
-
-        var dstLabel = "";
-        var chkGroup = partsGroupCopy[0];
-        for( var i = 0; i< chkGroup.length; i++ ){
-            var label = chkGroup[i];
-            if( label[0] == faces[0]) {
-                dstLabel = label;
-            }
-        }
-        return dstLabel;
-    };
-    var getUnsolvedLabelEdge = function(doneList){
-        // 辺
-        if( doneList.length < 24) { // 24 = 辺のステッカーの数. すべて分析済みの場合24になる.
-            for( var i = 0; i < faceName.length; i++ ){
-                var f = faceName[i];
-                var len = generateFaceType[f].length;
-                for( var j = 0; j < Math.floor(len/2); j++ ){
-                    var num = j * 2 + 1;
-                    var newLabel = f + "F" + ("00" + num).slice(-2);
-                    if( doneList.indexOf(newLabel) == -1) {
-                        return newLabel;
-                    }
-                }
-            }
-        }
-        return "";
-    };
-    var getUnsolvedLabelCorner = function(doneList){
-        // 角
-        for( var i = 0; i < faceName.length; i++ ){
-            var f = faceName[i];
-            var len = generateFaceType[f].length;
-            for( var j = 0; j < Math.floor(len/2) - 1; j++ ){ // -1 = センター分.
-                var num = j * 2;
-                var newLabel = f + "F" + ("00" + num).slice(-2);
-                if( doneList.indexOf(newLabel) == -1) {
-                    return newLabel;
-                }
-            }
-        }
-        return "";
-    };
-
-    var getAlgorithmOrder = function(firstLabel, funcGetUnsolvedLabel, lastLabel){
-        var doneList = [];
-        var isNewLoop = false;
-        var nextLabel = firstLabel;
-        var algorithmOrder = [];
-        while(true){
-            if( !isNewLoop ) {
-                doneList.push( nextLabel);
-                var labels = getGroupLabels(nextLabel);
-                for( var i = 0; i < labels.length; i ++ ){
-                    doneList.push( labels[i] );
-                }
-            }
-            nextLabel = getNextSticker( nextLabel );
-            if( doneList.indexOf(nextLabel) != -1 ) {
-                isNewLoop = true;
-                nextLabel = funcGetUnsolvedLabel(doneList);
-                if( nextLabel == "") {
-                    if( algorithmOrder.length % 2 == 1) {
-                        algorithmOrder.push( lastLabel );
-                    }
-                    break;
-                }
-            } else {
-                isNewLoop = false;
-            }
-            if( algorithmOrder.slice(-1) == nextLabel ){
-                algorithmOrder.pop();
-            } else {
-                algorithmOrder.push( nextLabel );
-            }
-        }
-        return algorithmOrder;
-    };
-    var labelNames = {
-        "UF00":"[UBR]","UF01":"[UR]","UF02":"[URF]","UF03":"[UF]","UF04":"[UFL]","UF05":"[UL]","UF06":"[ULB]","UF07":"[UB]",
-        "FF00":"[FRD]","FF01":"[FD]","FF02":"[FDL]","FF03":"[FL]","FF04":"[FLU]","FF05":"[FU]","FF06":"[FUR]","FF07":"[FR]",
-        "LF00":"[LFD]","LF01":"[LD]","LF02":"[LDB]","LF03":"[LB]","LF04":"[LBU]","LF05":"[LU]","LF06":"[LUF]","LF07":"[LF]",
-        "BF00":"[BLD]","BF01":"[BD]","BF02":"[BDR]","BF03":"[BR]","BF04":"[BRU]","BF05":"[BU]","BF06":"[BUL]","BF07":"[BL]",
-        "RF00":"[RBD]","RF01":"[RD]","RF02":"[RDF]","RF03":"[RF]","RF04":"[RFU]","RF05":"[RU]","RF06":"[RUB]","RF07":"[RB]",
-        "DF00":"[DFR]","DF01":"[DR]","DF02":"[DRB]","DF03":"[DB]","DF04":"[DBL]","DF05":"[DL]","DF06":"[DLF]","DF07":"[DF]"
-    }
-    var convResult = function( edgeOrder, cornerOrder){
-        var edgeTbl = [];
-        for( var i = 0; i < edgeOrder.length; i++ ){
-            edgeTbl.push( labelNames[edgeOrder[i]] );
-        }
-        var cornerTbl = [];
-        for( var i = 0; i < cornerOrder.length; i ++ ){
-            cornerTbl.push( labelNames[cornerOrder[i]]);
-        }
-        return {"edge":edgeTbl,"corner":cornerTbl};
-    };
-
-    var algos = {
-        "FF03":"U' L' U M2 U' L U",
-        "DF05":"U' L2 U M2 U' L2 U",
-        "BF07":"U' L U M2 U' L' U",
-        "UF05":"L U' L' U M2 U' L U L'",
-        "FF07":"U R U' M2 U R' U'",
-        "DF01":"U R2 U' M2 U R2 U'",
-        "BF03":"U R' U' M2 U R U'",
-        "UF01":"R' U R U' M2 U R' U' R",
-        "LF01":"B L B' M2 B L' B'",
-        "LF07":"B L2 B' M2 B L2 B'",
-        "LF05":"B L' B' M2 B L B'",
-        "LF03":"L B L' B' M2 B L B' L'",
-        "RF01":"B' R' B M2 B' R B",
-        "RF03":"B' R2 B M2 B' R2 B",
-        "RF05":"B' R B M2 B' R' B",
-        "RF07":"R' B' R B M2 B' R' B R",
-        "UF03":"U2 M' U2 M'",
-        "DF03":"M U2 M U2",
-        "FF05":"F E R U R' E' R U' R' F' M2",
-        "BF01":"M2 F R U R' E R U' R' E' F'",
-        "BF05":"L U' L' U L B L' B' M2 B L B' L' U' L U L'",
-        "UF07":"M2",
-        "UF00":"R2",
-        "UF02":"U' R2 L' U' L U R2 U' L' U L U R2",
-        "UF04":"L U' L' U L' U' L U R2 U' L' U L U' L U L'",
-        "UF06":"L' U' L U R2 U' L' U L",
-        "BF00":"U' L U R2 U' L' U",
-        "BF02":"U' R2 L' U' L U R U' L' U L R U R2",
-        "BF04":"L U' L' U L U' L' U R2 U' L U L' U' L U L'",
-        "BF06":"U' L U L2 U' L' U R2 U' L U L2 U' L' U",
-        "DF02":"D' R2 L U' L U R2 U' L' U L' D R2",
-        "DF04":"L U' L U L2 U' L' U R2 U' L U L2 U' L' U L'",
-        "DF06":"U' L2 U R2 U' L2 U",
-        "LF00":"L2 U' L' U R2 U' L U L2",
-        "LF02":"L U' L' U R2 U' L U L'",
-        "LF04":"U' L' U R2 U' L U",
-        "LF06":"L' U' L' U R2 U' L U L",
-        "FF02":"U' L' U L' U' L U R2 U' L' U L U' L U",
-        "FF04":"R' U L U' R2 U L' U' R",
-        "FF06":"D' R U' L2 U R' U' L2 U D R2",
-        "RF00":"R' U R2 U' R' F' R U R2 U' R' F",
-        "RF04":"F' R U R2 U' R' F R U R2 U' R",
-        "RF06":"U' L U L' U' L U L' R2 L U' L' U L U' L' U"
-    }
-
-    var mLayer = ["FF05","BF01","UF03","DF03"];
-    var rLayer = ["FF06","BF02","UF02","DF02","RF04","RF00"];
-
-    var checkFlip = function(macroBtnName, macro, label, layer){
-        var edgeIdx = parseInt( macro[0] ) * 10 + parseInt( macro[1]);
-        if( edgeIdx % 2 == 1) {  // 奇数のとき
-            var idx = layer.indexOf( label );
-            if( idx != -1 ) {
-                var convIdx = idx % 2 == 0 ? idx + 1 : idx - 1;
-                label = layer[convIdx];
-            }
-        }
-        return label;
-    }
-
     var that = {
         generateFaces: function(){
             for( var faceNum = 0; faceNum < faceName.length; faceNum ++ ){
                 var $svg = $('<svg class="face ' + faceName[faceNum] +'"></svg>');
-                $svg.css('width',"400px").css('height',"400px");
                 var $shadow = $('<svg class="face ' + faceName[faceNum] + ' shadow"></svg>');
-                $shadow.css('width',"400px").css('height',"400px");
                 var svgData = generateFaceType[faceName[faceNum]];
                 for( var i = 0; i < svgData.length; i++ ) {
                     var svgNS = "http://www.w3.org/2000/svg";
@@ -584,18 +366,13 @@ var Cube = function(){
                         .css('-ms-transform',currentAnimation[name]["matrix"])
                         .css('-o-transform',currentAnimation[name]["matrix"]);
                     turnExecuteEnd(shadowPlane);
-                    var className = $(this).attr("class");
-                    $(this).attr('class', className.replace(" moving",""));
                 });
                 currentOperation = turnOperation;
                 currentAnimation = {};
                 currentState = {};
-
+                $shadow.addClass('hide');
             }
-            jQuery.each( $shadow, function(){
-                var className = $(this).attr("class");
-                $(this).attr('class', className + " moving");
-            });
+            $shadow.removeClass('hide');
 
             backUpCurrentState(); // 現在の色のリストを取得.
             currentOperation = turnOperation;
@@ -699,69 +476,17 @@ var Cube = function(){
         scramble: function(){
             if( that.checkComplete() ) {
                 for( var i = 0; i < 100; i++ ){
-                    var rand = Math.floor(Math.random()*(availableTurn.length-6)); // -6 = M E S X Y Z を使わない.
+                    var rand = Math.floor(Math.random()*availableTurn.length);
                     var targetTurn = availableTurn[rand];
                     var prime =  ((Math.floor(Math.random()*2) % 2) == 0) ? "P":"";
-                    //var layer =  ((Math.floor(Math.random()*2) % 2) == 0) ? "1":"2";
-                    that.turnExecute( targetTurn + "1" + prime );
+                    var layer =  ((Math.floor(Math.random()*2) % 2) == 0) ? "1":"2";
+                    that.turnExecute( targetTurn + layer + prime );
                 }
             }
         },
         setMagnification: function( magnification ) {
             mag = magnification;
             that.setPosition();
-        },
-        analyze: function(){
-            var edgeOrder = getAlgorithmOrder("DF07", getUnsolvedLabelEdge, "DF03");
-            var cornerOrder = getAlgorithmOrder("DF00", getUnsolvedLabelCorner, "DF06");
-            return convResult(edgeOrder,cornerOrder);;
-        },
-        setColorTable: function(colorList){
-            faceColor = colorList;
-        },
-        scrambleByInput: function(scramble){
-            scramble = scramble.split(' ');
-            var queue = [];
-            for( var i = 0; i < scramble.length; i ++ ){
-                var turn = scramble[i];
-                if( turn.length == 1){
-                    queue.push( turn + "1");
-                    //that.turnExecute( turn + "1");
-                } else if( turn.length == 2) {
-                    if( turn[1] == 2){
-                        queue.push( turn[0] + "1");
-                        queue.push( turn[0] + "1");
-                        //that.turnExecute( turn[0] + "1");
-                        //that.turnExecute( turn[0] + "1");
-                    } else if( turn[1] == "'") {
-                        queue.push( turn[0] + "1" + "P");
-                        //that.turnExecute( turn[0] + "1" + "P");
-                    }
-                }
-            }
-            var seek = 0;
-            var time = setInterval(function(){
-                var turn = queue[seek++];
-                that.turnExecute( turn );
-                if( queue.length == seek ){
-                    clearInterval(time);
-                }
-
-            }, 500 );
-        },
-        ExecuteMacro: function(macro,type){
-            jQuery.each( labelNames, function(label,v){
-                if( macro.slice(2) == v ) {
-                    var checkNum = parseInt(label.slice(-1));
-                    if( type == "edge" && checkNum % 2 == 1 ) {
-                        label = checkFlip("edgeMacro", macro, label, mLayer);
-                        that.scrambleByInput( algos[label] );
-                    } else if( type == "corner" && checkNum % 2 == 0) {
-                        label = checkFlip("cornerMacro", macro, label, rLayer);
-                        that.scrambleByInput( algos[label] );
-                    }
-                }
-            });
         }
     }
     return that;
@@ -819,28 +544,6 @@ var Control = function(turns){
     var isShow = true;
 
     var that = {
-        setAlgorithms: function(algo){
-            $('#algoBtn').html("");
-            $('#algoBtn').append('Edge:<br>');
-            for( var e = 0; e < algo["edge"].length; e ++ ){
-                var $btn = $('<button></button>');
-                var name = algo["edge"][e];
-                $btn.attr('name',"edgeMacro")
-                    .html( ("00"+e).slice(-2) + name );
-                $('#algoBtn').append( $btn );
-            }
-            $('#algoBtn').append('<br>Corner:<br>');
-            for( var c = 0; c < algo["corner"].length; c ++ ){
-                var $btn = $('<button></button>');
-                var name = algo["corner"][c];
-                $btn.attr('name','cornerMacro')
-                    .html( ("00"+c).slice(-2) + name );
-                $('#algoBtn').append( $btn );
-            }
-        },
-        getColorTable: function(){
-            return colorList;
-        },
         generateKeys: function(){
             var $keys = $('#keys');
             jQuery.each( availableTurns, function(i,val){
@@ -848,11 +551,10 @@ var Control = function(turns){
                 generateSelection( $keys, val + "P" );
                 $keys.append($('<br/>'));
             });
-            /*
             generateSelection( $keys, "Minus" );
             $keys.append($('<br/>'));
             generateSelection( $keys, "Plus" );
-            $keys.append($('<br/>'));*/
+            $keys.append($('<br/>'));
         },
         eventBind: function(){
             // show/hideボタン.
@@ -1022,7 +724,6 @@ var LayerControl = function(){
 }
 
 var WindowControl = function(){
-    /*
     // 回転時処理---------------------------------------------------
     document.querySelector('#cubeViewPort').addEventListener("mousemove", mouseOver, false);
     var lastX =  315 + 270, offsetX = 0; // + 270
@@ -1054,7 +755,7 @@ var WindowControl = function(){
         $('#rotate').trigger('click');
         offsetX = e.pageX - lastX;
         offsetY = e.pageY - lastY;
-    });*/
+    }).css('cursor','pointer');
 
     var that = {
         updateLayout: function(){
@@ -1082,7 +783,6 @@ jQuery(function(){
     control.generateKeys();
     control.restoreLastSettings();
     control.eventBind();
-    cube.setColorTable( control.getColorTable() );
 
     var layerCtrl = LayerControl();
     var windowCtrl = WindowControl();
@@ -1147,20 +847,4 @@ jQuery(function(){
     $('svg:not(.shadow)>path').mouseover( function(){
         console.log( this.className.animVal + "------------------------------" );
     });
-
-    $('button[name="analyze"]').click(function(){
-        var algorithms = cube.analyze();
-        control.setAlgorithms( algorithms );
-        $('button[name="edgeMacro"]').click(function(){
-            cube.ExecuteMacro($(this).html(),"edge");
-        });
-        $('button[name="cornerMacro"]').click(function(){
-            cube.ExecuteMacro($(this).html(),"corner");
-        });
-    });
-
-    $('button[name="scramble"]').click(function(){
-        cube.scrambleByInput($('input[name="scramble"]').val());
-    });
-
 });

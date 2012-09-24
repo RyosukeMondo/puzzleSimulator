@@ -1,0 +1,176 @@
+body {
+    background-color: white;
+}
+
+#keys>button {
+    font-family:monospace;
+    width: 50px;
+    height: 30px;
+}
+
+.shadow {
+    display: none;
+}
+
+#fb {
+    position: absolute;
+    bottom:0;
+}
+
+#fc2_footer {
+    display: none;
+}
+
+.fc2add {
+    display: none;
+}
+
+#cubeWrapper {
+    background-color: #115555;
+    width: 1000px;
+    height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+#cubeContainer{
+    position:absolute;
+    top: 10%;
+    left: 10%;
+}
+
+#cubeViewPort{
+    -webkit-perspective: 1200px;
+    -webkit-perspective-origin: 50% 50%;
+    -moz-perspective: 1200px;
+    -moz-perspective-origin: 50% 50%;
+    -ms-perspective: 1200px;
+    -ms-perspective-origin: 50% 50%;
+    -o-perspective: 1200px;
+    -o-perspective-origin: 50% 50%;
+}
+
+#faces {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+}
+
+#faces>div {
+    background-color: blue;
+    width: 400px;
+    height: 400px;
+    display: none;
+}
+
+.face,.arrow {
+    position:absolute;
+    top:0%;
+    left:0%;
+    z-index: -1;
+}
+
+/* 141.421356 , 70.710678*/
+
+.faceCorner {
+    width:  90px; /* 100 - 20 */
+    height: 90px; /* 100 - 20 */
+}
+
+.hide {
+    display: none;
+}
+
+
+#colorSelector {
+    display: inline;
+    font-size: 12px;
+    color: #ffffff;
+
+}
+.colorpicker {
+    z-index: 1000;
+}
+
+
+
+.NColor {
+    display: none;
+}
+
+#layer {
+
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 100;
+    font-size: 30px;
+    color: white;
+}
+
+.moving {
+    display: block;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+}
+
+#plane {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+
+}
+
+#puzzleTitle {
+    position: absolute;
+    color: white;
+    font-family: monospace;
+    font-size: 30px;
+}
+
+.panelItem {
+
+    width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#control {
+    background-color: #116655;
+    width: 1000px;
+    font-family: monospace;
+    font-size: 20px;
+    color: #EEE;
+    padding: 10px;
+    text-align: left;
+    z-index: 2;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#hint {
+    position: relative;
+    margin-left: auto;
+    background: rgba(3,5,6,0.5);
+    color: #EEE;
+    text-align: center;
+
+    top: 680px;
+    font-size: 30px;
+    padding: 50px;
+
+    z-index: 100;
+}
+
+.off {
+    display: none;
+}
+
+/* for U [.U,.F,.M,.UM,.BM,.LS,.US]*/
+.a {
+    opacity: 0;
+}
