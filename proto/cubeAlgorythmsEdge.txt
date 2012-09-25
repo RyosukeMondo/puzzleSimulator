@@ -1,0 +1,552 @@
+AA	/		
+AB	U'	DA	U'
+AC		U'M'U'2MU'	
+AD		R'URU'M2UR'U'RM2	
+AE	U'	DE	U
+AF	/		
+AG	L'	AC	L
+AH	(r)	UR'U'M'URU'M	(r')
+AI	R	OI	R'
+AJ	R'Uw	IJ	Uw'R
+AK	Uw'	DG	Uw
+AL	RL'	OI	R'L
+AM	L	AC	L'
+AN	(r')	URU'MUR'U'M'	(r)
+AO		U'M2UR'U'M2UR	
+AP	RUw	ST	Uw'R'
+AQ	Uw'	AM	Uw
+AR	R2	WT	R2
+AS	Uw'	SA	Uw
+AT	/		
+AU		U'M2UR2U'M2UR2	
+AV	U'	DV	U
+AW	L2	AC	L2
+AX	/		
+BA	U'	AD	U'
+BB	/		
+BC	U	CD	U'
+BD		U2M'U2M	
+BE	U2	DE	U2
+BF	/		
+BG	U2	DG	U2
+BH	/		
+BI	Uw'U'	DE	UwU
+BJ	UL2	WL	L2U'
+BK	Uw'L'	AC	Luw
+BL	U'	AH	U'
+BM	U2	DM	U2
+BN	U'	AN	U
+BO	U2	DO	U2
+BP	U'R2	UL	R2U
+BQ	Uw'L	AC	UwL'
+BR	RUwU	DG	U'R'Uw'
+BS	UwU	DG	U'Uw'
+BT	U	CH	U'
+BU	U'	AU	U
+BV		MD2M'D2	
+BW	U	CW	U'
+BX			
+CA		UM'U2MU	
+CB	U	DC	U'
+CC	/		
+CD		LU'L'UM2U'LUL'M2	
+CE	R	CA	R'
+CF	/		
+CG	U	DG	U'
+CH	(r)	U'LUM'U'L'UM	(r')
+CI	Uw	DM	Uw'
+CJ	L2	WL	L2
+CK	Uw	DO	Uw'
+CL	/		
+CM	U	DM	U'
+CN	(r')	U'L'UMU'LUM'	(r)
+CO	R'	CA	R
+CP	U2	AH	U2
+CQ	Uw	DE	Uw'
+CR	LUw'	RS	UwL'
+CS	Uw	DG	Uw'
+CT	L2	WT	L2
+CU	R2	CA	R2
+CV	U'	DV	U
+CW		UM2U'L2UM2U'L2	
+CX	/		
+DA		M2R'URU'M2UR'U'R	
+DB		M'U2MU2	
+DC		M2LU'L'UM2U'LUL'	
+DD	/		
+DE		M2URU'M2UR'U'	
+DF	/		
+DG		M2U'L'UM2U'LU	
+DH	U'L2	WT	L2U
+DI	Uw'R	CA	Ruw
+DJ	LUw'U	DG	U'UwL'
+DK	Uw'U	DG	U'Uw
+DL	U'	CH	U
+DM		M2U'LUM2U'L'U	
+DN	U'	CN	U
+DO		M2UR'U'M2URU'	
+DP	/		
+DQ	UwU'	DE	UUw'
+DR	UR2	UT	R2U'
+DS	UwL'	AC	LUw'
+DT	U	AH	U'
+DU		M2UR2U'M2UR2U'	
+DV	(r')	MU2M'U2	(r)
+DW		M2U'L2UM2U'L2U	
+DX	/		
+EA		RU'M2UR'U'M2U	
+EB	U'	EA	U
+EC	R	AC	R'
+ED		URU'M2UR'U'M2	
+EE	/		
+EF	/		
+EG	Uw	IK	Uw'
+EH	Uw	IL	Uw'
+EI	R2	OI	R2
+EJ	Uw	IJ	Uw'
+EK	L'Uw	IJ	Uw'L
+EL	R	UL	R'
+EM	(f')	U'RUM2U'R'UM2	(f)
+EN	Lw'U'	TU	ULw
+EO	R	AU	R'
+EP	R'U	UT	U'R
+EQ	R'	UT	R
+ER	Uw'	QR	Uw
+ES	/		
+ET	UR'U'	UT	URU'
+EU	RU'	DE	UR'
+EV	RU'	DV	UR'
+EW	RU'	DW	UR'
+EX	/		
+FA	/		
+FB	/		
+FC	/		
+FD	/		
+FE	/		
+FF	/		
+FG	/		
+FH	/		
+FI	/		
+FJ	/		
+FK	/		
+FL	/		
+FM	/		
+FN	/		
+FO	/		
+FP	/		
+FQ	/		
+FR	/		
+FS	/		
+FT	/		
+FU	/		
+FV	/		
+FW	/		
+FX	/		
+GA	L'	CA	L
+GB	U	CG	U'
+GC		L'UM2U'LUM2U'	
+GD	U'	GC	U
+GE	Uw	KI	Uw'
+GF	/		
+GG	/		
+GH	Uw	KL	Uw'
+GI	L'U'Lw'	flip	LwUL
+GJ	Uw	KJ	Uw'
+GK	L	WL	L'
+GL	U'LU	WL	U'L'U
+GM	L'	CW	L
+GN	L2(r)U	LW	U'(r')L2
+GO	(f)	UL'U'M2ULU'M2	(f)
+GP	LU'	WL	L'U
+GQ	RUw'	SR	UwR'
+GR	Uw'	SR	Uw
+GS	Uw'	SO	Uw
+GT	L	WT	L'
+GU	L'U	DU	U'L
+GV	L'U	DV	U'L
+GW	L'	CG	L
+GX	/		
+HA	R2U'	TU	U'R2
+HB	Lw'	flip	Lw
+HC	(r)	M'U'LUMU'L'U	(r')
+HD	UL2	WT	L2U'
+HE	Uw	LI	Uw'
+HF	/		
+HG	Uw	LK	Uw'
+HH	/		
+HI		M'UL'U'MULU'	
+HJ		M'UL2U'MUL2U'	
+HK		M'ULU'MUL'U'	
+HL		M'LUL'U'MULU'L'	
+HM	L'U	LW	U'L
+HN	U2(r)U	LV	U'(r')U2
+HO	RU'	TU	UR'
+HP	U'LU	HI	U'L'U
+HQ		M'U'R'UMU'RU	
+HR		M'U'R2UMU'R2U	
+HS		M'U'RUMU'R'U	
+HT		M'R'U'RUMU'R'UR	
+HU	D'	WH	D
+HV	U	LV	U'
+HW	U	LW	U'
+HX	/		
+IA	Uw'	ED	Uw
+IB	Uw'	EA	Uw
+IC	Uw	MD	Uw'
+ID	Uw'R	AC	R'Uw
+IE	Uw	MI	Uw'
+IF	/		
+IG	L'U'Lw'	flip	LwUL
+IH		UL'U'M'ULU'M	
+II	/		
+IJ		L'U'M'UL'U'MUL2	
+IK		L'U'M'UL2U'MUL'	
+IL		L'U'M'ULU'MU	
+IM		L'DM'U'MD'M'ULw	
+IN	Uw(r)U	LW	U'(r')Uw'
+IO	LUw'	JK	UwL'
+IP	U'	IL	U
+IQ	L'U'	HQ	UL
+IR	L'U'	HR	UL
+IS	L'U'	HS	UL
+IT	U2	IL	U2
+IU		L'D'M'U'MDM'ULw	
+IV	L'	LV	L
+IW	L'ULU'	LW	UL'U'L
+IX	/		
+JA	R'Uw	JI	Uw'R
+JB	UL'	IM	LU'
+JC	L'	IM	L
+JD	U'L'	IM	LU
+JE	Uw	JI	Uw'
+JF	/		
+JG	Uw	JK	Uw'
+JH		UL2U'M'UL2U'M	
+JI		L2U'M'ULU'MUL	
+JJ	/		
+JK		L2U'M'UL'U'MUL'	
+JL		L2U'M'UL2U'MU	
+JM	Uw'	JI	Uw
+JN	(r)	HI	(r')
+JO	Uw'	JK	Uw
+JP	U'	JL	U
+JQ	L2U'	HQ	UL2
+JR	L2U'	HR	UL2
+JS	L2U'	HS	UL2
+JT	U2	JL	U2
+JU	L2	LU	L2
+JV	L2	LV	L2
+JW	L2U'Lw'	flip	LwUL2
+JX	/		
+KA	Uw'	GD	Uw
+KB	UwR'	AC	Ruw'
+KC	Uw	OD	Uw'
+KD	Uw'	GC	Uw
+KE	L'Uw	JI	Uw'L
+KF	/		
+KG	L	LW	L'
+KH		ULU'M'UL'U'M	
+KI		LU'M'UL2U'MUL	
+KJ		LU'M'ULU'MUL2	
+KK	/		
+KL		LU'M'UL'U'MU	
+KM	LU'Lw'	flip	LwUL'
+KN	(r)	HJ	(r')
+KO	Uw	OS	Uw'
+KP	U'	KL	U
+KQ	LU'	HQ	UL'
+KR	LU'	HR	UL'
+KS	LU'	HS	UL'
+KT	U2	KL	U2
+KU	L	LU	L'
+KV	L	LV	L'
+KW	LU'L'U	LW	U'LUL'
+KX	/		
+LA	R2	LU	L2
+LB	U'	HA	U
+LC	U'Lw'	flip	LwU
+LD	U'	HC	U
+LE	R'	LU	R
+LF	/		
+LG	U'LU	LW	U'L'U
+LH	L	IH	L'
+LI		U'M'UL'U'MUL	
+LJ		U'M'UL2U'MUL2	
+LK		U'M'ULU'MUL'	
+LL	/		
+LM	U'L'U	LW	U'LU
+LN	(r)	HK	(r')
+LO	R	LU	R'
+LP	U'	HL	U
+LQ	U'	HQ	U
+LR	U'	HR	U
+LS	U'	HS	U
+LT	LU2	IL	U2L'
+LU		D'M'U'MDM'UM	
+LV		D2M'U'MD2M'UM	
+LW		DM'U'MD'M'UM	
+LX	/		
+MA	L	CA	L'
+MB	U2	MD	U2
+MC		LUM2U'L'UM2U'	
+MD		U'LUM2U'L'UM2	
+ME	(f)	U'L'UM2U'LUM2	(f')
+MF	/		
+MG	L	CW	L'
+MH	L'U	WL	U'L
+MI		Lw'U'MDM'UMD'L	
+MJ	Uw'	IJ	Uw
+MK	LU'Lw'	flip	LwUL'
+ML	U'L'U	WL	U'LU
+MM	/		
+MN	(r)	HW	(r')
+MO	Uw'	IK	Uw
+MP	Uw'	IL	Uw
+MQ	Uw'	IM	Uw
+MR	Uw	QR	Uw'
+MS	R'Uw	RQ	Uw'R
+MT	L'	WT	L
+MU	LU	DU	U'L'
+MV	LU	DV	U'L'
+MW	L	CM	L'
+MX	/		
+NA	(r')	MURU'M'UR'U'	(r)
+NB	U	NC	U'
+NC	(r')	MU'L'UM'U'LU	(r)
+ND	U'	NC	U
+NE	R2(r)	UH	(r')R2
+NF	/		
+NG	L2(r)	WH	(r')L2
+NH	URw	LH	Rw'U'
+NI	Uw(r)	WH	(r')Uw'
+NJ	(r)	IH	(r')
+NK	(r)	JH	(r')
+NL	(r)	KH	(r')
+NM	(r)	WH	(r')
+NN	/		
+NO	(r)	UH	(r')
+NP	(r)U	VL	U'(r')
+NQ	(r)	RH	(r')
+NR	(r)	SH	(r')
+NS	(r)	TH	(r')
+NT	(r)	U'R'UM'U'RUM	(r')
+NU	Lw'	UH	Lw
+NV	Lw2	flip	Lw2
+NW	Rw	WH	Rw'
+NX	/		
+OA		R'U'M2URU'M2U	
+OB	U'	OA	U
+OC	R'	AC	R
+OD		UR'U'M2URU'M2	
+OE	R'	AU	R
+OF	/		
+OG	(f')	URU'M2UR'U'M2	(f)
+OH	R	UH	R'
+OI	(r)	U'MD'M'UMDM'	(r')
+OJ	Uw'	KJ	Uw
+OK	Uw	SO	Uw'
+OL	R	UL	R'
+OM	Uw'	KI	Uw
+ON	(r)	HU	(r')
+OO	/		
+OP	Uw	ST	Uw'
+OQ	R'URw	flip	Rw'U'R
+OR	Uw	SR	Uw'
+OS		RwUMD'M'U'MDR'	
+OT	URU'	UT	UR'U'
+OU	R'	AO	R
+OV	R'U'	DV	UR
+OW	R'U'	DW	UR
+OX	/		
+PA	U2	HC	U2
+PB	U'R2	LU	R2U
+PC	U2	HA	U2
+PD	U2Lw'	flip	Lw'U2
+PE	R'U	TU	U'R
+PF	/		
+PG	LU'	LW	UL'
+PH	U'LU	IH	U'L'U
+PI	U'	LI	U
+PJ	U'	LJ	U
+PK	U'	LK	U
+PL	U'	LH	U
+PM	Uw'	LI	Uw
+PN	(r)U	LV	U'(r')
+PO	Uw	TS	Uw'
+PP	/		
+PQ	U	TQ	U'
+PR	U	TR	U'
+PS	U	TS	U'
+PT	U	TH	U'
+PU	U	TU	U'
+PV	U'	LV	U
+PW	U'	LW	U
+PX	/		
+QA	Uw'	MD	Uw
+QB	UwR	AC	R'Uw'
+QC	Uw	ED	Uw'
+QD	Uw	EA	Uw'
+QE	R'	TU	R
+QF	/		
+QG	RUw'	RS	UwR'
+QH		U'R'UM'U'RUM	
+QI	R'U	HI	U'R
+QJ	R'U	HJ	U'R
+QK	R'U	HK	U'R
+QL	U2	QT	U2
+QM	Uw	MI	Uw'
+QN	(r)	HR	(r')
+QO	R'ULw'	flip	LwU'R
+QP	U	QT	U'
+QQ	/		
+QR		R'UM'U'R'UMU'R2	
+QS		R'UM'U'R2UMU'R'	
+QT		R'UM'U'RUMU'	
+QU	RUR'U'	TU	URU'R'
+QV	R'	TV	R
+QW	R'	TW	R
+QX	/		
+RA	R	SO	R'
+RB	U'R	SO	R'
+RC	LUw'	RS	UwL'
+RD	UR	SO	R'U'
+RE	Uw'	RQ	Uw
+RF	/		
+RG	Uw'	RS	Uw
+RH		U'R2UM'U'R2UM	
+RI	R2U	HI	U'R2
+RJ	R2U	HJ	U'R2
+RK	R2U	HK	U'R2
+RL	U2	RT	U2
+RM	Uw	RS	Uw'
+RN	(r)	HS	(r')
+RO	Uw	RS	Uw'
+RP	U	RT	U'
+RQ		R2UM'U'RUMU'R	
+RR	/		
+RS		R2UM'U'R'UMU'R'	
+RT		R2UM'U'R2UMU'	
+RU	R2ULw'	flip	LwU'R2
+RV	R2	TV	R2
+RW	R2	TW	R2
+RX	/		
+SA	Uw'	OD	Uw
+SB	Uw	GC	Uw'
+SC	Uw	GD	Uw'
+SD	UwL'	CA	LUw'
+SE	RULw'	flip	LwU'R'
+SF	/		
+SG	Uw'	OS	Uw
+SH		U'RUM'U'R'UM	
+SI	RU	HI	U'R'
+SJ	RU	HJ	U'R'
+SK	RU	HK	U'R'
+SL	U2	ST	U2
+SM	R'Uw	RQ	Uw'R
+SN	(r)	HT	(r')
+SO		RD'M'UMDM'U'Rw'	
+SP	U	ST	U'
+SQ		RUM'U'R2UMU'R	
+SR		RUM'U'RUMU'R2	
+SS	/		
+ST		RUM'U'R'UMU'	
+SU	RUR'U'	TU	URU'R'
+SV	R	TV	R'
+SW	R	TW	R'
+SX	/		
+TA	ULw'	flip	LwU'
+TB	U	HC	U'
+TC	R2	TW	R2
+TD	U	HA	U'
+TE	UR'U'	TU	URU'
+TF	/		
+TG	L	TW	L'
+TH		R'U'RUM'U'R'URM	
+TI	U	HI	U'
+TJ	U	HJ	U'
+TK	U	HK	U'
+TL	R'U2	ST	U2R
+TM	L'	TW	L
+TN	(r)	HQ	(r')
+TO	URU'	TU	UR'U'
+TP	U	HT	U'
+TQ		UM'U'R'UMU'R	
+TR		UM'U'R2UMU'R2	
+TS		UM'U'RUMU'R'	
+TT	/		
+TU		D'M'UMDM'U'M	
+TV		D2M'UMD2M'U'M	
+TW		DM'UMD'M'U'M	
+TX	/		
+UA		R2U'M2UR2U'M2U	
+UB	U'	UA	U
+UC	R2	AC	R2
+UD		UR2U'M2UR2U'M2	
+UE		R2U'M2UR'U'M2UR'	
+UF	/		
+UG	R2U'	DG	UR2
+UH	U'	UT	U
+UI	L'	UL	L
+UJ	L2	UL	L2
+UK	L	UL	L'
+UL		M'U'MD'M'UMD	
+UM	R2U'	DM	UR2
+UN	(r)Uw	LI	Uw'(r')
+UO		R2U'M2URU'M2UR	
+UP	U'	UL	U
+UQ	R'URU'	UT	UR'U'R
+UR	R2ULw'	flip	LwU'R2
+US	RUR'U'	UT	URU'R'
+UT		M'UMD'M'U'MD	
+UU	/		
+UV	R2U'	DV	UR2
+UW	R2U'	DW	UR2
+UX	/		
+VA	U'	VD	U
+VB		D2MD2M'	
+VC	U	VD	U'
+VD	(r')	U2MU2M'	(r)
+VE	RU'	VD	UR'
+VF	/		
+VG	L'U	VD	U'L
+VH	U	VL	U'
+VI	(r)	LH	(r')
+VJ	L2	VL	L2
+VK	L	VL	L'
+VL		M'U'MD2M'UMD2	
+VM	LU	VD	U'L'
+VN	Lw2	flip	Lw2
+VO	R'U'	VD	UR
+VP	U'	VL	U
+VQ	R'	VT	R
+VR	R2	VT	R2
+VS	R	VT	R'
+VT		M'UMD2M'U'MD2	
+VU	R2U'	VD	UR2
+VV	/		
+VW	L2U	VD	U'L2
+VX	/		
+WA	L2	CA	L2
+WB	U	WC	U'
+WC		L2UM2U'L2UM2U'	
+WD		U'L2UM2U'L2UM2	
+WE	L2U	DE	U'L2
+WF	/		
+WG		L2UM2U'LUM2U'L	
+WH	U	WL	U'
+WI	L'U'LU	WL	U'L'UL
+WJ	R2U'Lw'	flip	LwUR2
+WK	LU'L'U	WL	U'LUL'
+WL		M'U'MDM'UMD'	
+WM		L2UM2U'L'UM2U'L'	
+WN	(r)Uw'	TS	Uw(r)
+WO	L2U	DO	U'L2
+WP	U'	WL	U
+WQ	R'	WT	R
+WR	R2	WT	R2
+WS	R	WT	R'
+WT		M'UMDM'U'MD'	
+WU	L2U	DU	U'L2
+WV	L2U	DV	U'L2
+WW	/		
+WX	/		

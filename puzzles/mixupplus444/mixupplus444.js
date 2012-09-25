@@ -599,7 +599,7 @@ var Cube = function(){
 
     var turnExecuteEnd = function(shadow){
         var home = shadow.className.animVal.split(" ")[1];
-        var $home = $('#faces>svg:not(.shadow).' + home);
+        var $home = $('#faces>svg.face:not(.shadow).' + home);
 
         var orderAry = currentTargetStickers["order"];
         var stickersAry = currentTargetStickers["stickers"];
@@ -620,7 +620,7 @@ var Cube = function(){
                     var afterIndex = operation['isPrime'] ? (preIndex + 6) % 24 : (preIndex + 18) % 24;
                     var afterLabel = stickers[afterFace][afterIndex];
 
-                    var $pre = $('#faces>svg:not(.arrow)>path.' + preLabel);
+                    var $pre = $('#faces>svg.face:not(.arrow)>path.' + preLabel);
                     setColor( $pre, currentState[afterLabel]);
                     $home[0].appendChild( this );
                 });
@@ -646,15 +646,14 @@ var Cube = function(){
                 });
             }
         };
-
-        that.checkComplete();
         var className = $(shadow).attr("class");
         $(shadow).attr('class', className.replace(" moving", ""));
+        that.checkComplete();
     };
 
     var currentState = {};
     var backUpCurrentState = function(){
-        var $target = $('#faces>svg:not(shadow)>path');
+        var $target = $('#faces>svg.face:not(.shadow)>path');
         jQuery.each( $target, function(){
             currentState[ this.className.animVal ] = $(this).attr('fill');
         });
@@ -933,6 +932,9 @@ var Cube = function(){
                             .css('-o-transform',matrix);
                         clearInterval( time );
                         turnExecuteEnd(shadowPlane);
+                        if( $shadow.length == i) {
+                            that.checkComplete();
+                        }
                         delete currentAnimation[name];
                         if( isEmpty( currentAnimation ) ) {
                             currentOperation = "";
@@ -947,7 +949,7 @@ var Cube = function(){
         },
         checkComplete: function(){
             var isComplete = true;
-            var $planes = $('#faces>svg:not(.shadow)');
+            var $planes = $('#faces>svg.face:not(.shadow)');
             for( var i = 0; i < $planes.length; i ++ ){
                 var $stickers = $planes.eq(i).children();
                 if( $stickers.length == 0) {
@@ -970,34 +972,75 @@ var Cube = function(){
             return isComplete;
         },
         turnRandom: function(table, repeat, times){
+            var queue = [];
             for( var i = 0; i < repeat; i ++ ) {
                 var rand = Math.floor(Math.random()*table.length);
                 var targetTurn = table[rand];
                 var prime =  ((Math.floor(Math.random()*2) % 2) == 0) ? ",P":"";
-                for( var j = 0; j < times; j++ ) that.turnExecute( targetTurn + prime );
+                for( var j = 0; j < times; j++ ) queue.push( targetTurn + prime );
             }
+            return queue;
         },
         scramble: function(){
             if( that.checkComplete() ) {
+                var queue = [];
                 var subESM = ["ML","MR","EU","ED","SF","SB"];
                 var mainESM = ["MM",'EE','SS'];
                 var main = ["U","F","L","B","R","D"];
-                that.turnRandom( subESM, 50, 2 ); // center.
+                var tmpQueue = that.turnRandom( subESM, 50, 2 ); // center.
+                jQuery.merge( queue, tmpQueue);
 
                 for( var i = 0; i < 10; i++ ) { // inner edge.
                     var rand = Math.floor(Math.random()*mainESM.length);
                     var targetTurn = mainESM[rand];
-                    that.turnExecute( targetTurn );
-                    that.turnRandom( main, 4, 2);
-                    that.turnExecute( targetTurn );
+                    queue.push( targetTurn );
+                    jQuery.merge( queue, that.turnRandom( main, 4, 2) );
+                    queue.push( targetTurn );
                 }
-
-                that.turnRandom( availableTurn, 30, 1);
+                jQuery.merge( queue, that.turnRandom( availableTurn, 30, 1));
+                that.turnExecuteInterval(queue);
             }
         },
         setMagnification: function( magnification ) {
             mag = magnification;
             that.setPosition();
+        },
+        turnExecuteInterval: function(queue){
+            var seek = 0;
+            var time = setInterval(function(){
+                var turn = queue[seek++];
+                that.turnExecute( turn );
+                if( queue.length == seek ){
+                    clearInterval(time);
+                }
+
+            }, 10 );
+        },
+        turnMacro: function(macro){
+            var macroAry = macro.split(' ');
+            var queue = [];
+            for( var i = 0; i < macroAry.length; i ++ ){
+                var turn = macroAry[i];
+                var dstTurn = "";
+                var ope = turn.match(/^[a-zA-Z]+/);
+                if( ope != null) {
+                    dstTurn = ope[0];
+                }
+                var num = turn.match(/\d/);
+                if( num != null) {
+                    num = parseInt( num[0] );
+                } else {
+                    num = 1;
+                }
+                var prime = turn.match(/'/);
+                if( prime != null ) {
+                    dstTurn += ',P';
+                }
+                if( dstTurn != "") {
+                    for( var j = 0; j < num; j++ ) queue.push( dstTurn);
+                }
+            }
+            that.turnExecuteInterval(queue);
         }
     }
     return that;
@@ -1009,7 +1052,7 @@ var Control = function(turns){
     var availableKeys = {
         65:"A",66:"B",67:"C",68:"D",69:"E",70:"F",71:"G",72:"H",73:"I",74:"J",75:"K",76:"L",77:"M",78:"N",79:"O",80:"P",
         81:"Q",82:"R",83:"S",84:"T",85:"U",86:"V",87:"W",88:"X",89:"Y",90:"Z",44:",",190:".",47:"/", 7:"'",187:";",27:"ESC",
-        48:"0",49:"1",50:"2",51:"3",52:"4",53:"5",55:"6",56:"7","57":"8",59:"9"};
+        };
     // 色の初期設定.
     var colorList = {
         'U':"#FFFFFF",
@@ -1068,21 +1111,37 @@ var Control = function(turns){
         $select.attr('name',name);
 
         var $option = $('<option/>');
-        $option.attr('value',-1).html('none'); // .attr('selected',"")
+        $option.attr('value',-1).html('none');
         $select.append($option);
 
+        var used = [];
         jQuery.each( availableKeys, function(keyCode,letter){
             var $option = $('<option/>');
             $option.attr('value',keyCode).html(letter);
-            if( name[0] == letter && name[1] != "P") {
+            if( name[0] == letter && name.indexOf(',') == -1 && used.indexOf(name[0]) == -1) {
                 keyTable[name] = name.charCodeAt(0);
                 $option.attr('selected','');
+                used.push( name );
             }
             $select.append($option);
         });
 
         $target.append($select);
     }
+
+    var defaultMacro = [
+        "R U' U' R' U' R U' U' L' U R' U' L",
+        "MM2' U MM2' U MM2' U U MM2 U MM2 U MM2 U U",
+        "MM2 EE2' MM2' EE2 F' EE2' MM2 EE2 MM2' F",
+        "SS R SS' L' SS R' SS' L",
+        "R2 F2 R' B' R F2 R' B R'",
+        "U U' F F'",
+        "U",
+        "U",
+        "U",
+        "U"
+    ];
+    var savedMacro = [];
 
     var isShow = true;
 
@@ -1114,7 +1173,7 @@ var Control = function(turns){
             jQuery.each( availableTurns, function(i,val){
                 generateSelection( $keys, val );
                 generateSelection( $keys, val + ",P" );
-                //if( i % 4 == 3 ) $keys.append($('<br/>'));
+                if( i % 3 == 2 ) $keys.append($('<br/>'));
             });
         },
         eventBind: function(){
@@ -1175,7 +1234,7 @@ var Control = function(turns){
                     .css('-ms-perspective',viewRange + 'px')
                     .css('-o-perspective',viewRange + 'px');
 
-            })
+            });
 
             // [back face].
             $('#backFace').click(function(){
@@ -1189,7 +1248,28 @@ var Control = function(turns){
                     .css('-moz-backface-visibility',ope)
                     .css('-ms-backface-visibility',ope)
                     .css('-o-backface-visibility',ope);
-            })
+            });
+
+            // macro.
+            for( var i = 0; i < 10; i++ ) {
+                var $input = $('<button value="' + (i+1)%10 + '">'+(i+1)%10+'</button>');
+                var $text = $('<input type="text" name="'+(i+1)%10+'">');
+                if( savedMacro != [] ) {
+                    $text.val( savedMacro[i] );
+                } else {
+                    $text.val( defaultMacro[i] );
+                }
+                value="'+ defaultMacro[i] +'"
+                $('#macro').append($input).append($text);
+                if( i % 3 == 2) $('#macro').append($('<br>'));
+            }
+            $('#macro>button[value="save"]').click(function(){
+                var macros = [];
+                jQuery.each( $('#macro>input'), function(i,v){
+                    macros.push( $(this).val().replace(',',''));
+                });
+                store.set('macroSetting', macros.join(','));
+            });
         },
         restoreLastSettings: function(){
             // キーボード設定.
@@ -1255,7 +1335,21 @@ var Control = function(turns){
                     }
                 }
             });
-
+            // macro設定.
+            store.get('macroSetting', function(ok, val) {
+                if (ok) {
+                    if( val != null && val != "") {
+                        try {
+                            var tmpAry = val.split(',');
+                            for( var i = 0; i < tmpAry.length; i++ ) {
+                                savedMacro[i] = tmpAry[i];
+                            }
+                        } catch (e) {
+                            console.log(e);
+                        }
+                    }
+                }
+            });
         },
         getTurnName: function(keyCode){
             var turnName = "";
@@ -1396,20 +1490,22 @@ jQuery(function(){
             prime = (isShift && prime == "") ? ",P" : "";
             cube.turnExecute( turn + prime);
         }
-
         cube.checkComplete();
     }
 
     $('body').keyup(function(e){
         console.log(e.which);
-        if(e.which == 46) { // deleteキー
-            cube.turnExecute('undo');
+        if( !isMacroFocus ) {
+            if(e.which == 46) { // deleteキー
+                cube.turnExecute('undo');
+            } else if(e.which >= 48 && e.which <= 57) { // 数字
+                $('#macro>button[value='+(e.which-48)+']').click();
+            }
+            var isShift = (e.shiftKey) ? true : false;
+
+            var turnName = control.getTurnName(e.which);
+            parseTurnName(turnName, isShift);
         }
-
-        var isShift = (e.shiftKey) ? true : false;
-
-        var turnName = control.getTurnName(e.which);
-        parseTurnName(turnName, isShift);
     });
 
 
@@ -1428,17 +1524,13 @@ jQuery(function(){
     });
     // scramble --------------------------
     $("button[name='scramble']").click(function(){
-        $('#hint').html("now scrambling.");
-        var time = setInterval(function(){
-            var text = $('#hint').html();
-            $('#hint').html(text + '.' );
-        }, 1000);
-
-        $.when( cube.scramble())
-            .done( function(){
-                cube.checkComplete();
-                clearInterval(time);
-            });
+        $('#hint').html("now scrambling. wait 5+ sec");
+        setTimeout( function(){
+            cube.scramble();
+            cube.checkComplete();
+            $('#hint').html("Now Complete.");
+            $('#hint').addClass('off');
+        }, 10);
     });
 
     // faceBookのコメントを縮小.
@@ -1451,10 +1543,6 @@ jQuery(function(){
     $('svg:not(.shadow)>path').mouseover( function(){
         console.log( this.className.animVal + "------------------------------" );
     });
-    $('button[name="scramble"]').click(function(){
-        cube.scrambleByInput($('input[name="scramble"]').val());
-    });
-
 
     $('#mag').change(function(){
         var mag = parseInt( this.value );
@@ -1463,5 +1551,20 @@ jQuery(function(){
     // 暫定対応. svgで描画した矢印のクリックイベントを拾うため.
     $('#mag').val(parseInt($('#mag').val()) + 1).change();
 
+    // macro.
+    $('#macro>button').click(function(){
+        if( this.value != "save" || this.value != reset) {
+            var macro = $('#macro>input[name='+this.value+']').val();
+            cube.turnMacro(macro);
+        }
+    });
 
+    // #macroのinputにフォーカスがあるかの判断.
+    var isMacroFocus = false;
+    $('#macro>input')
+        .focus(function(){
+            isMacroFocus = true;
+        }).blur(function(){
+            isMacroFocus = false;
+        });
 });
