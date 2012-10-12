@@ -1,0 +1,960 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : Office Memo  
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20120401
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>cubememo</title>
+<link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css" />
+<link href="http://fonts.googleapis.com/css?family=Coda:400,800" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+    <!-- jQuery -->
+    <script type="text/javascript" src="puzzles/commonjs/jquery-1.8.1.min.js"></script>
+    <!-- local -->
+    <script type="text/javascript" src="cube-solution.js"></script>
+    <link href="cube-solution.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="menu-wrapper">
+	<div id="menu">
+		<ul>
+			<li><a href="index.html">Home</a></li>
+            <li><a href="cube-simulator.html">simulators</a></li>
+            <li class="current_page_item"><a href="cube-solution.html">solutions</a></li>
+			<!--<li><a href="#">Blog</a></li>
+			<li><a href="#">Photos</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Links</a></li>
+			<li><a href="#">Contact</a></li>-->
+		</ul>
+	</div>
+	<!-- end #menu -->
+</div>
+<div id="header-wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="#">Cube <span>Memo</span></a></h1>
+			<p>Template design by <a href="http://www.freecsstemplates.org">FCT</a></p>
+		</div>
+	</div>
+</div>
+<div id="banner"><img src="images/main.png" width="1000" height="350" alt="" /></div>
+<div id="wrapper">
+	<!-- end #header -->
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+				<div id="content" style="width:1000px">
+                    <div class="post">
+                        <h2 class="title"><span>+</span> <a>M Method(freeStyle)</a></h2>
+                        <p class="meta"><span class="date">2012-09-28</span><span class="posted">Posted by <a>ももんが</a></span></p>
+                        <div style="clear: both;">&nbsp;</div>
+                        <div class="entry">
+                            <p>コミュテータ(Commutators)とセットアップ(SetUpMove)を利用し、
+                                3点交換の全パターンを手順化した方法です。</p>
+                            <p>一般に上記の方針で目隠し用解法とする場合は、FreeStyleと呼びます。
+                            すべての手順は、私のCommutatorsの理解を元に考えたものです。
+                            着想時、M2法では面倒くさくなりがちなM列の処理を、M2ではなくM,M'で置き換えられないか？と
+                            考えたのがきっかけです。そのため私はM法と呼んでいます。</p>
+                            <p>コミュテータでは、ある回転をA,別の回転をBと表現します。
+                                また、それぞれの逆回転をA',B'と表現します。
+                                そして、A B A' B'と回転することで、AとBで関係するパーツのみが入れ替わります。</p>
+                            <p>コミュテータの考えを理解するため、PLLの十字交換の手順を見てみましょう。</p>
+                            <p><b>M2' U M2' U2 M2' U M2'</b> => 十字交換</p>
+                            <P>この手順の元になっているコミュテータは次の手順です。</P>
+                            <p><b>M2 U2 M2 U2</b></p>
+                            <p>ここで、A = M2, B = U2 と考えると、</p>
+                            <p>A B A' B' = M2 U2 M2' U2'</p>
+                            <p>と、コミュテータの関係になっていることがわかります。</p>
+                            <P>この手順では、(UF)<=>(UB),(DF)<=>(DB)が入れ替わります。</P>
+                            <p>このままではPLLとして利用できませんので、セットアップをします。</p>
+                            <p>セットアップとは、一連の手順Cを実行する前にある手順Dを実行しておき、
+                            手順Cを実行し終えたあとに、手順D'を実行することで、入れ替わるパーツを
+                            別のものにできます。</p>
+                            <p><b>M2 U2 M2 U2</b> => 手順C</p>
+                            <p>のD面での入れ替わりは発生してほしくないので、入れ替わってほしいU面のパーツを
+                            D面に移動しておきます。</p>
+                            <p><b>M2</b></p>
+                            <p>つぎに、U面も入れ替わってほしいパーツを入れ替えが起こる場所に移動しておきます。</p>
+                            <p><b>U</b></p>
+                            <p>M2 Uのセットアップによって、(UF)<=>(UB)、(DF)<=>(DB)にいずれももともとU面にあったパーツが
+                                配置されました。</p>
+                            <p>このセットアップ手順は、コミュテータ手順を実行後に忘れずに逆回転をしておきます。
+                            <p><b>U' M2</b></p>
+                            ここまでをまとめると、</p>
+                            <p><b>(M2 U) (M2 U2 M2 U2) (U' M2)</b></p>
+                            <p>最後の(U2 U')は(U)と同じですので、結果としてPLLの十字交換と等しくなります。</p>
+                            <p><b>M2' U M2' U2 M2' U M2'</b></p>
+
+                            <p>このように、コミュテータとセットアップを利用して、エッジのすべての3点交換を
+                            手順化したものが、目隠し用解法ではFreeStyleと呼び、そのうち私がまとめたものをM法と呼ぶことにしました。</p>
+                            <p>以下、手順一覧です。下のボタンをクリックしてください。</p>
+                            <p>DFをバッファとして、その他2点の入れ替え手順です。</p>
+                            <p>[]内はコミュテータ手順、それより外側はセットアップ手順、()は持ち変えを意味します。</p>
+                            <p>記載のない組み合わせは考慮がもともと手順がない（入れ替え不要）なものです。</p>
+                            <p>[flip]はDFとDBのエッジ反転を意味します。</p>
+                            <div class="algo">
+                            <button>UR</button><div>
+                            <p>(UR)->(UR):</p>
+                            <p>(UR)->(UF):U'[M2R'URU'M2UR'U'R]U'</p>
+                            <p>(UR)->(UL):U'M'U'2MU'</p>
+                            <p>(UR)->(UB):R'URU'M2UR'U'RM2</p>
+                            <p>(UR)->(FR):U'[M2URU'M2UR'U']U</p>
+                            <p>(UR)->(FD):</p>
+                            <p>(UR)->(FL):L'[U'M'U'2MU']L</p>
+                            <p>(UR)->(FU):(r)UR'U'M'URU'M(r')</p>
+                            <p>(UR)->(LF):Uw'[M2URU'M2UR'U']Uw</p>
+                            <p>(UR)->(LD):R'Uw[L'U'M'UL'U'MUL2]Uw'R</p>
+                            <p>(UR)->(LB):Uw'[M2U'L'UM2U'LU]Uw</p>
+                            <p>(UR)->(LU):R2[M'U'MD'M'UMD]R2</p>
+                            <p>(UR)->(BL):M2U'LUM2U'L'U</p>
+                            <p>(UR)->(BD):(r')URU'MUR'U'M'(r)</p>
+                            <p>(UR)->(BR):U'M2UR'U'M2UR</p>
+                            <p>(UR)->(BU):RUw[RUM'U'R'UMU']Uw'R'</p>
+                            <p>(UR)->(RB):Uw'[M2U'LUM2U'L'U]Uw</p>
+                            <p>(UR)->(RD):R2[M'UMDM'U'MD']R2</p>
+                            <p>(UR)->(RF):Uw'[M2UR'U'M2URU']Uw</p>
+                            <p>(UR)->(RU):ULw'[flip]LwU'</p>
+                            <p>(UR)->(DR):U'M2UR2U'M2UR2</p>
+                            <p>(UR)->(DB):U'(r')[MU2M'U2](r)U</p>
+                            <p>(UR)->(DL):L2[U'M'U'2MU']L2</p>
+                            <p>(UR)->(DF):</p>
+                            </div><button>UF</button><div>
+                            <p>(UF)->(UR):U'[R'URU'M2UR'U'RM2]U'</p>
+                            <p>(UF)->(UF):</p>
+                            <p>(UF)->(UL):U[LU'L'UM2U'LUL'M2]U'</p>
+                            <p>(UF)->(UB):U2M'U2M</p>
+                            <p>(UF)->(FR):U2[M2URU'M2UR'U']U2</p>
+                            <p>(UF)->(FD):</p>
+                            <p>(UF)->(FL):U2[M2U'L'UM2U'LU]U2</p>
+                            <p>(UF)->(FU):Lw'[flip]Lw</p>
+                            <p>(UF)->(LF):Uw'U'[M2URU'M2UR'U']UwU</p>
+                            <p>(UF)->(LD):UL2[M'U'MDM'UMD']L2U'</p>
+                            <p>(UF)->(LB):Uw'L'[U'M'U'2MU']Luw</p>
+                            <p>(UF)->(LU):U'(r)[UR'U'M'URU'M](r')U'</p>
+                            <p>(UF)->(BL):U2[M2U'LUM2U'L'U]U2</p>
+                            <p>(UF)->(BD):U'(r')[URU'MUR'U'M'](r)U</p>
+                            <p>(UF)->(BR):U2[M2UR'U'M2URU']U2</p>
+                            <p>(UF)->(BU):U'R2[M'U'MD'M'UMD]R2U</p>
+                            <p>(UF)->(RB):Uw'L[U'M'U'2MU']UwL'</p>
+                            <p>(UF)->(RD):RUwU[M2U'L'UM2U'LU]U'R'Uw'</p>
+                            <p>(UF)->(RF):UwU[M2U'L'UM2U'LU]U'Uw'</p>
+                            <p>(UF)->(RU):U(r)[U'LUM'U'L'UM](r')U'</p>
+                            <p>(UF)->(DR):U'[U'M2UR2U'M2UR2]U</p>
+                            <p>(UF)->(DB):MD2M'D2</p>
+                            <p>(UF)->(DL):U[UM2U'L2UM2U'L2]U'</p>
+                            <p>(UF)->(DF):</p>
+                            </div><button>UL</button><div>
+                            <p>(UL)->(UR):UM'U2MU</p>
+                            <p>(UL)->(UF):U[M2LU'L'UM2U'LUL']U'</p>
+                            <p>(UL)->(UL):</p>
+                            <p>(UL)->(UB):LU'L'UM2U'LUL'M2</p>
+                            <p>(UL)->(FR):R[UM'U2MU]R'</p>
+                            <p>(UL)->(FD):</p>
+                            <p>(UL)->(FL):U[M2U'L'UM2U'LU]U'</p>
+                            <p>(UL)->(FU):(r)U'LUM'U'L'UM(r')</p>
+                            <p>(UL)->(LF):Uw[M2U'LUM2U'L'U]Uw'</p>
+                            <p>(UL)->(LD):L2[M'U'MDM'UMD']L2</p>
+                            <p>(UL)->(LB):Uw[M2UR'U'M2URU']Uw'</p>
+                            <p>(UL)->(LU):U'Lw'[flip]LwU</p>
+                            <p>(UL)->(BL):UM2U'LUM2U'L'</p>
+                            <p>(UL)->(BD):(r')U'L'UMU'LUM'(r)</p>
+                            <p>(UL)->(BR):R'[UM'U2MU]R</p>
+                            <p>(UL)->(BU):U2(r)[UR'U'M'URU'M](r')U2</p>
+                            <p>(UL)->(RB):Uw[M2URU'M2UR'U']Uw'</p>
+                            <p>(UL)->(RD):LUw'[R2UM'U'R'UMU'R']UwL'</p>
+                            <p>(UL)->(RF):Uw[M2U'L'UM2U'LU]Uw'</p>
+                            <p>(UL)->(RU):L2[M'UMDM'U'MD']L2</p>
+                            <p>(UL)->(DR):R2[UM'U2MU]R2</p>
+                            <p>(UL)->(DB):U'(r')[MU2M'U2](r)U</p>
+                            <p>(UL)->(DL):UM2U'L2UM2U'L2</p>
+                            <p>(UL)->(DF):</p>
+                            </div><button>UB</button><div>
+                            <p>(UB)->(UR):M2R'URU'M2UR'U'R</p>
+                            <p>(UB)->(UF):M'U2MU2</p>
+                            <p>(UB)->(UL):M2LU'L'UM2U'LUL'</p>
+                            <p>(UB)->(UB):</p>
+                            <p>(UB)->(FR):M2URU'M2UR'U'</p>
+                            <p>(UB)->(FD):</p>
+                            <p>(UB)->(FL):M2U'L'UM2U'LU</p>
+                            <p>(UB)->(FU):U'L2[M'UMDM'U'MD']L2U</p>
+                            <p>(UB)->(LF):Uw'R[UM'U2MU]Ruw</p>
+                            <p>(UB)->(LD):LUw'U[M2U'L'UM2U'LU]U'UwL'</p>
+                            <p>(UB)->(LB):Uw'U[M2U'L'UM2U'LU]U'Uw</p>
+                            <p>(UB)->(LU):U'(r)[U'LUM'U'L'UM](r')U</p>
+                            <p>(UB)->(BL):M2U'LUM2U'L'U</p>
+                            <p>(UB)->(BD):U'(r')[U'L'UMU'LUM'](r)U</p>
+                            <p>(UB)->(BR):M2UR'U'M2URU'</p>
+                            <p>(UB)->(BU):U2Lw'[flip]LwU2</p>
+                            <p>(UB)->(RB):UwU'[M2URU'M2UR'U']UUw'</p>
+                            <p>(UB)->(RD):UR2[M'UMD'M'U'MD]R2U'</p>
+                            <p>(UB)->(RF):UwL'[U'M'U'2MU']LUw'</p>
+                            <p>(UB)->(RU):U(r)[UR'U'M'URU'M](r')U'</p>
+                            <p>(UB)->(DR):M2UR2U'M2UR2U'</p>
+                            <p>(UB)->(DB):(r')MU2M'U2(r)</p>
+                            <p>(UB)->(DL):M2U'L2UM2U'L2U</p>
+                            <p>(UB)->(DF):</p>
+                            </div><button>FR</button><div>
+                            <p>(FR)->(UR):RU'M2UR'U'M2U</p>
+                            <p>(FR)->(UF):U'[RU'M2UR'U'M2U]U</p>
+                            <p>(FR)->(UL):R[U'M'U'2MU']R'</p>
+                            <p>(FR)->(UB):URU'M2UR'U'M2</p>
+                            <p>(FR)->(FR):</p>
+                            <p>(FR)->(FD):</p>
+                            <p>(FR)->(FL):Uw[L'U'M'UL2U'MUL']Uw'</p>
+                            <p>(FR)->(FU):Uw[L'U'M'ULU'MU]Uw'</p>
+                            <p>(FR)->(LF):R2(r)[U'MD'M'UMDM'](r')R2</p>
+                            <p>(FR)->(LD):Uw[L'U'M'UL'U'MUL2]Uw'</p>
+                            <p>(FR)->(LB):L'Uw[L'U'M'UL'U'MUL2]Uw'L</p>
+                            <p>(FR)->(LU):R[M'U'MD'M'UMD]R'</p>
+                            <p>(FR)->(BL):(f')U'RUM2U'R'UM2(f)</p>
+                            <p>(FR)->(BD):Lw'U'[D'M'UMDM'U'M]ULw</p>
+                            <p>(FR)->(BR):R[U'M2UR2U'M2UR2]R'</p>
+                            <p>(FR)->(BU):R'U[M'UMD'M'U'MD]U'R</p>
+                            <p>(FR)->(RB):R'[M'UMD'M'U'MD]R</p>
+                            <p>(FR)->(RD):Uw'[R'UM'U'R'UMU'R2]Uw</p>
+                            <p>(FR)->(RF):RURw[flip]Rw'U'R'</p>
+                            <p>(FR)->(RU):UR'U'[M'UMD'M'U'MD]URU'</p>
+                            <p>(FR)->(DR):RU'[M2URU'M2UR'U']UR'</p>
+                            <p>(FR)->(DB):RU'(r')[MU2M'U2](r)UR'</p>
+                            <p>(FR)->(DL):RU'[M2U'L2UM2U'L2U]UR'</p>
+                            <p>(FR)->(DF):</p>
+                            </div><button>FD</button><div>
+                            <p>(FD)->(UR):</p>
+                            <p>(FD)->(UF):</p>
+                            <p>(FD)->(UL):</p>
+                            <p>(FD)->(UB):</p>
+                            <p>(FD)->(FR):</p>
+                            <p>(FD)->(FD):</p>
+                            <p>(FD)->(FL):</p>
+                            <p>(FD)->(FU):</p>
+                            <p>(FD)->(LF):</p>
+                            <p>(FD)->(LD):</p>
+                            <p>(FD)->(LB):</p>
+                            <p>(FD)->(LU):</p>
+                            <p>(FD)->(BL):</p>
+                            <p>(FD)->(BD):</p>
+                            <p>(FD)->(BR):</p>
+                            <p>(FD)->(BU):</p>
+                            <p>(FD)->(RB):</p>
+                            <p>(FD)->(RD):</p>
+                            <p>(FD)->(RF):</p>
+                            <p>(FD)->(RU):</p>
+                            <p>(FD)->(DR):</p>
+                            <p>(FD)->(DB):</p>
+                            <p>(FD)->(DL):</p>
+                            <p>(FD)->(DF):</p>
+                            </div><button>FL</button><div>
+                            <p>(FL)->(UR):L'[UM'U2MU]L</p>
+                            <p>(FL)->(UF):U[L'UM2U'LUM2U']U'</p>
+                            <p>(FL)->(UL):L'UM2U'LUM2U'</p>
+                            <p>(FL)->(UB):U'L'UM2U'LUM2</p>
+                            <p>(FL)->(FR):Uw[LU'M'UL2U'MUL]Uw'</p>
+                            <p>(FL)->(FD):</p>
+                            <p>(FL)->(FL):</p>
+                            <p>(FL)->(FU):Uw[LU'M'UL'U'MU]Uw'</p>
+                            <p>(FL)->(LF):L'U'Lw'[flip]LwUL</p>
+                            <p>(FL)->(LD):Uw[LU'M'ULU'MUL2]Uw'</p>
+                            <p>(FL)->(LB):L[M'U'MDM'UMD']L'</p>
+                            <p>(FL)->(LU):U'LU[M'U'MDM'UMD']U'L'U</p>
+                            <p>(FL)->(BL):L'[UM2U'L2UM2U'L2]L</p>
+                            <p>(FL)->(BD):L2(r)U[DM'U'MD'M'UM]U'(r')L2</p>
+                            <p>(FL)->(BR):(f)UL'U'M2ULU'M2(f)</p>
+                            <p>(FL)->(BU):LU'[M'U'MDM'UMD']L'U</p>
+                            <p>(FL)->(RB):RUw'[RUM'U'RUMU'R2]UwR'</p>
+                            <p>(FL)->(RD):Uw'[RUM'U'RUMU'R2]Uw</p>
+                            <p>(FL)->(RF):Uw'[RD'M'UMDM'U'Rw']Uw</p>
+                            <p>(FL)->(RU):L[M'UMDM'U'MD']L'</p>
+                            <p>(FL)->(DR):L'U[M2UR2U'M2UR2U']U'L</p>
+                            <p>(FL)->(DB):L'U(r')[MU2M'U2](r)U'L</p>
+                            <p>(FL)->(DL):L'UM2U'L'UM2L2</p>
+                            <p>(FL)->(DF):</p>
+                            </div><button>FU</button><div>
+                            <p>(FU)->(UR):(r2)R'UR'U'MURU'Rw(r2)</p>
+                            <p>(FU)->(UF):Lw'[flip]Lw</p>
+                            <p>(FU)->(UL):(r)M'U'LUMU'L'U(r')</p>
+                            <p>(FU)->(UB):UL2[M'UMDM'U'MD']L2U'</p>
+                            <p>(FU)->(FR):Uw[U'M'UL'U'MUL]Uw'</p>
+                            <p>(FU)->(FD):</p>
+                            <p>(FU)->(FL):Uw[U'M'ULU'MUL']Uw'</p>
+                            <p>(FU)->(FU):</p>
+                            <p>(FU)->(LF):M'UL'U'MULU'</p>
+                            <p>(FU)->(LD):M'UL2U'MUL2U'</p>
+                            <p>(FU)->(LB):M'ULU'MUL'U'</p>
+                            <p>(FU)->(LU):M'LUL'U'MULU'L'</p>
+                            <p>(FU)->(BL):L'U[DM'U'MD'M'UM]U'L</p>
+                            <p>(FU)->(BD):U2(r)U[D2M'U'MD2M'UM]U'(r')U2</p>
+                            <p>(FU)->(BR):RU'[D'M'UMDM'U'M]UR'</p>
+                            <p>(FU)->(BU):U'LU[M'UL'U'MULU']U'L'U</p>
+                            <p>(FU)->(RB):M'U'R'UMU'RU</p>
+                            <p>(FU)->(RD):M'U'R2UMU'R2U</p>
+                            <p>(FU)->(RF):M'U'RUMU'R'U</p>
+                            <p>(FU)->(RU):M'R'U'RUMU'R'UR</p>
+                            <p>(FU)->(DR):U'[D'M'UMDM'U'M]U</p>
+                            <p>(FU)->(DB):U[D2M'U'MD2M'UM]U'</p>
+                            <p>(FU)->(DL):U[DM'U'MD'M'UM]U'</p>
+                            <p>(FU)->(DF):</p>
+                            </div><button>LF</button><div>
+                            <p>(LF)->(UR):Uw'[URU'M2UR'U'M2]Uw</p>
+                            <p>(LF)->(UF):Uw'[RU'M2UR'U'M2U]Uw</p>
+                            <p>(LF)->(UL):Uw[U'LUM2U'L'UM2]Uw'</p>
+                            <p>(LF)->(UB):Uw'R[U'M'U'2MU']R'Uw</p>
+                            <p>(LF)->(FR):Uw[Lw'U'MDM'UMD'L]Uw'</p>
+                            <p>(LF)->(FD):</p>
+                            <p>(LF)->(FL):L'U'Lw'[flip]LwUL</p>
+                            <p>(LF)->(FU):UL'U'M'ULU'M</p>
+                            <p>(LF)->(LF):</p>
+                            <p>(LF)->(LD):L'U'M'UL'U'MUL2</p>
+                            <p>(LF)->(LB):L'U'M'UL2U'MUL'</p>
+                            <p>(LF)->(LU):L'U'M'ULU'MU</p>
+                            <p>(LF)->(BL):L'DM'U'MD'M'ULw</p>
+                            <p>(LF)->(BD):Uw(r)U[DM'U'MD'M'UM]U'(r')Uw'</p>
+                            <p>(LF)->(BR):LUw'[L2U'M'UL'U'MUL']UwL'</p>
+                            <p>(LF)->(BU):U'[L'U'M'ULU'MU]U</p>
+                            <p>(LF)->(RB):L'U'[M'U'R'UMU'RU]UL</p>
+                            <p>(LF)->(RD):L'U'[M'U'R2UMU'R2U]UL</p>
+                            <p>(LF)->(RF):L'U'[M'U'RUMU'R'U]UL</p>
+                            <p>(LF)->(RU):U2[L'U'M'ULU'MU]U2</p>
+                            <p>(LF)->(DR):L'D'M'U'MDM'ULw</p>
+                            <p>(LF)->(DB):L'[D2M'U'MD2M'UM]L</p>
+                            <p>(LF)->(DL):L'ULU'[DM'U'MD'M'UM]UL'U'L</p>
+                            <p>(LF)->(DF):</p>
+                            </div><button>LD</button><div>
+                            <p>(LD)->(UR):R'Uw[L2U'M'ULU'MUL]Uw'R</p>
+                            <p>(LD)->(UF):UL'[L'DM'U'MD'M'ULw]LU'</p>
+                            <p>(LD)->(UL):L'[L'DM'U'MD'M'ULw]L</p>
+                            <p>(LD)->(UB):U'L'[L'DM'U'MD'M'ULw]LU</p>
+                            <p>(LD)->(FR):Uw[L2U'M'ULU'MUL]Uw'</p>
+                            <p>(LD)->(FD):</p>
+                            <p>(LD)->(FL):Uw[L2U'M'UL'U'MUL']Uw'</p>
+                            <p>(LD)->(FU):UL2U'M'UL2U'M</p>
+                            <p>(LD)->(LF):L2U'M'ULU'MUL</p>
+                            <p>(LD)->(LD):</p>
+                            <p>(LD)->(LB):L2U'M'UL'U'MUL'</p>
+                            <p>(LD)->(LU):L2U'M'UL2U'MU</p>
+                            <p>(LD)->(BL):Uw'[L2U'M'ULU'MUL]Uw</p>
+                            <p>(LD)->(BD):(r)[M'UL'U'MULU'](r')</p>
+                            <p>(LD)->(BR):Uw'[L2U'M'UL'U'MUL']Uw</p>
+                            <p>(LD)->(BU):U'[L2U'M'UL2U'MU]U</p>
+                            <p>(LD)->(RB):L2U'[M'U'R'UMU'RU]UL2</p>
+                            <p>(LD)->(RD):L2U'[M'U'R2UMU'R2U]UL2</p>
+                            <p>(LD)->(RF):L2U'[M'U'RUMU'R'U]UL2</p>
+                            <p>(LD)->(RU):U2[L2U'M'UL2U'MU]U2</p>
+                            <p>(LD)->(DR):L2[D'M'U'MDM'UM]L2</p>
+                            <p>(LD)->(DB):L2[D2M'U'MD2M'UM]L2</p>
+                            <p>(LD)->(DL):L2U'Lw'[flip]LwUL2</p>
+                            <p>(LD)->(DF):</p>
+                            </div><button>LB</button><div>
+                            <p>(LB)->(UR):Uw'[U'L'UM2U'LUM2]Uw</p>
+                            <p>(LB)->(UF):UwR'[U'M'U'2MU']Ruw'</p>
+                            <p>(LB)->(UL):Uw[UR'U'M2URU'M2]Uw'</p>
+                            <p>(LB)->(UB):Uw'[L'UM2U'LUM2U']Uw</p>
+                            <p>(LB)->(FR):L'Uw[L2U'M'ULU'MUL]Uw'L</p>
+                            <p>(LB)->(FD):</p>
+                            <p>(LB)->(FL):L[DM'U'MD'M'UM]L'</p>
+                            <p>(LB)->(FU):ULU'M'UL'U'M</p>
+                            <p>(LB)->(LF):LU'M'UL2U'MUL</p>
+                            <p>(LB)->(LD):LU'M'ULU'MUL2</p>
+                            <p>(LB)->(LB):</p>
+                            <p>(LB)->(LU):LU'M'UL'U'MU</p>
+                            <p>(LB)->(BL):LU'Lw'[flip]LwUL'</p>
+                            <p>(LB)->(BD):(r)[M'UL2U'MUL2U'](r')</p>
+                            <p>(LB)->(BR):Uw[RwUMD'M'U'MDR']Uw'</p>
+                            <p>(LB)->(BU):U'[LU'M'UL'U'MU]U</p>
+                            <p>(LB)->(RB):LU'[M'U'R'UMU'RU]UL'</p>
+                            <p>(LB)->(RD):LU'[M'U'R2UMU'R2U]UL'</p>
+                            <p>(LB)->(RF):LU'[M'U'RUMU'R'U]UL'</p>
+                            <p>(LB)->(RU):U2[LU'M'UL'U'MU]U2</p>
+                            <p>(LB)->(DR):L[D'M'U'MDM'UM]L'</p>
+                            <p>(LB)->(DB):L[D2M'U'MD2M'UM]L'</p>
+                            <p>(LB)->(DL):LU'L'U[DM'U'MD'M'UM]U'LUL'</p>
+                            <p>(LB)->(DF):</p>
+                            </div><button>LU</button><div>
+                            <p>(LU)->(UR):R2[D'M'U'MDM'UM]L2</p>
+                            <p>(LU)->(UF):U'(r2)[R'UR'U'MURU'Rw](r2)U</p>
+                            <p>(LU)->(UL):U'Lw'[flip]LwU</p>
+                            <p>(LU)->(UB):U'(r)[M'U'LUMU'L'U](r')U</p>
+                            <p>(LU)->(FR):R'[D'M'U'MDM'UM]R</p>
+                            <p>(LU)->(FD):</p>
+                            <p>(LU)->(FL):U'LU[DM'U'MD'M'UM]U'L'U</p>
+                            <p>(LU)->(FU):L[UL'U'M'ULU'M]L'</p>
+                            <p>(LU)->(LF):U'M'UL'U'MUL</p>
+                            <p>(LU)->(LD):U'M'UL2U'MUL2</p>
+                            <p>(LU)->(LB):U'M'ULU'MUL'</p>
+                            <p>(LU)->(LU):</p>
+                            <p>(LU)->(BL):U'L'U[DM'U'MD'M'UM]U'LU</p>
+                            <p>(LU)->(BD):(r)[M'ULU'MUL'U'](r')</p>
+                            <p>(LU)->(BR):R[D'M'U'MDM'UM]R'</p>
+                            <p>(LU)->(BU):U'[M'LUL'U'MULU'L']U</p>
+                            <p>(LU)->(RB):U'[M'U'R'UMU'RU]U</p>
+                            <p>(LU)->(RD):U'[M'U'R2UMU'R2U]U</p>
+                            <p>(LU)->(RF):U'[M'U'RUMU'R'U]U</p>
+                            <p>(LU)->(RU):LU2[L'U'M'ULU'MU]U2L'</p>
+                            <p>(LU)->(DR):D'M'U'MDM'UM</p>
+                            <p>(LU)->(DB):D2M'U'MD2M'UM</p>
+                            <p>(LU)->(DL):DM'U'MD'M'UM</p>
+                            <p>(LU)->(DF):</p>
+                            </div><button>BL</button><div>
+                            <p>(BL)->(UR):L[UM'U2MU]L'</p>
+                            <p>(BL)->(UF):U2[U'LUM2U'L'UM2]U2</p>
+                            <p>(BL)->(UL):LUM2U'L'UM2U'</p>
+                            <p>(BL)->(UB):U'LUM2U'L'UM2</p>
+                            <p>(BL)->(FR):(f)U'L'UM2U'LUM2(f')</p>
+                            <p>(BL)->(FD):</p>
+                            <p>(BL)->(FL):L[UM2U'L2UM2U'L2]L'</p>
+                            <p>(BL)->(FU):L'U[M'U'MDM'UMD']U'L</p>
+                            <p>(BL)->(LF):Lw'U'MDM'UMD'L</p>
+                            <p>(BL)->(LD):Uw'[L'U'M'UL'U'MUL2]Uw</p>
+                            <p>(BL)->(LB):LU'Lw'[flip]LwUL'</p>
+                            <p>(BL)->(LU):U'L'U[M'U'MDM'UMD']U'LU</p>
+                            <p>(BL)->(BL):</p>
+                            <p>(BL)->(BD):(r)U[DM'U'MD'M'UM]U'(r')</p>
+                            <p>(BL)->(BR):Uw'[L'U'M'UL2U'MUL']Uw</p>
+                            <p>(BL)->(BU):Uw'[L'U'M'ULU'MU]Uw</p>
+                            <p>(BL)->(RB):Uw'[L'DM'U'MD'M'ULw]Uw</p>
+                            <p>(BL)->(RD):Uw[R'UM'U'R'UMU'R2]Uw'</p>
+                            <p>(BL)->(RF):R'Uw[R2UM'U'RUMU'R]Uw'R</p>
+                            <p>(BL)->(RU):L'[M'UMDM'U'MD']L</p>
+                            <p>(BL)->(DR):LU[M2UR2U'M2UR2U']U'L'</p>
+                            <p>(BL)->(DB):LU(r')[MU2M'U2](r)U'L'</p>
+                            <p>(BL)->(DL):L[UM2U'LUM2U'L']L'</p>
+                            <p>(BL)->(DF):</p>
+                            </div><button>BD</button><div>
+                            <p>(BD)->(UR):(r')MURU'M'UR'U'(r)</p>
+                            <p>(BD)->(UF):U(r')[MU'L'UM'U'LU](r)U'</p>
+                            <p>(BD)->(UL):(r')MU'L'UM'U'LU(r)</p>
+                            <p>(BD)->(UB):U'(r')[MU'L'UM'U'LU](r)U</p>
+                            <p>(BD)->(FR):(r2)UR'U'M'URU'M(r2)</p>
+                            <p>(BD)->(FD):</p>
+                            <p>(BD)->(FL):(r2)U'LUM'U'L'UM(r2)</p>
+                            <p>(BD)->(FU):URw2(r')[UL'U'M'ULU'M](r)Rw2U'</p>
+                            <p>(BD)->(LF):(r)L[UL'U'M'ULU'M]L'(r')</p>
+                            <p>(BD)->(LD):(r)[UL'U'M'ULU'M](r')</p>
+                            <p>(BD)->(LB):(r)[UL2U'M'UL2U'M](r')</p>
+                            <p>(BD)->(LU):(r)[ULU'M'UL'U'M](r')</p>
+                            <p>(BD)->(BL):(r)U[M'U'MDM'UMD']U'(r')</p>
+                            <p>(BD)->(BD):</p>
+                            <p>(BD)->(BR):(r)U'[M'UMD'M'U'MD]U(r')</p>
+                            <p>(BD)->(BU):(r)U[M'U'MD2M'UMD2]U'(r')</p>
+                            <p>(BD)->(RB):(r)[U'R2UM'U'R2UM](r')</p>
+                            <p>(BD)->(RD):(r)[U'RUM'U'R'UM](r')</p>
+                            <p>(BD)->(RF):(r)[R'U'RUM'U'R'URM](r')</p>
+                            <p>(BD)->(RU):(r)U'R'UM'U'RUM(r')</p>
+                            <p>(BD)->(DR):Lw'U'[M'UMD'M'U'MD]ULw</p>
+                            <p>(BD)->(DB):Lw2[flip]Lw2</p>
+                            <p>(BD)->(DL):RwU[M'U'MDM'UMD']U'Rw'</p>
+                            <p>(BD)->(DF):</p>
+                            </div><button>BR</button><div>
+                            <p>(BR)->(UR):R'U'M2URU'M2U</p>
+                            <p>(BR)->(UF):U'[R'U'M2URU'M2U]U</p>
+                            <p>(BR)->(UL):R'[U'M'U'2MU']R</p>
+                            <p>(BR)->(UB):UR'U'M2URU'M2</p>
+                            <p>(BR)->(FR):R'[U'M2UR2U'M2UR2]R</p>
+                            <p>(BR)->(FD):</p>
+                            <p>(BR)->(FL):(f')URU'M2UR'U'M2(f)</p>
+                            <p>(BR)->(FU):RU'[M'UMD'M'U'MD]UR'</p>
+                            <p>(BR)->(LF):(r)U'MD'M'UMDM'(r')</p>
+                            <p>(BR)->(LD):Uw'[LU'M'ULU'MUL2]Uw</p>
+                            <p>(BR)->(LB):Uw[RD'M'UMDM'U'Rw']Uw'</p>
+                            <p>(BR)->(LU):R[M'U'MD'M'UMD]R'</p>
+                            <p>(BR)->(BL):Uw'[LU'M'UL2U'MUL]Uw</p>
+                            <p>(BR)->(BD):(r)U'[D'M'UMDM'U'M]U(r')</p>
+                            <p>(BR)->(BR):</p>
+                            <p>(BR)->(BU):Uw[RUM'U'R'UMU']Uw'</p>
+                            <p>(BR)->(RB):R'URw[flip]Rw'U'R</p>
+                            <p>(BR)->(RD):Uw[RUM'U'RUMU'R2]Uw'</p>
+                            <p>(BR)->(RF):RwUMD'M'U'MDR'</p>
+                            <p>(BR)->(RU):URU'[M'UMD'M'U'MD]UR'U'</p>
+                            <p>(BR)->(DR):R'[U'M2UR'U'M2UR]R</p>
+                            <p>(BR)->(DB):R'U'(r')[MU2M'U2](r)UR</p>
+                            <p>(BR)->(DL):R'U'[M2U'L2UM2U'L2U]UR</p>
+                            <p>(BR)->(DF):</p>
+                            </div><button>BU</button><div>
+                            <p>(BU)->(UR):U2(r)[M'U'LUMU'L'U](r')U2</p>
+                            <p>(BU)->(UF):U'R2[D'M'U'MDM'UM]R2U</p>
+                            <p>(BU)->(UL):U2(r2)[R'UR'U'MURU'Rw](r2)U2</p>
+                            <p>(BU)->(UB):U2Lw'[flip]Lw'U2</p>
+                            <p>(BU)->(FR):R'U[D'M'UMDM'U'M]U'R</p>
+                            <p>(BU)->(FD):</p>
+                            <p>(BU)->(FL):LU'[DM'U'MD'M'UM]UL'</p>
+                            <p>(BU)->(FU):U'LU[UL'U'M'ULU'M]U'L'U</p>
+                            <p>(BU)->(LF):U'[U'M'UL'U'MUL]U</p>
+                            <p>(BU)->(LD):U'[U'M'UL2U'MUL2]U</p>
+                            <p>(BU)->(LB):U'[U'M'ULU'MUL']U</p>
+                            <p>(BU)->(LU):U'L[UL'U'M'ULU'M]L'U</p>
+                            <p>(BU)->(BL):Uw'[U'M'UL'U'MUL]Uw</p>
+                            <p>(BU)->(BD):(r)U[D2M'U'MD2M'UM]U'(r')</p>
+                            <p>(BU)->(BR):Uw[UM'U'RUMU'R']Uw'</p>
+                            <p>(BU)->(BU):</p>
+                            <p>(BU)->(RB):U[UM'U'R'UMU'R]U'</p>
+                            <p>(BU)->(RD):U[UM'U'R2UMU'R2]U'</p>
+                            <p>(BU)->(RF):U[UM'U'RUMU'R']U'</p>
+                            <p>(BU)->(RU):U[R'U'RUM'U'R'URM]U'</p>
+                            <p>(BU)->(DR):U[D'M'UMDM'U'M]U'</p>
+                            <p>(BU)->(DB):U'[D2M'U'MD2M'UM]U</p>
+                            <p>(BU)->(DL):U'[DM'U'MD'M'UM]U</p>
+                            <p>(BU)->(DF):</p>
+                            </div><button>RB</button><div>
+                            <p>(RB)->(UR):Uw'[U'LUM2U'L'UM2]Uw</p>
+                            <p>(RB)->(UF):UwR[U'M'U'2MU']R'Uw'</p>
+                            <p>(RB)->(UL):Uw[URU'M2UR'U'M2]Uw'</p>
+                            <p>(RB)->(UB):Uw[RU'M2UR'U'M2U]Uw'</p>
+                            <p>(RB)->(FR):R'[D'M'UMDM'U'M]R</p>
+                            <p>(RB)->(FD):</p>
+                            <p>(RB)->(FL):RUw'[R2UM'U'R'UMU'R']UwR'</p>
+                            <p>(RB)->(FU):U'R'UM'U'RUM</p>
+                            <p>(RB)->(LF):R'U[M'UL'U'MULU']U'R</p>
+                            <p>(RB)->(LD):R'U[M'UL2U'MUL2U']U'R</p>
+                            <p>(RB)->(LB):R'U[M'ULU'MUL'U']U'R</p>
+                            <p>(RB)->(LU):U2[R'UM'U'RUMU']U2</p>
+                            <p>(RB)->(BL):Uw[Lw'U'MDM'UMD'L]Uw'</p>
+                            <p>(RB)->(BD):(r)[M'U'R2UMU'R2U](r')</p>
+                            <p>(RB)->(BR):R'ULw'[flip]LwU'R</p>
+                            <p>(RB)->(BU):U[R'UM'U'RUMU']U'</p>
+                            <p>(RB)->(RB):</p>
+                            <p>(RB)->(RD):R'UM'U'R'UMU'R2</p>
+                            <p>(RB)->(RF):R'UM'U'R2UMU'R'</p>
+                            <p>(RB)->(RU):R'UM'U'RUMU'</p>
+                            <p>(RB)->(DR):RUR'U'[D'M'UMDM'U'M]URU'R'</p>
+                            <p>(RB)->(DB):R'[D2M'UMD2M'U'M]R</p>
+                            <p>(RB)->(DL):R'[DM'UMD'M'U'M]R</p>
+                            <p>(RB)->(DF):</p>
+                            </div><button>RD</button><div>
+                            <p>(RD)->(UR):R[RD'M'UMDM'U'Rw']R'</p>
+                            <p>(RD)->(UF):U'R[RD'M'UMDM'U'Rw']R'</p>
+                            <p>(RD)->(UL):LUw'[R2UM'U'R'UMU'R']UwL'</p>
+                            <p>(RD)->(UB):UR[RD'M'UMDM'U'Rw']R'U'</p>
+                            <p>(RD)->(FR):Uw'[R2UM'U'RUMU'R]Uw</p>
+                            <p>(RD)->(FD):</p>
+                            <p>(RD)->(FL):Uw'[R2UM'U'R'UMU'R']Uw</p>
+                            <p>(RD)->(FU):U'R2UM'U'R2UM</p>
+                            <p>(RD)->(LF):R2U[M'UL'U'MULU']U'R2</p>
+                            <p>(RD)->(LD):R2U[M'UL2U'MUL2U']U'R2</p>
+                            <p>(RD)->(LB):R2U[M'ULU'MUL'U']U'R2</p>
+                            <p>(RD)->(LU):U2[R2UM'U'R2UMU']U2</p>
+                            <p>(RD)->(BL):Uw[R2UM'U'R'UMU'R']Uw'</p>
+                            <p>(RD)->(BD):(r)[M'U'RUMU'R'U](r')</p>
+                            <p>(RD)->(BR):Uw[R2UM'U'R'UMU'R']Uw'</p>
+                            <p>(RD)->(BU):U[R2UM'U'R2UMU']U'</p>
+                            <p>(RD)->(RB):R2UM'U'RUMU'R</p>
+                            <p>(RD)->(RD):</p>
+                            <p>(RD)->(RF):R2UM'U'R'UMU'R'</p>
+                            <p>(RD)->(RU):R2UM'U'R2UMU'</p>
+                            <p>(RD)->(DR):R2ULw'[flip]LwU'R2</p>
+                            <p>(RD)->(DB):R2[D2M'UMD2M'U'M]R2</p>
+                            <p>(RD)->(DL):R2[DM'UMD'M'U'M]R2</p>
+                            <p>(RD)->(DF):</p>
+                            </div><button>RF</button><div>
+                            <p>(RF)->(UR):Uw'[UR'U'M2URU'M2]Uw</p>
+                            <p>(RF)->(UF):Uw[L'UM2U'LUM2U']Uw'</p>
+                            <p>(RF)->(UL):Uw[U'L'UM2U'LUM2]Uw'</p>
+                            <p>(RF)->(UB):UwL'[UM'U2MU]LUw'</p>
+                            <p>(RF)->(FR):RULw'[flip]LwU'R'</p>
+                            <p>(RF)->(FD):</p>
+                            <p>(RF)->(FL):Uw'[RwUMD'M'U'MDR']Uw</p>
+                            <p>(RF)->(FU):U'RUM'U'R'UM</p>
+                            <p>(RF)->(LF):RU[M'UL'U'MULU']U'R'</p>
+                            <p>(RF)->(LD):RU[M'UL2U'MUL2U']U'R'</p>
+                            <p>(RF)->(LB):RU[M'ULU'MUL'U']U'R'</p>
+                            <p>(RF)->(LU):U2[RUM'U'R'UMU']U2</p>
+                            <p>(RF)->(BL):R'Uw[R2UM'U'RUMU'R]Uw'R</p>
+                            <p>(RF)->(BD):(r)[M'R'U'RUMU'R'UR](r')</p>
+                            <p>(RF)->(BR):RD'M'UMDM'U'Rw'</p>
+                            <p>(RF)->(BU):U[RUM'U'R'UMU']U'</p>
+                            <p>(RF)->(RB):RUM'U'R2UMU'R</p>
+                            <p>(RF)->(RD):RUM'U'RUMU'R2</p>
+                            <p>(RF)->(RF):</p>
+                            <p>(RF)->(RU):RUM'U'R'UMU'</p>
+                            <p>(RF)->(DR):RUR'U'[D'M'UMDM'U'M]URU'R'</p>
+                            <p>(RF)->(DB):R[D2M'UMD2M'U'M]R'</p>
+                            <p>(RF)->(DL):R[DM'UMD'M'U'M]R'</p>
+                            <p>(RF)->(DF):</p>
+                            </div><button>RU</button><div>
+                            <p>(RU)->(UR):ULw'[flip]LwU'</p>
+                            <p>(RU)->(UF):U(r)[M'U'LUMU'L'U](r')U'</p>
+                            <p>(RU)->(UL):R2[DM'UMD'M'U'M]R2</p>
+                            <p>(RU)->(UB):U(r2)[R'UR'U'MURU'Rw](r2)U'</p>
+                            <p>(RU)->(FR):UR'U'[D'M'UMDM'U'M]URU'</p>
+                            <p>(RU)->(FD):</p>
+                            <p>(RU)->(FL):L[DM'UMD'M'U'M]L'</p>
+                            <p>(RU)->(FU):R'U'RUM'U'R'URM</p>
+                            <p>(RU)->(LF):U[M'UL'U'MULU']U'</p>
+                            <p>(RU)->(LD):U[M'UL2U'MUL2U']U'</p>
+                            <p>(RU)->(LB):U[M'ULU'MUL'U']U'</p>
+                            <p>(RU)->(LU):R'U2[RUM'U'R'UMU']U2R</p>
+                            <p>(RU)->(BL):L'[DM'UMD'M'U'M]L</p>
+                            <p>(RU)->(BD):(r)[M'U'R'UMU'RU](r')</p>
+                            <p>(RU)->(BR):URU'[D'M'UMDM'U'M]UR'U'</p>
+                            <p>(RU)->(BU):U[M'R'U'RUMU'R'UR]U'</p>
+                            <p>(RU)->(RB):UM'U'R'UMU'R</p>
+                            <p>(RU)->(RD):UM'U'R2UMU'R2</p>
+                            <p>(RU)->(RF):UM'U'RUMU'R'</p>
+                            <p>(RU)->(RU):</p>
+                            <p>(RU)->(DR):D'M'UMDM'U'M</p>
+                            <p>(RU)->(DB):D2M'UMD2M'U'M</p>
+                            <p>(RU)->(DL):DM'UMD'M'U'M</p>
+                            <p>(RU)->(DF):</p>
+                            </div><button>DR</button><div>
+                            <p>(DR)->(UR):R2U'M2UR2U'M2U</p>
+                            <p>(DR)->(UF):U'[R2U'M2UR2U'M2U]U</p>
+                            <p>(DR)->(UL):R2[U'M'U'2MU']R2</p>
+                            <p>(DR)->(UB):UR2U'M2UR2U'M2</p>
+                            <p>(DR)->(FR):R2U'M2UR'U'M2UR'</p>
+                            <p>(DR)->(FD):</p>
+                            <p>(DR)->(FL):R2U'[M2U'L'UM2U'LU]UR2</p>
+                            <p>(DR)->(FU):U'[M'UMD'M'U'MD]U</p>
+                            <p>(DR)->(LF):L'[M'U'MD'M'UMD]L</p>
+                            <p>(DR)->(LD):L2[M'U'MD'M'UMD]L2</p>
+                            <p>(DR)->(LB):L[M'U'MD'M'UMD]L'</p>
+                            <p>(DR)->(LU):M'U'MD'M'UMD</p>
+                            <p>(DR)->(BL):R2U'[M2U'LUM2U'L'U]UR2</p>
+                            <p>(DR)->(BD):(r)Uw[U'M'UL'U'MUL]Uw'(r')</p>
+                            <p>(DR)->(BR):R2U'M2URU'M2UR</p>
+                            <p>(DR)->(BU):U'[M'U'MD'M'UMD]U</p>
+                            <p>(DR)->(RB):R'URU'[M'UMD'M'U'MD]UR'U'R</p>
+                            <p>(DR)->(RD):R2ULw'[flip]LwU'R2</p>
+                            <p>(DR)->(RF):RUR'U'[M'UMD'M'U'MD]URU'R'</p>
+                            <p>(DR)->(RU):M'UMD'M'U'MD</p>
+                            <p>(DR)->(DR):</p>
+                            <p>(DR)->(DB):R2U'(r')[MU2M'U2](r)UR2</p>
+                            <p>(DR)->(DL):R2U'[M2U'L2UM2U'L2U]UR2</p>
+                            <p>(DR)->(DF):</p>
+                            </div><button>DB</button><div>
+                            <p>(DB)->(UR):U'(r')[U2MU2M'](r)U</p>
+                            <p>(DB)->(UF):D2MD2M'</p>
+                            <p>(DB)->(UL):U(r')[U2MU2M'](r)U'</p>
+                            <p>(DB)->(UB):(r')U2MU2M'(r)</p>
+                            <p>(DB)->(FR):RU'(r')[U2MU2M'](r)UR'</p>
+                            <p>(DB)->(FD):</p>
+                            <p>(DB)->(FL):L'U(r')[U2MU2M'](r)U'L</p>
+                            <p>(DB)->(FU):U[M'U'MD2M'UMD2]U'</p>
+                            <p>(DB)->(LF):Rw[UL'U'M'ULU'M]Rw'</p>
+                            <p>(DB)->(LD):L2[M'U'MD2M'UMD2]L2</p>
+                            <p>(DB)->(LB):L[M'U'MD2M'UMD2]L'</p>
+                            <p>(DB)->(LU):M'U'MD2M'UMD2</p>
+                            <p>(DB)->(BL):LU(r')[U2MU2M'](r)U'L'</p>
+                            <p>(DB)->(BD):Lw2[flip]Lw2</p>
+                            <p>(DB)->(BR):R'U'(r')[U2MU2M'](r)UR</p>
+                            <p>(DB)->(BU):U'[M'U'MD2M'UMD2]U</p>
+                            <p>(DB)->(RB):R'[M'UMD2M'U'MD2]R</p>
+                            <p>(DB)->(RD):R2[M'UMD2M'U'MD2]R2</p>
+                            <p>(DB)->(RF):R[M'UMD2M'U'MD2]R'</p>
+                            <p>(DB)->(RU):M'UMD2M'U'MD2</p>
+                            <p>(DB)->(DR):R2U'(r')[U2MU2M'](r)UR2</p>
+                            <p>(DB)->(DB):</p>
+                            <p>(DB)->(DL):L2U(r')[U2MU2M'](r)U'L2</p>
+                            <p>(DB)->(DF):</p>
+                            </div><button>DL</button><div>
+                            <p>(DL)->(UR):L2[UM'U2MU]L2</p>
+                            <p>(DL)->(UF):U[L2UM2U'L2UM2U']U'</p>
+                            <p>(DL)->(UL):L2UM2U'L2UM2U'</p>
+                            <p>(DL)->(UB):U'L2UM2U'L2UM2</p>
+                            <p>(DL)->(FR):L2U[M2URU'M2UR'U']U'L2</p>
+                            <p>(DL)->(FD):</p>
+                            <p>(DL)->(FL):L2UM2U'LUM2U'L</p>
+                            <p>(DL)->(FU):U[M'U'MDM'UMD']U'</p>
+                            <p>(DL)->(LF):L'U'LU[M'U'MDM'UMD']U'L'UL</p>
+                            <p>(DL)->(LD):R2U'Lw'[flip]LwUR2</p>
+                            <p>(DL)->(LB):LU'L'U[M'U'MDM'UMD']U'LUL'</p>
+                            <p>(DL)->(LU):M'U'MDM'UMD'</p>
+                            <p>(DL)->(BL):L2UM2U'L'UM2U'L'</p>
+                            <p>(DL)->(BD):(r)Uw'[UM'U'RUMU'R']Uw(r)</p>
+                            <p>(DL)->(BR):L2U[M2UR'U'M2URU']U'L2</p>
+                            <p>(DL)->(BU):U'[M'U'MDM'UMD']U</p>
+                            <p>(DL)->(RB):R'[M'UMDM'U'MD']R</p>
+                            <p>(DL)->(RD):R2[M'UMDM'U'MD']R2</p>
+                            <p>(DL)->(RF):R[M'UMDM'U'MD']R'</p>
+                            <p>(DL)->(RU):M'UMDM'U'MD'</p>
+                            <p>(DL)->(DR):L2U[M2UR2U'M2UR2U']U'L2</p>
+                            <p>(DL)->(DB):L2U(r')[MU2M'U2](r)U'L2</p>
+                            <p>(DL)->(DL):</p>
+                            <p>(DL)->(DF):</p>
+                            </div>
+                            </div>
+
+                        </div>
+
+                    <div class="post">
+                    <h2 class="title"><span>+</span> <a>M2 Method</a></h2>
+                    <p class="meta"><span class="date">2012-09-28</span><span class="posted">Posted by <a>ももんが</a></span></p>
+                    <div style="clear: both;">&nbsp;</div>
+                    <div class="entry">
+                    <p>Stefan Pochmann氏考案のM2法です。</p>
+                    <p> 目隠し用解法の一つで、特徴は向き/位置を同時に揃えられること、M2やR2を多用することです。<br />
+                        M2は、エッジ用　R2はコーナー用の解法です。  <br />
+                        本文章では、M2法についてのみ解説します。<br />
+                        (R2は例外状態が多いため、あまりうまみがないためです）</p>
+                    <p>まずキューブの面単位で名前を付けます。</p>
+                    <table width="200" border="1">
+                        <tr>
+                            <td colspan="3" rowspan="3">&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>え</td>
+                            <td>&nbsp;</td>
+                            <td colspan="6" rowspan="3">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>う</td>
+                            <td>U</td>
+                            <td>あ</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>い</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>し</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>く</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>と</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>た</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>さ</td>
+                            <td>L</td>
+                            <td>け</td>
+                            <td>き</td>
+                            <td>F</td>
+                            <td>お</td>
+                            <td>て</td>
+                            <td>R</td>
+                            <td>ち</td>
+                            <td>そ</td>
+                            <td>B</td>
+                            <td>す</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>こ</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>か</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>つ</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>せ</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" rowspan="3">&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>ね</td>
+                            <td>&nbsp;</td>
+                            <td colspan="6" rowspan="3">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>ぬ</td>
+                            <td>D</td>
+                            <td>な</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>に</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                    <p>今後、キューブの面を指定する際には「あ」「ぬ」という具合に指定します。</p>
+                    <p>まず概要です。この方法では二つの特別な面を定義します。<br />
+                        一番簡単な手順、M2は、「ね」と「え」の交換を意味します。この「ね」をバッファ、「え」をターゲットとします。<br />
+                        また、セットアップをset、逆セットアップをset'と表記します。<br />
+                        バッファ「ね」にある面を、「え」に飛ばすためには、M2を使います。</p>
+                    <p><br />
+                        たとえば、「ね」を「さ」に飛ばす時には、セットアップ手順を用いてM列にある4つのパーツの内、「え」だけを「さ」に交換します。<br />
+                        そしてM2をして、逆セットアップ手順をします。すると結果的に、「ね」が、「さ」に行き、「さ」がバッファの「ね」に来ます。<br />
+                        そのため、「ね」以外のすべての面ごとにセットアップ手順が存在し、また逆セットアップ手順が存在します。<br />
+                        そのため、「ね」にどこの面があるかを見れば、どの手順をすべきかが一つに決まります。</p>
+                    <p>手順は基本的には、set M2 set' の形になります。ただし、M列にあるパーツ3つについてはM2では交換出来ないため、特別な手順を必要とします。<br />
+                        しかしながら、「い」「に」手順は簡単です。「た」は、UBエッジとDFエッジを、F2でセットアップ、マヌーバでひっくり返して、セットアップ戻し、そしてM2です。<br />
+                        「く」手順は、「ね」-&gt;「く」-&gt;「え」交換の後、M2をしています。「ねくえ」交換は、F'でセットアップ、(E R U R') (E' R U' R) で交換、Fでセットアップ戻し、最後にM2してます。 <br />
+                        「せ」手順は、「く」の逆回転手順です。</p>
+                    <p>手順一覧</p>
+                    <table width="200" border="1">
+                        <tr>
+                            <td width="57"><div align="center">      ターゲット</div></td>
+                            <td width="127"><div align="center">      手順</div></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><div align="center">L列</div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="center">      き</div></td>
+                            <td><div align="center">      U'L'U M2 U'L U </div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="center">      ぬ</div></td>
+                            <td><div align="center">      U'L2U M2 U'L2U</div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="center">      す</div></td>
+                            <td><div align="center">      U'LU M2 U'L'U </div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="center">      う</div></td>
+                            <td><div align="center">      LU'L'U M2 U'LUL' </div></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><div align="center">R列</div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="center">      お</div></td>
+                            <td><div align="center">      URU' M2 UR'U' </div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="center">      な</div></td>
+                            <td><div align="center">      UR2U' M2 UR2U' </div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="center">      そ</div></td>
+                            <td><div align="center">      UR'U' M2 URU' </div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="center">      あ</div></td>
+                            <td><div align="center">      R'URU' M2 UR'U'R </div></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><div align="center">L面</div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="center">      こ</div></td>
+                            <td><div align="center">      BLB' M2 BL'B' </div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="center">      け</div></td>
+                            <td><div align="center">      BL2B' M2 BL2B' </div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="center">      し</div></td>
+                            <td><div align="center">      BL'B' M2 BLB' </div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="center">      さ</div></td>
+                            <td><div align="center">      LBL'B' M2 BLB'L' </div></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><div align="center">R面</div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="center">      つ</div></td>
+                            <td><div align="center">      B'R'B M2 B'RB </div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="center">      て</div></td>
+                            <td><div align="center">      B'R2B M2 B'R2B </div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="center">      と</div></td>
+                            <td><div align="center">      B'RB M2 B'R'B</div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="center">      ち</div></td>
+                            <td><div align="center">      R'B'RB M2 B'R'BR </div></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><div align="center">M列</div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="center">      い</div></td>
+                            <td><div align="center">      U2 M' U2 M' </div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="center">      に</div></td>
+                            <td><div align="center">      M U2 M U2 </div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="center"> く      </div></td>
+                            <td><div align="center">      FERUR'E'RU'R'F' M2 </div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="center">      せ</div></td>
+                            <td><div align="center">      M2 FRUR'ERU'R'E'F' </div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="center">      た</div></td>
+                            <td><div align="center">      F2 (MU)*3 (UM')*3 <br />
+                                U2 F2 M2 </div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="center">      え</div></td>
+                            <td><div align="center">      M2</div></td>
+                        </tr>
+                    </table>
+                    '
+                    <p>ここで注意です。M列に関する手順の場合、いまM2を偶数回やったか奇数回やったかを意識する必要があります。<br />
+                        「い」「に」と「く」「せ」については、M2で場所がひっくり返るので、M2が奇数回目の場合には、回すべき手順が「い」と「に」、「く」と「せ」で逆になります。<br />
+                        なので、M2が奇数回目の場合、バッファに「い」があれば、「に」の手順をするということです。</p>
+                    <p>試しに、適当に崩して「ね」がどこに行くべきかをみて、手順表から手順を実行してみてください。「ね」に在ったパーツがそこに揃います。</p>
+                    <p>解き終わったとき、M2が奇数回目で終わる時があります。このときは、「い」の手順などをしてDFとDB交換などにしておきます。その後、CPなどと絡ませて修正します。</p>
+                    <p>●分析・記憶</p>
+                    <p>　まず「ね」にある面に注目します。それが「つ」だったとします。次に「つ」にある面に注目します。「し」だったとします。おなじように、見ていき「こ」「と」「さ」「ち」「く」「に」だったとします。<br />
+                        次に、2文字一セットで覚えて行きます。「つし」-「こと」-「さち」-「くに」 これを文章化、あるいはイメージ化します。</p>
+                    <p>津市(つし)に引っ越した子供(こと)は幸（さち)が薄くて国(くに)に帰った。</p>
+                    <p>目隠し後は、手順を順に行うだけです。「つ」-「し」-「こ」-「と」-「さ」-「ち」-「く」-「い」<br />
+                        そう、最後だけはM列に在る面で、かつM2が奇数回目なので、反対の位置の手順「い」を行います。</p>
+                    <p>●実例</p>
+                    <p>スクランブル</p>
+                    <p>U F2 B2 U2 D B2 U B2 L F2 L2 U L' B F L' U2 L' B2 U' F U' L' U B</p>
+                    <p>「なあ」「さに」「いお」「けし」「ぬた」ですね。<br />
+                        この場合、「さに」の「に」だけが、実際回す手順が「い」になります。</p>
+                    <p>説明用のスクランブルなどは、stefanのページにもあります。</p>
+                    <p>●例外</p>
+                    <p>　・位置が揃っていて、向きが間違っているパーツ</p>
+                    <p>　　　これについては、別途EO手順が必要になります。それか、「う」「し」のように、同じパーツで二つの面の手順を続けて行うことでも修正出来ます。</p>
+                    <p>　・「ね」がすでに揃っている場合</p>
+                    <p>　　最初から揃っているか、ループが二つ以上になるときです。たとえば、「あ」-「い」-「う」などのループがある場合は、「あ」-「い」-「う」-「あ」のように、最初と最後を同じ手順にすると解消できます。実際に手順を回すときは、「あにうあ」になります。「い」は偶数回目なので、「に」に変わります。</p>
+                    <p>・ループ補足説明</p>
+                    <p>　完成状態から、PLLの十字交換をしてください。このときのループは、「う」-「あ」、「い」-「え」の二つです。しかし、「うあ」手順と、「いえ」手順を行うだけでは揃いません。ループは、「ね」から始まっているという暗黙の了解があります。そのため、記憶する段階で、このようにしておきます。<br />
+                        　
+                        「う」-「あ」-「う」-「い」-「え」-「い」<br />
+                        もしくは、<br />
+                        　「あ」-「う」-「あ」-「え」-「い」-「え」<br />
+                        ほかにも、<br />
+                        　「い」-「え」-「い」-「う」-「あ」-「う」<br />
+                        と、一つではありません。<br />
+                        こういう風に、記憶時に一つのループにしておけば、解く段階でいろいろ考えなくて済みます。</p>
+                    <p>質問、訂正、アドバイスなどは ももんが　mon_576r at yahoo.co.jpまでお願いします。</p>
+                    <p>訂正履歴<br />
+                        2007/09/05 もろもろ<br />
+                        2007/09/11 手順表直後2行目，入れ替わる面の説明を修正<br />
+                        2007/09/12 分析・記憶の章を一部修正</p>
+                    <p>訂正協力<br />
+                        　Raidenさん えすさん　takafumiさん</p>
+                    <p>&nbsp; </p>
+                    <p class="links"></p>
+                    </div>
+                    </div>
+					<div style="clear: both;">&nbsp;</div>
+				</div>
+				<!-- end #content -->
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page -->
+</div>
+<div id="footer">
+	<p>&copy; 2012 Sitename.com. | Design by <a href="http://www.freecsstemplates.org">FCT</a>.</p>
+</div>
+<!-- end #footer -->
+</body>
+</html>

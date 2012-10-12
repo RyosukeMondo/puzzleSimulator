@@ -1,0 +1,12 @@
+.pos {
+    width: 20px;
+}
+
+.algo {
+    font-family: monospace;
+    font-family: consolas;
+}
+
+.algo>div {
+    display: none;
+}

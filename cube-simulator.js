@@ -8,14 +8,13 @@ $(function(){
 
     */
 
-    $('div.post>div.entry').slideToggle();
     $('div.post>h2.title').click(function(){
         var $entry = $(this).parent().children('.entry');
         var name = $(this).children('a').html();
         name = name.replace(' ','').replace(' ','').replace(' ','');
         var $iframe = $entry.children('iframe');
         if( $iframe.attr('src') == undefined) {
-            $iframe.attr('src','../puzzles/'+name+'/'+name+'.html')
+            $iframe.attr('src','puzzles/'+name+'/'+name+'.html')
                 .attr('name',name)
                 .attr('width','1000')
                 .attr('height','1285');
